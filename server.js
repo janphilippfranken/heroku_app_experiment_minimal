@@ -10,7 +10,7 @@ const indexRoutes = require('./routes/index')
 app.use((req, res, next) => {
     const allowedOrigins = [
         'http://localhost:3000',
-        'http://dbn-1-exp.herokuapp.com/'
+        'http://dbn-1-exp.herokuapp.com'
     ];
     const origin = req.header.origin;
     if (allowedOrigins.includes(origin)) {
