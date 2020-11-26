@@ -1,0 +1,230 @@
+.Action {
+    background-color: grey;
+	width: 100px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	margin: 60px auto;
+	background-color: #fff;
+	border: 8px solid #666;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	-webkit-box-shadow: 2px 2px 4px #888;
+	-moz-box-shadow: 2px 2px 4px #888;
+    box-shadow: 2px 2px 4px #888;
+    font-weight: bold;
+}
+
+/* ask actions (ask B/askC) */
+.aB {
+    position: absolute;
+    left:9%;
+    top:9%; 
+    width: 120px;
+    height: 90px;
+    background-color:lightgray;
+    font: 20px Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aC {
+    position: absolute;
+    left:27%;
+    top:9%; 
+    width: 120px;
+    height: 90px;
+    background-color: lightgray;
+    font: 20px Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ /* tell actions (tell B blue/tell B red/ tell C blue/tell C red) */
+.tBb {
+    position: absolute;
+    left:9%;
+    top:35%; 
+    width: 120px;
+    height: 90px;
+    background-color:deepskyblue;
+    font: 20px Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tCb {
+    position: absolute;
+    left:27%;
+    top:35%; 
+    width: 120px;
+    height: 90px;
+    background-color: deepskyblue;
+    font: 20px Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tBr {
+    position: absolute;
+    left:9%;
+    top:55%; 
+    width: 120px;
+    height: 90px;
+    background-color:red;
+    font: 20px Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tCr {
+    position: absolute;
+    left:27%;
+    top:55%; 
+    width: 120px;
+    height: 90px;
+    background-color: red;
+    font: 20px Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* instruction frame above actions */
+.instr_frame {
+    position: absolute;
+    left:10%;
+    top:-5%; 
+    width: 275px;
+    height: 40px;
+    background-color: transparent;
+    font: 30px Arial, sans-serif;
+    font-weight: bold;
+    border-style: none!important;
+    -webkit-box-shadow: 0px 0px 0px #888;
+	-moz-box-shadow: 0px 0px 0px #888;
+	box-shadow: 0px 0px 0px #888;
+}
+
+ /* ask headline  */
+.ask_frame {
+    position: absolute;
+    left:10%;
+    top:4%; 
+    width: 275px;
+    height: 40px;
+    background-color: transparent;
+    font: 30px Arial, sans-serif;
+    font-weight: bold;
+    border-style: none!important;
+    -webkit-box-shadow: 0px 0px 0px #888;
+	-moz-box-shadow: 0px 0px 0px #888;
+	box-shadow: 0px 0px 0px #888;
+
+}
+
+/* tell headline  */
+.tell_frame {
+    position: absolute;
+    left:10%;
+    top:30%; 
+    width: 275px;
+    height: 40px;
+    background-color: transparent;
+    font: 30px Arial, sans-serif;
+    font-weight: bold;
+    border-style: none!important;
+    -webkit-box-shadow: 0px 0px 0px #888;
+	-moz-box-shadow: 0px 0px 0px #888;
+	box-shadow: 0px 0px 0px #888;
+
+}
+
+/* confidence slider */
+.conf_node {
+    position: absolute;
+    left:24%;
+    top:75%; 
+    width: 10px;
+    height: 40px;
+    background-color: lightgray;
+    font: 15spx Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.conf_sentence {
+    position: absolute;
+    left:25%;
+    top:83%; 
+    width: 10px;
+    height: 40px;
+    background-color:transparent;
+    font: 15spx Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    border-style: none!important;
+    -webkit-box-shadow: 0px 0px 0px #888;
+	-moz-box-shadow: 0px 0px 0px #888;
+	box-shadow: 0px 0px 0px #888;
+}
+
+/* confidence bar */
+.conf_frame {
+    position: absolute;
+    left:13%;
+    top:78.5%; 
+    width: 200px;
+    height: 0px;
+    background-color: transparent;
+    font: 30px Arial, sans-serif;
+    font-weight: bold;
+  }
+
+/* border separating actions and node states  */
+.border_frame {
+    position: absolute;
+    left:49%;
+    top:-8%; 
+    width: 0px;
+    height: 565px;
+    background-color: transparent;
+    font: 30px Arial, sans-serif;
+    font-weight: bold;
+    -webkit-box-shadow: 1px 1px 1px #888;
+	-moz-box-shadow: 1px 1px 1px #888;
+    box-shadow: 1px 1px 1px #888;
+    border: 4px solid #666;
+  }
+
+
+
+
+
+
+
+
