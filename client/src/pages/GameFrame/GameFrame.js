@@ -1,14 +1,14 @@
 import React from 'react';
-
-import classes from './GameFrame.module.css';
 import Agent from '../Agent/Agent';
 import Action from '../Action/Action';
+import classes from './GameFrame.module.css';
+
 
 const GameFrame = propos => {
     return (
         <div className={classes.GameFrame}>
             {/* agents */}
-            <Agent agent_id="instr_frame" >BELIEFS OF PLAYERS</Agent>
+            <Agent agent_id="instr_frame" >BELIEFS OF PLAYERS</Agent> 
             <Agent agent_id="A">?</Agent>
             <Agent agent_id="A_name">YOU</Agent>
             <Agent agent_id="B">?</Agent>

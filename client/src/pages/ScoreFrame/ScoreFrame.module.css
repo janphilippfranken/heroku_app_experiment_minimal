@@ -10,11 +10,7 @@
     margin: 60px auto;
     background-color: transparent;
     border: 8px solid #666;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
     border-radius: 30px;
-    -webkit-box-shadow: 2px 2px 4px #888;
-    -moz-box-shadow: 2px 2px 4px #888;
     box-shadow: 2px 2px 4px #888;
-};
+}
 
