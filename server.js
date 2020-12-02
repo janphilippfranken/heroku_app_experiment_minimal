@@ -1,6 +1,7 @@
 // npm i --save express 
+console.log('heloo');
 const express = require('express');
-const path = require('path')
+const path = require('path');
 
 const app = express();
 
@@ -27,7 +28,7 @@ app.use('/', indexRoutes);
 app.use(express.static(path.join(__dirname, './client/build')));
 
 //  error middle ware 
-app.use((req, res, next) => {
+app.use((error, req, res, next) => {
     console.log('ERROR');
     const status = error.statusCode || 500; 
     const message = error.message;
