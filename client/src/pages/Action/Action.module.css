@@ -1,5 +1,6 @@
 .Action {
     background-color: grey;
+    opacity: 0.4;
 	width: 100px;
 	height: 50px;
 	text-align: center;
@@ -15,6 +16,12 @@
     box-shadow: 2px 2px 4px #888;
     font-weight: bold;
 }
+
+.Action:hover {
+    opacity: 1.0;
+}
+
+
 
 /* ask actions (ask B/askC) */
 .aB {
@@ -110,6 +117,7 @@
 
 /* instruction frame above actions */
 .instr_frame {
+    opacity: 1.0;
     position: absolute;
     left:10%;
     top:-5%; 
@@ -126,6 +134,7 @@
 
  /* ask headline  */
 .ask_frame {
+    opacity: 1.0;
     position: absolute;
     left:10%;
     top:4%; 
@@ -143,6 +152,7 @@
 
 /* tell headline  */
 .tell_frame {
+    opacity: 1.0;
     position: absolute;
     left:10%;
     top:30%; 
@@ -159,24 +169,10 @@
 }
 
 /* confidence slider */
-.conf_node {
+.conf_sentence {
+    opacity: 1.0;
     position: absolute;
     left:24%;
-    top:75%; 
-    width: 10px;
-    height: 40px;
-    background-color: lightgray;
-    font: 15spx Arial, sans-serif;
-    font-weight: bold;
-    vertical-align: middle;
-    display: flex;
-    justify-content: center;
-    align-items: center;   
-}
-
-.conf_sentence {
-    position: absolute;
-    left:25%;
     top:83%; 
     width: 10px;
     height: 40px;
@@ -195,6 +191,7 @@
 
 /* confidence bar */
 .conf_frame {
+    opacity: 1.0;
     position: absolute;
     left:13%;
     top:78.5%; 
@@ -203,11 +200,17 @@
     background-color: transparent;
     font: 30px Arial, sans-serif;
     font-weight: bold;
+    cursor: move;
+    overflow: scroll;
+	resize: both;
+    max-width: 200px;
+    max-height: 0px;
   }
 
 /* border separating actions and node states  */
 .border_frame {
     position: absolute;
+    opacity: 1.0;
     left:49%;
     top:-8%; 
     width: 0px;
@@ -220,6 +223,44 @@
     box-shadow: 1px 1px 1px #888;
     border: 4px solid #666;
   }
+
+
+.conf_node {
+    opacity: 1;
+    position: absolute;
+    left:22%;
+    top:75%; 
+    width: 10px;
+    height: 0px;
+    background-color: lightgray;
+    font: 15spx Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    cursor: move;
+    overflow: scroll;
+	resize: horizontal;
+}
+
+/* confidence bar */
+.conf_frame_background {
+    opacity: 0.2;
+    position: absolute;
+    left:13%;
+    top:78.5%; 
+    width: 200px;
+    height: 0px;
+    background-color: transparent;
+    font: 30px Arial, sans-serif;
+    font-weight: bold;
+  }
+
+.conf_frame_background:hover {
+    opacity: 0.2;
+}
+
 
 
 

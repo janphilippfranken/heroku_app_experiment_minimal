@@ -11,10 +11,10 @@ const GameFrame = propos => {
             <Agent agent_id="instr_frame" >BELIEFS OF PLAYERS</Agent>
             <Agent agent_id="A">?</Agent>
             <Agent agent_id="A_name">YOU</Agent>
-            <Agent agent_id="B_name">NIKOS</Agent>
             <Agent agent_id="B">?</Agent>
-            <Agent agent_id="C_name">NEIL</Agent>
+            <Agent agent_id="B_name">NIKOS</Agent>
             <Agent agent_id="C">?</Agent>
+            <Agent agent_id="C_name">NEIL</Agent>
 
             {/* actions */}
             <Action action_id="border_frame"></Action>
@@ -27,14 +27,10 @@ const GameFrame = propos => {
             <Action action_id="tCb">Tell Neil blue</Action>
             <Action action_id="tBr">Tell Nikos red</Action>
             <Action action_id="tCr">Tell Neil red</Action>
-            <Action action_id="conf_frame"></Action>
-            <Action action_id="conf_node"></Action>
             <Action action_id="conf_sentence">Confidence</Action>
-            
-
-           
-       
-        
+            <Action action_id="conf_frame_background"></Action>
+            <Action draggable="true" action_id="conf_frame"></Action>
+            {/* <Action action_id="conf_node"></Action> */}
         </div>
     );
 };
