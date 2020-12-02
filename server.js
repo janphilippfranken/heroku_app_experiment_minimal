@@ -1,17 +1,16 @@
-// npm i --save express 
-console.log('heloo');
-const express = require('express');
 const path = require('path');
+const express = require('express');
 
 const app = express();
 
-// add routes later
-const indexRoutes = require('./routes/index')
+
+//  adding routes
+const indexRoutes = require('./routes/index');
 
 app.use((req, res, next) => {
     const allowedOrigins = [
         'http://localhost:3000',
-        'http://dbn-1-exp.herokuapp.com'
+        'http://reactjs-bare-minimum.herokuapp.com'
     ];
     const origin = req.header.origin;
     if (allowedOrigins.includes(origin)) {
@@ -24,18 +23,19 @@ app.use((req, res, next) => {
     next();
 });
 
+// routes
 app.use('/', indexRoutes);
 app.use(express.static(path.join(__dirname, './client/build')));
 
-//  error middle ware 
+// ERROR MIDLEWARE
 app.use((error, req, res, next) => {
     console.log('ERROR');
-    const status = error.statusCode || 500; 
+    const status = error.statusCode || 500;
     const message = error.message;
     const data = error.data;
-    res.status(statsu).json({ message: message, data: data });
+    res.status(status).json({ message: message, data: data });
 });
 
-const server = app.listen(process.nextTick.PORT || 5000, () => {
-    console.log('Server\'s up on port 5000');
+const server = app.listen(process.env.PORT || 5000, () => {
+    console.log('Server\'s up on port 5000!');
 });

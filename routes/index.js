@@ -6,4 +6,4 @@ const router = express.Router();
 
 router.get('/', indexController.getIndex);
 
-module.exports = router; 
+module.exports = router;
