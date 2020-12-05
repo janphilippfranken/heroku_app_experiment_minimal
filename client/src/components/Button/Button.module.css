@@ -1,0 +1,76 @@
+
+.Button, .Button:disabled, .Button:disabled:hover {
+  border-radius: 12px;
+  position: relative;
+  background-color: #000000;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px 30px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  
+  margin: auto;
+  margin-bottom: -.7rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.Button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.ButtonPre span:after {
+  content: '\00AB';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -140px;
+  transition: 0.5s;
+}
+
+.Button:hover {
+  background-color: #006400;
+}
+
+.Button:hover span {
+  padding-right: 25px;
+  background-color: #006400;
+  color: #fff;
+}
+.ButtonPre:hover span {
+  padding-left: 25px;
+  background-color: #006400;
+  color: #fff;
+}
+.Button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.Button:disabled, .Button:disabled:hover {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.Button:disabled span, .Button:disabled:hover span {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #000000;
+}

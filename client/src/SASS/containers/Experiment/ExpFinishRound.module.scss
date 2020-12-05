@@ -1,0 +1,15 @@
+@import '../../constants';
+
+.ExpFinishRound {
+    display: grid;
+    grid-template-columns: 1fr 40rem 1fr;
+    grid-template-areas: ". text .";
+}
+
+.InnerContainer {
+    text-align: center;
+    grid-area: text;
+    padding: 1rem;
+    background-color: white;
+
+}

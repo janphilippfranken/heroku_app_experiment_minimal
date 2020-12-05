@@ -1,0 +1,132 @@
+@keyframes slideOutFromBottom {
+  0% {
+    color: white;
+    background-color:#A52A2A;
+    transform: translate(-50%, 100px);
+    -ms-transform: translate(-50%, 100px); /* for IE 9 */
+    -webkit-transform: translate(-50%, 100px); /* for Safari */
+  }
+  100% {
+    color: black;
+    background-color:white;
+    transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0); /* for IE 9 */
+    -webkit-transform: translate(-50%, 0); /* for Safari */
+  }
+}
+
+@keyframes repeatRender {
+  0% {
+    color: white;
+    background-color:#A52A2A;
+  }
+  100% {
+    color: black;
+    background-color:white;
+  }
+}
+
+@keyframes borderLine {
+  0% {
+    border: 1px black solid;
+  }
+  100% {
+    border: 1px red solid;
+  }
+}
+
+.BorderLine{
+  position: fixed;
+  transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0); /* for IE 9 */
+  -webkit-transform: translate(-50%, 0); /* for Safari */
+
+  width: 100%;
+  height: 50px;
+  left: 50%;
+  top: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px black solid;
+  transition: transform 0.3s ease-in;
+  text-align: center;
+
+  animation-duration: 2s; /* the duration of the animation */
+  animation-timing-function: ease-out; /* how the animation will behave */
+  animation-delay: 0s; /* how long to delay the animation from starting */
+  animation-iteration-count: infinite; /* how many times the animation will play */
+  animation-name: borderLine;
+}
+
+.Timer {
+  position: fixed;
+  transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0); /* for IE 9 */
+  -webkit-transform: translate(-50%, 0); /* for Safari */
+
+  width: 65px;
+  max-width: 70%;
+  height: 50px;
+  left: 50%;
+  top: -37px;
+  z-index: 190;
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 2px;
+  /* border: 1px black solid; */
+  transition: transform 0.3s ease-in;
+  text-align: center;
+
+
+  opacity: 1;
+  -webkit-transition: background-color 2s ease-in, opacity 2s ease-in;
+  transition: background-color 2s ease-in, opacity 2s ease-in;
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation-duration: 2s; /* the duration of the animation */
+  animation-timing-function: ease-out; /* how the animation will behave */
+  animation-delay: 0s; /* how long to delay the animation from starting */
+  animation-iteration-count: 1; /* how many times the animation will play */
+  animation-name: slideOutFromBottom;
+
+
+}
+
+
+.Timer:hover {
+   top: -10px;
+   opacity: 1;
+  -webkit-transition: top .2s ease-in, opacity 2s ease-in;
+  transition: top .2s ease-in, opacity 2s ease-in;
+}
+
+
+.LastMin:hover{
+  top: 20px;
+}
+.LastMin{
+  color: white;
+  background-color:#A52A2A;
+  position: fixed;
+  transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0); /* for IE 9 */
+  -webkit-transform: translate(-50%, 0); /* for Safari */
+  text-align: center;
+  width: 65px;
+  max-width: 70%;
+  height: 50px;
+  left: 50%;
+  top: 20px;
+  z-index: 190;
+  box-sizing: border-box;
+  border-radius: 2px;
+  border: 1px black solid;
+  transition: transform 0.3s ease-in;
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation-duration: .2s; /* the duration of the animation */
+  animation-timing-function: ease-out; /* how the animation will behave */
+  animation-delay: 0s; /* how long to delay the animation from starting */
+  animation-iteration-count: infinite; /* how many times the animation will play */
+  animation-name: repeatRender;
+}

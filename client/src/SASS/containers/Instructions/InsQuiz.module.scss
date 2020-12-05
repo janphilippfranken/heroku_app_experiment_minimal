@@ -1,0 +1,137 @@
+@import '../../constants.scss';
+
+.InsQuiz {
+    display: grid;
+    grid-template-columns: 1fr 45rem 1fr;
+    grid-template-areas: ". text .";
+}
+
+.InnerContainer {
+    text-align: justify;
+    grid-area: text;
+    padding: 1rem;
+    background-color: white;
+}
+
+.QuizContainer {
+    display: grid;
+    grid-template-areas: "qs ts . fs"
+                         "hr hr hr hr"
+                         "q1 t1 vl f1"
+                         "q2 t2 vl f2"
+                         "q3 t3 vl f3"
+                         "q4 t4 vl f4"
+                         "q5 t5 vl f5"
+                         "q6 t6 vl f6";
+    & li {
+        list-style: none;
+
+        &:not(:last-of-type) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .Hr {
+        grid-area: hr;
+    }
+    .Qs,
+    .Ts,
+    .Fs {
+        justify-self: center;
+    }
+
+    .Vl {
+        grid-area: vl;
+    }
+    .Qs {
+        grid-area: qs;
+    }
+
+    .Ts {
+        grid-area: ts;
+    }
+
+    .Fs {
+        grid-area: fs;
+    }
+
+    .Q1 {
+        grid-area: q1;
+        margin-right: 1rem;
+    }
+    .Q2 {
+        grid-area: q2;
+        margin-right: 1rem;
+    }
+    .Q3 {
+        grid-area: q3;
+        margin-right: 1rem;
+    }
+    .Q4 {
+        grid-area: q4;
+        margin-right: 1rem;
+    }
+    .Q5 {
+        grid-area: q5;
+        margin-right: 1rem;
+    }
+    .Q6 {
+        grid-area: q6;
+        margin-right: 1rem;
+    }
+
+    .T1,
+    .T2,
+    .T3,
+    .T4,
+    .T5,
+    .T6,
+    .F1,
+    .F2,
+    .F3,
+    .F4,
+    .F5,
+    .F6 {
+        justify-self: center;
+        align-self: center;
+        color: black;
+    }
+
+    .T1 {
+        grid-area: t1;
+    }
+    .T2 {
+        grid-area: t2;
+    }
+    .T3 {
+        grid-area: t3;
+    }
+    .T4 {
+        grid-area: t4;
+    }
+    .T5 {
+        grid-area: t5;
+    }
+    .T6 {
+        grid-area: t6;
+    }
+
+    .F1 {
+        grid-area: f1;
+    }
+    .F2 {
+        grid-area: f2;
+    }
+    .F3 {
+        grid-area: f3;
+    }
+    .F4 {
+        grid-area: f4;
+    }
+    .F5 {
+        grid-area: f5;
+    }
+    .F6 {
+        grid-area: f6;
+    }
+}

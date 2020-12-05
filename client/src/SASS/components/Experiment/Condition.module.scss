@@ -1,0 +1,25 @@
+@import '../../constants.scss';
+
+.Container {
+
+}
+
+.Condition {
+    display: grid;
+}
+
+.OrderedList {
+    margin-left: 1rem;
+}
+
+
+.NetworkPlotlyContainer {
+    overflow: hidden;
+    height: 300px;
+    .NetworkPlotly {
+        margin-top: -150px;
+        margin-left: -50px;
+        height: 500px;
+        width: 700px;
+   }
+}

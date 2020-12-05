@@ -1,0 +1,16 @@
+@import '../constants.scss';
+
+.Notes {
+    
+    display: grid;
+    grid-template-columns: 1fr 40rem 1fr;
+    grid-template-areas: ". text .";
+}
+
+.NotesMainText {
+    grid-area: text;
+
+    & ul {
+        margin-bottom: 2rem;
+    }
+}

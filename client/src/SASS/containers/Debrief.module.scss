@@ -1,0 +1,106 @@
+@import '../constants.scss';
+
+.Debrief {
+    display: grid;
+    grid-template-columns: 1fr 40rem 1fr;
+    grid-template-areas: ". text .";
+}
+
+.InnerContainer {
+    text-align: center;
+    grid-area: text;
+    padding: 1rem;
+    background-color: white;
+
+     & .Asterisk{
+        text-align: left !important;
+    }
+}
+
+
+.Form {
+    padding: 20px 10px;
+    margin-bottom: 10px;
+    background-color: $color-grey-light-2;
+    background-color: $color-grey-light-1;
+    box-shadow: $shadow-THE-smallest;
+    border-radius: .3rem;
+    display: grid;
+    grid-template-rows: repeat(7, min-content);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "eng eng" "dif dif" "po po" "age sex" "prior prior" "post post" "comm comm";
+    text-align: left;
+    row-gap: 2rem;
+    & span {
+        color: red;
+    }
+    .AgeContainer {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        grid-area: age;
+
+        & input {
+            width: 40px;
+            justify-self: start;
+        }
+    }
+
+    .GenderContainer {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        grid-area: sex;
+        & input {
+            width: 100%;
+        justify-self: start;
+        }
+    }
+
+    .EngagingContainer {
+        position: relative;
+        display: grid;
+        grid-area: eng;
+        & select {
+            width: 40%;
+        }
+    }
+
+    .DifficutlyContainer {
+        display: grid;
+        grid-area: dif;
+        & select {
+            width: 40%;
+        }
+    }
+
+    .PoliticalOrientationContainer {
+        display: grid;
+        grid-area: po;
+        & select {
+            width: 40%;
+        }
+    }
+
+    .PriorContainer {
+        display: grid;
+        grid-area: prior;
+        & textarea {
+            height: 80px;
+        }
+    }
+
+    .PosteriorContainer {
+        display: grid;
+        grid-area: post;
+        & textarea {
+            height: 80px;
+        }
+    }
+
+    .CommentsContainer {
+        display: grid;
+        grid-area: comm;
+        & textarea {
+            height: 80px;
+        }
+    }
+}

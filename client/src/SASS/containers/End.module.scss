@@ -1,0 +1,19 @@
+@import '../constants.scss';
+
+.End {
+    display: grid;
+    grid-template-columns: 1fr 40rem 1fr;
+    grid-template-areas: ". text .";
+}
+
+.InnerContainer {
+    text-align: justify;
+    grid-area: text;
+    padding: 1rem;
+    background-color: white;
+    text-align: center;
+    & img {
+        width: 300px;
+        height: 300px;
+    }
+}

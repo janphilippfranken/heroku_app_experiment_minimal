@@ -1,0 +1,10 @@
+.ScrollDivision {
+  height: 450px;
+  overflow: hidden;
+  padding-right: 18px;
+}
+
+.ScrollDivision:hover {
+  overflow-y: auto;
+  padding-right: 0px;
+}

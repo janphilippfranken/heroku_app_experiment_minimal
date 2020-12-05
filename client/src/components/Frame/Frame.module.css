@@ -1,0 +1,19 @@
+.Frame {
+  /* border: solid 1px black; */
+  padding: 5px 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-top: 20px;
+  font-size: 18px;
+  min-height: 300px;
+  width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+  .Frame {
+    /* border: solid 1px black; */
+    width: 100%;
+  }
+
+}

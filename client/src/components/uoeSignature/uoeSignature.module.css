@@ -1,0 +1,12 @@
+.uoeSignature {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  flex-flow: row;
+  box-sizing: border-box;
+  border-bottom: solid 4px #C0C0C0;
+  grid-area: logo;
+  justify-self: center;
+  margin-top: 5px;
+}

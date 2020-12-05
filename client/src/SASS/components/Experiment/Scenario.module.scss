@@ -1,0 +1,13 @@
+@import '../../constants.scss';
+
+ .Text {
+    line-height: 1.2;
+}
+
+.ImageContainer {
+    text-align: center;
+    & img {
+        width: 50%;
+        margin-bottom: .2rem;
+    }
+}

@@ -1,0 +1,126 @@
+@import '../../constants.scss';
+
+.ExpPosterior {
+    display: grid;
+    grid-template-columns: 1fr 52rem 1fr;
+    grid-template-areas: ". text .";
+    margin-bottom: .5rem;
+}
+
+.InnerContainer {
+    text-align: justify;
+    grid-area: text;
+    padding: 1rem;
+    background-color: white;
+    border-radius: .5rem;
+    box-shadow: $shadow-THE-smallest;
+    border-radius: .3rem;
+    overflow: hidden;
+    
+    .SmallDescription {
+        background-color: white;
+        position: relative;
+        z-index: 10;
+        line-height: 1.2;
+        margin-top: -5rem;
+        border-top: 1px solid $color-grey-dark-1;
+        border-bottom: 1px solid $color-grey-dark-1;
+    }    
+    & hr {
+        position: relative;
+        z-index: 10;
+    }
+    & h1 {
+        text-align: center;
+    }
+}
+
+
+.NeighboursContainer {
+    display: grid;
+    grid-template-columns: 1fr .1rem 1fr .1rem 1fr;
+    grid-template-rows: 300px;
+    // grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "n1 sep1 yours sep2 n2";
+                        //  "yours yours yours";
+
+    
+
+    .Neighbour1ContainerOuter {
+        grid-area: n1;
+        display: grid;
+        grid-template-columns: repeat(2, min-content);
+        align-items: center;
+        text-decoration: underline;
+        justify-self: start;
+        margin-left: -4rem;
+        z-index: 5;
+        position: relative;
+        
+            & .Neighbour1Container {
+                display: grid;
+                justify-items: flex-start;
+                margin-bottom: 2rem;
+        }
+    }
+
+    .SeperationImage1 {
+        grid-area: sep1;
+        position: relative;
+        z-index: 9;
+        margin-left: -2rem;
+    }
+
+    .SeperationImage2 {
+        grid-area: sep2;
+        position: relative;
+        z-index: 9;
+        margin-left: -2rem;
+    }
+
+    .Neighbour2ContainerOuter {
+        grid-area: n2;
+        display: grid;
+        grid-template-columns: repeat(2, min-content);
+        align-items: center;
+        text-decoration: underline;
+        justify-self: end;
+        margin-left: -4rem;
+        z-index: 6;
+        position: relative;
+        
+        & .Neighbour2Container {
+            display: grid;
+            justify-items: center;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .YourContainerOuter {
+        grid-area: yours;
+        display: grid;
+        grid-template-columns: repeat(2, min-content);
+        align-items: center;
+        text-decoration: underline;
+        justify-self: center;
+        z-index: 6;
+        position: relative;
+        margin-left: -4rem;
+
+        & .YourContainer {
+            display: grid;
+            justify-items: center;
+            margin-bottom: 2rem;
+        }
+    }
+}
+    
+    
+.MainPlot {
+    margin-top: -5rem;
+    display: grid;
+    grid-template-rows: repeat(6, min-content);
+}
+.Slider {
+    width: 70%;
+}

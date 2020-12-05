@@ -1,0 +1,18 @@
+.GameFrame {
+    background-color: grey;
+    position: relative;
+    /* top: 0%;
+    left: 0%; */
+    /* height: 300%;
+    width: 100%; */
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+    height: 35rem;
+    text-align: center;
+    background-color: transparent;
+    border: 8px solid #666;
+    border-radius: 30px;
+    box-shadow: 2px 2px 4px #888;
+}
+
+

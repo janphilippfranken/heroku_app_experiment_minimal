@@ -1,0 +1,40 @@
+@import '../../constants.scss';
+
+.InsVarSlider {
+    display: grid;
+    grid-template-columns: 1fr 40rem 1fr;
+    grid-template-areas: ". text .";
+    margin-bottom: .5rem;
+}
+
+
+.InnerContainer {
+    text-align: justify;
+    grid-area: text;
+    padding: 1rem;
+    background-color: white;
+    border-radius: .5rem;
+    box-shadow: $shadow-THE-smallest;
+    border-radius: .3rem;
+    & p {
+        position: relative;
+        z-index: 10;
+        line-height: 1.2;
+    }    
+    & hr {
+        position: relative;
+        z-index: 10;
+    }
+}
+
+
+.PlotContainer {
+    margin-top: -6rem;
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(5, min-content);
+
+    .Slider {
+        width: 80%;
+    }
+}

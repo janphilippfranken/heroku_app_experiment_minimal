@@ -1,0 +1,28 @@
+@import '../../constants.scss';
+
+.ExpPriorBelief {
+    text-align: justify;
+    grid-area: text;
+    padding: 1rem;
+    background-color: white;
+    text-align: center;
+    
+    & .SmallDescription {
+        position: relative;
+        z-index: 10;
+        line-height: 1.6;
+        border-top: 1px solid $color-grey-dark-1;
+        border-bottom: 1px solid $color-grey-dark-1;
+    }    
+    & hr {
+        position: relative;
+        z-index: 10;
+    }
+}
+
+
+.MainPlot {
+    // margin-top: -2rem;
+    display: grid;
+    grid-template-rows: repeat(6, min-content);
+}
