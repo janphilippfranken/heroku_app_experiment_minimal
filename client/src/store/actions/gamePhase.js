@@ -3,7 +3,7 @@ export const CHANGE_PHASE = 'CHANGE_PHASE';
 export const PHASES = {
     ethics: 'ethics',
     notes: 'notes',
-    instructions: 'instructions',
+    instruction: 'instruction',
     experiment: 'experiment',
     debrief: 'debrief',
     end: 'end'

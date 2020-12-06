@@ -4,6 +4,14 @@
     display: grid;
     grid-template-columns: 1fr 40rem 1fr;
     grid-template-areas: ". text .";
+    margin-bottom:  5rem;
+}
+
+.InsReminder {
+    text-align: justify;
+    grid-area: text;
+    padding: 1rem;
+    background-color: white;
 }
 
 .InnerContainer {
@@ -11,9 +19,12 @@
     grid-area: text;
     padding: 1rem;
     background-color: white;
+    margin-bottom: 0.5rem;
 
     & img {
         width: 100%;
+        margin-bottom: -3rem;
+        margin-top: 2rem;
 
     }
 }

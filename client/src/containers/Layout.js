@@ -6,7 +6,7 @@ import Timer from '../components/timer/Timer';
 import Ethics from '../containers/Ethics';
 import Notes from './Notes.js';
 import GameInterface from './GameInterface/GameInterface';
-// import Instructions from './Instructions/Instructions';
+import Instructions from './Instruction/Instructions';
 // import Experiment from './Experiment/Experiment';
 import End from './End';
 
@@ -26,10 +26,10 @@ const Layout = props => {
     } else if (gamePhase[PHASES.notes]) {
         currentGamePhase = <Notes />;
         
-    } else if (gamePhase[PHASES.instructions]) {
+    } else if (gamePhase[PHASES.instruction]) {
+        currentGamePhase = <Instructions />;
+    } else if (gamePhase[PHASES.experiment]) {
         currentGamePhase = <GameInterface />;
-    // } else if (gamePhase[PHASES.experiment]) {
-    //     currentGamePhase = <Experiment />;
     } else if (gamePhase[PHASES.debrief]) {
         currentGamePhase = <Debrief />;
     } else if (gamePhase[PHASES.end]) {

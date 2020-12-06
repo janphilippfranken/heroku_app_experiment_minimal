@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Button from '../../components/Button/Button';
-import Classes from '../../SASS/containers/Instructions/InsQuiz.module.scss';
+import Classes from '../../SASS/containers/Instruction/InsQuiz.module.scss';
 import vlImage from '../../static/images/vl.png';
 import TryAgainModal from '../../components/TryAgainModal';
 import { useDispatch } from 'react-redux';
@@ -68,12 +68,12 @@ const InsQuiz = props => {
                     <input type="radio" name="5" className={[Classes.F5, 'input'].join(" ")} />
                     <input type="radio" name="6" className={[Classes.T6, 'input'].join(" ")} />
                     <input type="radio" name="6" className={[Classes.F6, 'input'].join(" ")} />
-                    <li className={Classes.Q1}>1. In each condition you'll be presented with a fictional scenario involving few characters.</li>
-                    <li className={Classes.Q2}>2. Your job is to judge only the main character's behaviour.</li>
-                    <li className={Classes.Q3}>3. Your judgment should be based on main character's attractiveness.</li>
-                    <li className={Classes.Q4}>4. In each scenario, you have the opportunity to see the beliefs of two other individuals to improve your judgement.</li>
-                    <li className={Classes.Q5}>5. The individuals know about the motives behind the decision of the main actor.</li>
-                    <li className={Classes.Q6}>6. You will only provide your belief and certainty ratings once.</li>
+                    <li className={Classes.Q1}>1. True.</li>
+                    <li className={Classes.Q2}>2. True.</li>
+                    <li className={Classes.Q3}>3. False.</li>
+                    <li className={Classes.Q4}>4. True.</li>
+                    <li className={Classes.Q5}>5. True.</li>
+                    <li className={Classes.Q6}>6. False.</li>
                 </div>
                 <hr />
                 <br />

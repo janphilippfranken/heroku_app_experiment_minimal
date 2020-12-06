@@ -17,7 +17,7 @@ const Notes = props => {
     }, [dispatch]);
 
     const goToInstructionsHandler = () => {
-        dispatch(changePhase(PHASES.instructions));
+        dispatch(changePhase(PHASES.instruction));
     };
     return (
         <div className={Classes.Notes}>
