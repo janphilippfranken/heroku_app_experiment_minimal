@@ -22,14 +22,14 @@ const GameFrame = props => {
             <Action action_id="ask_frame">ASK</Action>
             <Action action_id="aB">Ask Nikos</Action>
             <Action action_id="aC">Ask Neil</Action>
-            <Action action_id="tell_frame">TELL</Action>
+            {/* <Action action_id="tell_frame">TELL</Action>
             <Action action_id="tBb">Tell Nikos blue</Action>
             <Action action_id="tCb">Tell Neil blue</Action>
             <Action action_id="tBr">Tell Nikos red</Action>
             <Action action_id="tCr">Tell Neil red</Action>
             <Action action_id="conf_sentence">Confidence</Action>
             <Action action_id="conf_frame_background"></Action>
-            <Action draggable="true" action_id="conf_frame"></Action>
+            <Action draggable="true" action_id="conf_frame"></Action> */}
             {/* <Action action_id="conf_node"></Action> */}
         </div>
     );

@@ -14,9 +14,9 @@
     position: absolute;
   
     left:15%;
-    top:10%; 
-    width: 30px;
-    height: 30px;
+    top:11%; 
+    width: 2rem;
+	height: 2rem;
     background-color: red;
     font: 20px Arial, sans-serif;
     font-weight: bold;
@@ -29,9 +29,9 @@
 .C1 {
     position:absolute;
     left:69%;
-    top:10%; 
-    width: 30px;
-    height: 30px;
+    top:11%; 
+    width: 2rem;
+	height: 2rem;
     background-color: deepskyblue;
     font: 20px Arial, sans-serif;
     font-weight: bold;
@@ -43,10 +43,10 @@
 
 .B_name {
     position: absolute;
-    left:5%;
+    left:-3%;
     top:4%;  
-    width: 100px;
-    height: 40px;
+    width: 7.5rem;
+	height: 5rem;
     background-color: transparent;
     font: 30px Arial, sans-serif;
     font-weight: bold;
@@ -57,10 +57,10 @@
 
 .C_name {
     position: absolute;
-    left:59%;
+    left:50%;
     top:4%; 
-    width: 100px;
-    height: 40px;
+    width: 7.5rem;
+	height: 5rem;
     background-color: transparent;
     font: 30px Arial, sans-serif;
     font-weight: bold;
@@ -72,10 +72,10 @@
 /* frame above agents for instructions etc. */
 .instr_frame {
     position:absolute;
-    left:25%;
+    left:21%;
     top:-4%; 
-    width: 50px;
-    height: 20px;
+    width: 7.5rem;
+	height: 5rem;
     font: 30px Arial, sans-serif;
     font-weight: bold;
     border-style: none!important;

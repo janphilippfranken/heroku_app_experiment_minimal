@@ -1,8 +1,8 @@
 .Action {
     background-color: grey;
     opacity: 0.4;
-	width: 100px;
-	height: 50px;
+	width: 7.5rem;
+	height: 5rem;
 	text-align: center;
 	line-height: 50px;
 	margin: 60px auto;
@@ -22,10 +22,10 @@
 /* ask actions (ask B/askC) */
 .aB {
     position: absolute;
-    left:9%;
-    top:9%; 
-    width: 120px;
-    height: 90px;
+    left:5%;
+    top:15%; 
+    width: 7.5rem;
+	height: 5rem;
     background-color:lightgray;
     font: 20px Arial, sans-serif;
     font-weight: bold;
@@ -37,10 +37,10 @@
 
 .aC {
     position: absolute;
-    left:27%;
-    top:9%; 
-    width: 120px;
-    height: 90px;
+    left:25%;
+    top:15%; 
+    width: 7.5rem;
+	height: 5rem;
     background-color: lightgray;
     font: 20px Arial, sans-serif;
     font-weight: bold;
@@ -55,8 +55,8 @@
     position: absolute;
     left:9%;
     top:35%; 
-    width: 120px;
-    height: 90px;
+    width: 7.5rem;
+	height: 5rem;
     background-color:deepskyblue;
     font: 20px Arial, sans-serif;
     font-weight: bold;
@@ -70,8 +70,8 @@
     position: absolute;
     left:27%;
     top:35%; 
-    width: 120px;
-    height: 90px;
+    width: 7.5rem;
+	height: 5rem;
     background-color: deepskyblue;
     font: 20px Arial, sans-serif;
     font-weight: bold;
@@ -85,8 +85,8 @@
     position: absolute;
     left:9%;
     top:55%; 
-    width: 120px;
-    height: 90px;
+    width: 7.5rem;
+	height: 5rem;
     background-color:red;
     font: 20px Arial, sans-serif;
     font-weight: bold;
@@ -100,8 +100,8 @@
     position: absolute;
     left:27%;
     top:55%; 
-    width: 120px;
-    height: 90px;
+    width: 7.5rem;
+	height: 5rem;
     background-color: red;
     font: 20px Arial, sans-serif;
     font-weight: bold;
@@ -115,7 +115,7 @@
 .instr_frame {
     opacity: 1.0;
     position: absolute;
-    left:10%;
+    left:5%;
     top:-5%; 
     width: 275px;
     height: 40px;
@@ -130,10 +130,10 @@
 .ask_frame {
     opacity: 1.0;
     position: absolute;
-    left:10%;
-    top:4%; 
-    width: 275px;
-    height: 40px;
+    left:15%;
+    top:8%; 
+    width: 7.5rem;
+	height: 5rem;
     background-color: transparent;
     font: 30px Arial, sans-serif;
     font-weight: bold;
@@ -199,7 +199,7 @@
 .border_frame {
     position: absolute;
     opacity: 1.0;
-    left:49%;
+    left:47%;
     top:-8%; 
     width: 0;
     height: 90%;

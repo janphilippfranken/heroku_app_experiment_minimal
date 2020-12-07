@@ -1,13 +1,14 @@
 .ScoreFrame {
     background-color: grey;
-    position: fixed;
-    top: 0px;
-    left: 940px;
-    height: 600px;
-    width: 250px;
+    position: relative;
+    /* top: 0%;
+    left: 0%; */
+    /* height: 300%; */
+    width: 15rem;
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+    height: 30rem;
     text-align: center;
-    line-height: 100px;
-    margin: 60px auto;
     background-color: transparent;
     border: 8px solid #666;
     border-radius: 30px;

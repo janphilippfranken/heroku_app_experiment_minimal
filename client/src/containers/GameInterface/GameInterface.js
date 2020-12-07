@@ -27,8 +27,15 @@ const GameInterface = props => {
         <div className={classes.GameForm}>
             <h2>Game</h2>
             <hr />
+
             {/* <div className={classes.ParagraphContainer}> */}
+               
+            <div className={classes.GameContainer}>
+               
                 <GameFrame/>
+                <ScoreFrame/>
+
+            </div>
             
                
             {/* </div> */}

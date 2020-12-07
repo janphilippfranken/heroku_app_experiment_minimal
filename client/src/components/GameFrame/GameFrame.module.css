@@ -1,13 +1,10 @@
 .GameFrame {
     background-color: grey;
     position: relative;
-    /* top: 0%;
-    left: 0%; */
-    /* height: 300%;
-    width: 100%; */
+    width: 45rem;
     margin-bottom: .5rem;
     margin-top: .5rem;
-    height: 35rem;
+    height: 30rem;
     text-align: center;
     background-color: transparent;
     border: 8px solid #666;

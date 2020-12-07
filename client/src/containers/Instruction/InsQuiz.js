@@ -77,7 +77,9 @@ const InsQuiz = props => {
                 </div>
                 <hr />
                 <br />
-                <Button clicked={submitAnswersHandler}>Next</Button>
+                {/* <Button clicked={submitAnswersHandler}>Next</Button> */}
+                <Button clicked={dispatch(changePhase(PHASES.experiment))}>Next</Button>
+                
             </div>
         </div >
     );

@@ -1,7 +1,7 @@
 .Agent {
     background-color: grey;
-	width: 200px;
-	height: 100px;
+	width: 7.5rem;
+	height: 5rem;
 	text-align: center;
 	line-height: 100px;
 	margin: 60px auto;
@@ -16,8 +16,6 @@
     position: absolute;
     left:67.5%;
     top:50%; 
-    width: 120px;
-    height: 90px;
     background-color: lightgray;
     font: 20px Arial, sans-serif;
     font-weight: bold;
@@ -31,8 +29,6 @@
     position:absolute;
     left:56%;
     top:9%; 
-    width: 120px;
-    height: 90px;
     background-color: lightgray;
     font: 20px Arial, sans-serif;
     font-weight: bold;
@@ -46,8 +42,6 @@
     position: absolute;
     left:79%;
     top:9%; 
-    width: 120px;
-    height: 90px;
     background-color: lightgray;
     font: 20px Arial, sans-serif;
     font-weight: bold;
@@ -60,10 +54,8 @@
 /* agent name tags */
 .A_name {
     position: absolute;
-    left:69.25%;
-    top:45%; 
-    width: 100px;
-    height: 40px;
+    left:67.5%;
+    top:44%; 
     background-color: transparent;
     font: 30px Arial, sans-serif;
     font-weight: bold;
@@ -74,10 +66,8 @@
 
 .B_name {
     position: absolute;
-    left:58%;
-    top:4%; 
-    width: 100px;
-    height: 40px;
+    left:56%;
+    top:3%; 
     background-color: transparent;
     font: 30px Arial, sans-serif;
     font-weight: bold;
@@ -88,10 +78,8 @@
 
 .C_name {
     position: absolute;
-    left:81.2%;
-    top:4%; 
-    width: 100px;
-    height: 40px;
+    left:79%;
+    top:3%; 
     background-color: transparent;
     font: 30px Arial, sans-serif;
     font-weight: bold;
@@ -103,7 +91,7 @@
 /* frame above agents for instructions etc. */
 .instr_frame {
     position:absolute;
-    left:55%;
+    left:50%;
     top:-5%; 
     width: 350px;
     height: 20px;
