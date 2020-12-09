@@ -5,23 +5,37 @@ import classes from './GameFrame.module.css';
 
 
 const GameFrame = props => {
+    
+//     this.state = {
+//         black: true
+//    }
+
+    const changeColor = () => {
+        this.setState({black: !this.state.black})
+    };
+
+    const render = () => {
+        let btn_class = this.state.black ? "blackButton" : "whiteButton";
+    };
+
+
     return (
         <div className={classes.GameFrame}>
             {/* agents */}
-            <Agent agent_id="instr_frame" >BELIEFS OF PLAYERS</Agent> 
-            <Agent agent_id="A">?</Agent>
-            <Agent agent_id="A_name">YOU</Agent>
-            <Agent agent_id="B">?</Agent>
-            <Agent agent_id="B_name">NIKOS</Agent>
-            <Agent agent_id="C">?</Agent>
-            <Agent agent_id="C_name">NEIL</Agent>
+            <Agent agent_id="instr_frame" >BELIEFS OF OTHERS</Agent> 
+            {/* <Agent agent_id="A">?</Agent>
+            <Agent agent_id="A_name">YOU</Agent> */}
+            <Agent agent_id="B_2">?</Agent>
+            <Agent agent_id="B_2name">NIKOS</Agent>
+            <Agent agent_id="C_2">?</Agent>
+            <Agent agent_id="C_2name">NEIL</Agent>
 
             {/* actions */}
-            <Action action_id="border_frame"></Action>
-            <Action action_id="instr_frame">YOUR ACTIONS</Action>
+            {/* <Action action_id="border_frame"></Action>
+            // <Action action_id="instr_frame">YOUR ACTIONS</Action>
             <Action action_id="ask_frame">ASK</Action>
-            <Action action_id="aB">Ask Nikos</Action>
-            <Action action_id="aC">Ask Neil</Action>
+            <Action action_id="aB">Ask Nikos</Action> */}
+            {/* <Action action_id="aC">Ask Neil</Action> */}
             {/* <Action action_id="tell_frame">TELL</Action>
             <Action action_id="tBb">Tell Nikos blue</Action>
             <Action action_id="tCb">Tell Neil blue</Action>
@@ -31,8 +45,12 @@ const GameFrame = props => {
             <Action action_id="conf_frame_background"></Action>
             <Action draggable="true" action_id="conf_frame"></Action> */}
             {/* <Action action_id="conf_node"></Action> */}
+
+            <Action id="ask_btn" action_id="button">Observe Beliefs</Action>
         </div>
     );
 };
 
 export default GameFrame; 
+
+

@@ -44,7 +44,7 @@
 .B_name {
     position: absolute;
     left:-3%;
-    top:4%;  
+    top:2%;  
     width: 7.5rem;
 	height: 5rem;
     background-color: transparent;
@@ -58,7 +58,7 @@
 .C_name {
     position: absolute;
     left:50%;
-    top:4%; 
+    top:2%; 
     width: 7.5rem;
 	height: 5rem;
     background-color: transparent;
@@ -73,7 +73,7 @@
 .instr_frame {
     position:absolute;
     left:21%;
-    top:-4%; 
+    top:-9%; 
     width: 7.5rem;
 	height: 5rem;
     font: 30px Arial, sans-serif;

@@ -50,6 +50,26 @@
     align-items: center;
 }
 
+.button {
+    position: absolute;
+    left:43%;
+    top:60%; 
+    width: 7.5rem;
+	height: 5rem;
+    background-color: lightgray;
+    font: 20px Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.clickedBtn {
+    background-color: red;
+}
+
  /* tell actions (tell B blue/tell B red/ tell C blue/tell C red) */
 .tBb {
     position: absolute;
