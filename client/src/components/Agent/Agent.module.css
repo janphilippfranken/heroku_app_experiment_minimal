@@ -213,22 +213,44 @@
 
 .BPlanet {
     opacity: 0.2;
+    top: 15%;
+    position: absolute;
+    background-color: skyblue;
     border-radius: 200px;
-    width: 15rem;
-    height: 15rem;
+    left: 0%;
+    width: 17rem;
+    height: 17rem;
     font: 30px Arial, sans-serif;
     font-weight: bold;
     text-align: center;
+    justify-content: center;
+    line-height: 15rem;
 }
 
 .RPlanet {
     opacity: 0.2;
+    position: absolute;
+    top: 15%;
+    background-color: red;
+    border-radius: 200px;
+    left: 10%;
+    width: 17rem;
+    height: 17rem;
+    font: 30px Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    line-height: 15rem;
 }
+
 
 .BPlanet:hover {
     opacity: 1;
+    cursor: pointer;
 }
 
 .RPlanet:hover {
     opacity: 1;
+    cursor: pointer;
 }

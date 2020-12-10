@@ -15,11 +15,15 @@ const PlanetFrame = props => {
             <Agent left={'18%'} agent_id="instr_frame" >Which Planet did the Fisherman travel?</Agent> 
             
             {/* Planet Blue */}
-            <Agent agent_id="BPlanet">Blue</Agent>
+            <Agent left={'5%'} agent_id="BPlanet">
+                <h3>BLUE</h3>    
+            </Agent>
             
 
             {/* Planet Red */}
-            <Agent agent_id="RPlanet">Red</Agent>
+            <Agent left={'36%'} agent_id="RPlanet">
+                <h3>RED</h3>
+            </Agent>
         
 
             {/* Scores */}
