@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Agent from '../Agent/Agent';
+import Button from '../Button/Button';
 import Action from '../Action/Action';
 import Scores from '../Scores/Scores';
 import classes from './GameFrame.module.css';
@@ -56,6 +57,8 @@ const GameFrame = props => {
         } else if (scoreCounter === 9) {
             setDisplayB10('');
             setDisplayC10('');
+            setDisplayNext('none')
+            setDisplayObserve('none')
         }
     };
 
@@ -67,6 +70,7 @@ const GameFrame = props => {
     const [displayObserve, setDisplayObserve] = useState('true')
     const [displayNext, setDisplayNext] = useState('none')
     const [scoreCounter, setScoreCounter] = useState(0);
+
 
     // B displays 
     const [displayB1, setDisplayB1] = useState('none');
@@ -94,7 +98,7 @@ const GameFrame = props => {
    
 
     return (
-        <div className={classes.GameFrame}>
+        <div className={classes.GameFrame} style={{display: props.display}}>
             {/* game interface */}
             <Agent agent_id="instr_frame" >BELIEFS OF OTHERS</Agent> 
             
@@ -140,16 +144,13 @@ const GameFrame = props => {
             <Scores id="C10" score_id="C1" display={displayC10} top={'74%'} ></Scores>   
 
     
-    
-          
-
-    
-          
 
             {/* actions */}
             <Action onClick={setColors} display={displayObserve} action_id="button">Observe Beliefs</Action>
             <Action onClick={resetColors} display={displayNext} action_id="button">Next Round</Action>
             <Action action_id="border_frame"></Action>
+            
+            {props.children}
         </div>
         
     );
@@ -157,5 +158,7 @@ const GameFrame = props => {
 
 
 export default GameFrame; 
+
+
 
 

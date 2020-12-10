@@ -11,7 +11,7 @@
   width: 200px;
   transition: all 0.5s;
   cursor: pointer;
-  
+  display: '';
   margin: auto;
   margin-bottom: -.7rem;
   display: flex;

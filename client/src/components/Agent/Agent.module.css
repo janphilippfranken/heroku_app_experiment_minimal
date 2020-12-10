@@ -4,11 +4,12 @@
 	height: 5rem;
 	text-align: center;
 	line-height: 100px;
-	margin: 60px auto;
+    margin: 60px auto;
 	background-color: #fff;
 	border: 8px solid #666;
 	border-radius: 30px;
-	box-shadow: 2px 2px 4px #888;
+    box-shadow: 2px 2px 4px #888;
+    
 }
 
 /* agent objects */
@@ -75,6 +76,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 /* agent name tags */
@@ -148,7 +150,85 @@
     font: 30px Arial, sans-serif;
     font-weight: bold;
     border-style: none!important;
+    background: transparent;
 	box-shadow: 0px 0px 0px #888;
-
 }
 
+.ConnectionR {
+
+    position: absolute;
+    border: 0px solid #666;
+	border-radius: 0px;
+    left:50%;
+    top:9%; 
+    width: 0rem;
+    height: 0rem;
+    background-color: transparent;
+    justify-content: center;
+    border-top: 2.5rem solid transparent;
+    border-left: 3rem solid grey;
+    border-bottom: 2.5rem solid transparent;
+    box-shadow: 0px 0px 0px #888;
+}
+
+.ConnectionL {
+    
+    position: absolute;
+    border: 0px solid #666;
+	border-radius: 0px;
+    left:50%;
+    top:9%; 
+    width: 0rem;
+    height: 0rem;
+    background-color: transparent;
+    justify-content: center;
+    border-top: 2.5rem solid transparent;
+    border-right: 3rem solid grey;
+    border-bottom: 2.5rem solid transparent;
+    box-shadow: 0px 0px 0px #888;
+}
+
+.ConnectionTail {
+    opacity: 0.2;
+    position: absolute;
+    left:10%;
+    top:9%; 
+    height: 2.5rem;
+    width: 16rem;
+    background-color: gray;
+    border: 8px solid gray;
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px #888;
+    font: 15px Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ConnectionTail:hover{
+    opacity: 1;
+}
+
+.BPlanet {
+    opacity: 0.2;
+    border-radius: 200px;
+    width: 15rem;
+    height: 15rem;
+    font: 30px Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.RPlanet {
+    opacity: 0.2;
+}
+
+.BPlanet:hover {
+    opacity: 1;
+}
+
+.RPlanet:hover {
+    opacity: 1;
+}
