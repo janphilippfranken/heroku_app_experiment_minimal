@@ -52,7 +52,7 @@
 
 .button {
     position: absolute;
-    left:43%;
+    left:28%;
     top:60%; 
     width: 7.5rem;
 	height: 5rem;
@@ -219,7 +219,7 @@
 .border_frame {
     position: absolute;
     opacity: 1.0;
-    left:47%;
+    left:68%;
     top:-8%; 
     width: 0;
     height: 90%;

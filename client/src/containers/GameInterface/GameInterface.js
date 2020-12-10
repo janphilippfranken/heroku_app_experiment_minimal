@@ -33,7 +33,7 @@ const GameInterface = props => {
             <div className={classes.GameContainer}>
                
                 <GameFrame/>
-                <ScoreFrame/>
+                
 
             </div>
             
