@@ -1,30 +1,71 @@
+import React, { useState } from 'react';
 import Agent from '../Agent/Agent';
 import Action from '../Action/Action';
 import Scores from '../Scores/Scores';
 import classes from './PlanetFrame.module.css';
 
 
-    
-
-
 const PlanetFrame = props => {
+
+    const selectPlanetRED = () => {
+        setPlanetSelectRED('1.0');
+        setPlanetSelectBLUE('0.2');
+    };
+
+    const selectPlanetBLUE = () => {
+        setPlanetSelectBLUE('1.0');
+        setPlanetSelectRED('0.2');
+    };
+
+    const selectLowConfidence = () => {
+        setLowConfidence('1.0');
+        setMediumConfidence('0.2');
+        setHighConfidence('0.2');
+    }; 
+
+    const selectMediumConfidence = () => {
+        setLowConfidence('0.2');
+        setMediumConfidence('1.0');
+        setHighConfidence('0.2');
+    }; 
+
+    const selectHighConfidence = () => {
+        setLowConfidence('0.2');
+        setMediumConfidence('0.2');
+        setHighConfidence('1.0');
+    }; 
     
+
+    const [PlanetSelectRED, setPlanetSelectRED] = useState('.2');
+    const [PlanetSelectBLUE, setPlanetSelectBLUE] = useState('.2');
+    const [lowConfidence, setLowConfidence] = useState('.2');
+    const [mediumConfidence, setMediumConfidence] = useState('.2');
+    const [highConfidence, setHighConfidence] = useState('.2');
+  
+   
     return (
         <div className={classes.PlanetFrame} style={{display: props.display}}>
             {/* game interface */}
-            <Agent left={'18%'} agent_id="instr_frame" >Which Planet did the Fisherman travel?</Agent> 
+            <Agent left={'7%'} width={'35rem'} agent_id="instr_frame" >Which Planet did the fisherman travel?</Agent> 
             
             {/* Planet Blue */}
-            <Agent left={'5%'} agent_id="BPlanet">
+            <Agent onClick={selectPlanetBLUE} top={'8%'} left={'12%'} opacity={PlanetSelectBLUE} agent_id="BPlanet">
                 <h3>BLUE</h3>    
-            </Agent>
+            </Agent> 
             
 
             {/* Planet Red */}
-            <Agent left={'36%'} agent_id="RPlanet">
-                <h3>RED</h3>
-            </Agent>
-        
+            <Agent onClick={selectPlanetRED} top={'8%'} left={'34%'} opacity={PlanetSelectRED} agent_id="RPlanet" >
+                <h3>RED</h3> 
+            </Agent> 
+            
+            <Agent left={'6%'} top={'57%'} width={'35rem'} agent_id="instr_frame" >Select your confidence</Agent> 
+            
+
+            {/* Confidence */}
+            <Action onClick={selectLowConfidence} opacity={lowConfidence} action_id='ConfidenceLow'>Low Confidence</Action>
+            <Action onClick={selectMediumConfidence} opacity={mediumConfidence} action_id='ConfidenceMedium'>Medium Confidence</Action>
+            <Action onClick={selectHighConfidence} opacity={highConfidence} action_id='ConfidenceHigh'>High Confidence</Action>
 
             {/* Scores */}
             {/* score history */}

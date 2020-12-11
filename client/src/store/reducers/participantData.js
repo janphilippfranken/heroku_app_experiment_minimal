@@ -1,36 +1,27 @@
-import { STORE_PRIOR, STORE_POSTERIOR } from '../actions/participantData';
+import { STORE_STRUCTURE, STORE_SELECTION } from '../actions/participantData';
 
 const initialState = [{}, {}, {}];
 
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case STORE_PRIOR:
-            const prior = {
-                meanRaw: action.priorData.meanRaw,
-                mean: action.priorData.mean,
-                varRaw: action.priorData.varRaw,
-                var: action.priorData.var,
-                a: action.priorData.a,
-                b: action.priorData.b
+        case STORE_STRUCTURE:
+            const structure = {
+                causalStructure: action.structureData.causalStructure
             };
-            const oldStatePrior = [...state];
-            oldStatePrior[action.conditionNumber].prior = prior;
-            return oldStatePrior;
+            const oldStateStructure = [...state];
+            oldStateStructure[action.conditionNumber].structure= structure;
+            return oldStateStructure;
 
-            case STORE_POSTERIOR:
-                const posterior = {
-                    meanRaw: action.posteriorData.meanRaw,
-                    mean: action.posteriorData.mean,
-                    varRaw: action.posteriorData.varRaw,
-                    var: action.posteriorData.var,
-                    a: action.posteriorData.a,
-                    b: action.posteriorData.b
+            case STORE_SELECTION:
+                const selection = {
+                    planet: action.selectionData.planet,
+                    confidence: action.selectionData.confidence
                 };
-                const oldStatePosterior = [...state];
-                oldStatePosterior[action.conditionNumber].posterior = posterior;
-                return oldStatePosterior;
-
+                const oldStateSelection = [...state];
+                oldStateSelection[action.conditionNumber].selection= selection;
+                return oldStateSelection;
+    
         default:
             return state;
     }

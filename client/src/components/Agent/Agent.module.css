@@ -209,39 +209,39 @@
 
 .ConnectionTail:hover{
     opacity: 1;
+    cursor: pointer;
+    
 }
 
 .BPlanet {
-    opacity: 0.2;
-    top: 15%;
+    top: 10%;
     position: absolute;
     background-color: skyblue;
     border-radius: 200px;
     left: 0%;
-    width: 17rem;
-    height: 17rem;
+    width: 13rem;
+    height: 13rem;
     font: 30px Arial, sans-serif;
     font-weight: bold;
     text-align: center;
     justify-content: center;
-    line-height: 15rem;
+    line-height: 12rem;
 }
 
 .RPlanet {
-    opacity: 0.2;
     position: absolute;
-    top: 15%;
+    top: 10%;
     background-color: red;
     border-radius: 200px;
     left: 10%;
-    width: 17rem;
-    height: 17rem;
+    width: 13rem;
+    height: 13rem;
     font: 30px Arial, sans-serif;
     font-weight: bold;
     text-align: center;
     justify-content: center;
     vertical-align: middle;
-    line-height: 15rem;
+    line-height: 12rem;
 }
 
 

@@ -3,6 +3,8 @@ import Button from '../../components/Button/Button';
 import GameFrame from '../../components/GameFrame/GameFrame';
 import StructureFrame from '../../components/StructureFrame/StructureFrame';
 import PlanetFrame from '../../components/PlanetFrame/PlanetFrame';
+import NextPlanetFrame from '../../components/NextPlanet/NextPlanetFrame';
+
 
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
@@ -31,12 +33,14 @@ const GameInterface = props => {
     const [beliefDisplay, setBeliefDisplay] = useState('');
     const [structureDisplay, setStructureDisplay] = useState('none');
     const [planetDisplay, setPlanetDisplay] = useState('none');
+    const [nextPlanetDisplay, setNextPlanetDisplay] = useState('none');
 
 
     const goToGameHandler = gamePhase => {
         if (gamePhase === GAME_PHASES.observeBeliefs) {
-            setBeliefDisplay('none');
-            setStructureDisplay('');;
+            setBeliefDisplay('');
+            setStructureDisplay('none');
+            setNextPlanetDisplay('none');
             setGamePhase(GAME_PHASES.selectStructure)
         } else if (gamePhase === GAME_PHASES.selectStructure) {
             setBeliefDisplay('none');
@@ -48,13 +52,18 @@ const GameInterface = props => {
             setPlanetDisplay('');
             setGamePhase(GAME_PHASES.nextPlanet)
         }
+        else if (gamePhase === GAME_PHASES.nextPlanet) {
+            setPlanetDisplay('none');
+            setNextPlanetDisplay('')
+            setGamePhase(GAME_PHASES.observeBeliefs)
+        }
     };
 
     
     return (
         <div className={classes.GameInterface}>
         <div className={classes.GameForm}>
-            <h2>Game</h2>
+            <h2>Your Journey</h2>
             <hr />
 
             {/* <div className={classes.ParagraphContainer}> */}
@@ -63,6 +72,7 @@ const GameInterface = props => {
                 <GameFrame display={beliefDisplay}></GameFrame>
                 <StructureFrame display={structureDisplay}/>
                 <PlanetFrame display={planetDisplay}/>
+                <NextPlanetFrame display={nextPlanetDisplay}></NextPlanetFrame>
             </div>       
 
             

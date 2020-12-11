@@ -4,7 +4,7 @@ import classes from './Action.module.css';
 
 const Action = props => {
     return (
-        <div onClick={props.onClick} className={[classes.Action,classes[props.action_id]].join(" ")} style={{display: props.display}}>
+        <div onClick={props.onClick} className={[classes.Action,classes[props.action_id]].join(" ")} style={{display: props.display, opacity: props.opacity}}>
         {props.children}
         
         

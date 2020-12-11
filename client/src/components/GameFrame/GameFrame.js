@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Agent from '../Agent/Agent';
-import Button from '../Button/Button';
 import Action from '../Action/Action';
 import Scores from '../Scores/Scores';
 import classes from './GameFrame.module.css';
@@ -13,10 +12,10 @@ const GameFrame = props => {
     const setColors = () => {
         setColorB('red');
         setColorC('deepskyblue');
-        setColorMessageB('Red')
-        setColorMessageC('Blue')
-        setDisplayObserve('none')
-        setDisplayNext('')
+        setColorMessageB('Red');
+        setColorMessageC('Blue');
+        setDisplayObserve('none');
+        setDisplayNext('');
     };
 
     const resetColors = () => {
@@ -57,8 +56,8 @@ const GameFrame = props => {
         } else if (scoreCounter === 9) {
             setDisplayB10('');
             setDisplayC10('');
-            setDisplayNext('none')
-            setDisplayObserve('none')
+            setDisplayNext('none');
+            setDisplayObserve('none');
         }
     };
 

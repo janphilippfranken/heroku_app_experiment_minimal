@@ -1,24 +1,15 @@
-export const STORE_PRIOR = 'STORE_PRIOR' ;
-export const STORE_POSTERIOR = 'STORE_POSTERIOR';
+export const STORE_STRUCTURE = 'STORE_STRUCTURE' ;
+export const STORE_SELECTION = 'STORE_SELECTION';
 
 const w = window;
 
-export const storePrior = priorData => {
-    const meanRaw = priorData.mean;
-    const mean = priorData.mean / 100;
-    const varRaw = priorData.var;
-    const variance = w.log_slider(w.transform_con_slider_pos(priorData.var));
-    const [a, b] = w.est_beta_par(mean, variance);
-
-    return { type: STORE_PRIOR, priorData: {mean: mean, meanRaw: meanRaw, varRaw: varRaw, var: variance, a: a, b: b}, conditionNumber: priorData.conditionNumber};
+export const storeSTRUCTURE = structureData => {
+    const causalStructure = structureData.causalStructure;
+    return { type: STORE_STRUCTURE, structureData: {causalStructure: causalStructure}, conditionNumber: structureData.conditionNumber};
 };
 
-export const storePosterior = posteriorData => {
-    const meanRaw = posteriorData.mean;
-    const mean = posteriorData.mean / 100;
-    const varRaw = posteriorData.var;
-    const variance = w.log_slider(w.transform_con_slider_pos(posteriorData.var));
-    const [a, b] = w.est_beta_par(mean, variance);
-
-    return { type: STORE_POSTERIOR, posteriorData: {mean: mean, meanRaw: meanRaw, varRaw: varRaw, var: variance, a: a, b: b}, conditionNumber: posteriorData.conditionNumber};
+export const storeSELECTION = selectionData => {
+    const selectedPLanet = selectionData.planet;
+    const confidence = selectionData.confidence;
+    return { type: STORE_SELECTION, selectionData: {selectedPLanet: selectedPLanet, confidence: confidence}, conditionNumber: selectionData.conditionNumber};
 };

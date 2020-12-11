@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Agent from '../Agent/Agent';
 import Action from '../Action/Action';
 import Scores from '../Scores/Scores';
@@ -8,11 +9,44 @@ import classes from './StructureFrame.module.css';
 
 
 const StructureFrame = props => {
+
+    const selectNoLink = () => {
+        setNoLink('1.0');
+        setLRLink('.2');
+        setRLLink('.2');
+        setBothLink('.2');
+    };
+
+    const selectLRLink = () => {
+        setNoLink('0.2');
+        setLRLink('1.0');
+        setRLLink('.2');
+        setBothLink('.2');
+    };
+
+    const selectRLLink = () => {
+        setNoLink('0.2');
+        setLRLink('.2');
+        setRLLink('1.0');
+        setBothLink('.2');
+    };
+
+    const selectBothLink = () => {
+        setNoLink('0.2');
+        setLRLink('.2');
+        setRLLink('.2');
+        setBothLink('1.0');
+    };
+
+    const [noLink, setNoLink] = useState('0.2');
+    const [LRLink, setLRLink] = useState('0.2');
+    const [RLLink, setRLLink] = useState('0.2');
+    const [BothLink, setBothLink] = useState('0.2');
     
     return (
         <div className={classes.GameFrame} style={{display: props.display}}>
             {/* game interface */}
-            <Agent left={'18%'} agent_id="instr_frame" >Did Neil and Nikos talk?</Agent> 
+            <Agent left={'18%'} agent_id="instr_frame" >Did Neil and Nikos talk? (click on statement)</Agent> 
             
             {/* agent B */}
             <Agent agent_id="B_2">NIKOS</Agent>
@@ -30,13 +64,13 @@ const StructureFrame = props => {
            
 
             {/* Connections */}
-            <Agent agent_id="ConnectionTail" left={'18%'} top={'13%'} width={'20rem'}>No Conversation</Agent>
+            <Agent onClick={selectNoLink} opacity={noLink} agent_id="ConnectionTail" left={'18%'} top={'13%'} width={'20rem'}>No Conversation</Agent>
             <Agent agent_id="ConnectionR" left={'45%'} top={'29%'}> </Agent>
-            <Agent agent_id="ConnectionTail" left={'18%'} top={'33%'} width={'18rem'}>Nikos talked to Neil</Agent>
+            <Agent onClick={selectLRLink} opacity={LRLink} agent_id="ConnectionTail" left={'18%'} top={'33%'} width={'18rem'}>Nikos talked to Neil</Agent>
             <Agent agent_id="ConnectionL" left={'17.5%'} top={'49%'}> </Agent>
-            <Agent agent_id="ConnectionTail" left={'21%'} top={'53%'} width={'18rem'}>Neil talked to Nikos </Agent>
+            <Agent onClick={selectRLLink}  opacity={RLLink}  agent_id="ConnectionTail" left={'21%'} top={'53%'} width={'18rem'}>Neil talked to Nikos </Agent>
             <Agent agent_id="ConnectionR" left={'45%'} top={'69%'}> </Agent>
-            <Agent agent_id="ConnectionTail" left={'21%'} top={'73%'}>Both talked to each other</Agent>
+            <Agent onClick={selectBothLink} opacity={BothLink} agent_id="ConnectionTail" left={'21%'} top={'73%'}>Both talked to each other</Agent>
             <Agent agent_id="ConnectionL" left={'17.5%'} top={'69%'}> </Agent>
 
             

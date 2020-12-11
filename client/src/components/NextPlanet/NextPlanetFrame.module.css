@@ -1,0 +1,17 @@
+
+.NextPlanetFrame {
+    background-color: grey;
+    position: relative;
+    width: 65rem;
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+    height: 30rem;
+    text-align: center;
+    background-color: transparent;
+    border: 0px solid #666;
+    border-radius: 30px;
+    justify-content: center;
+    vertical-align: middle;
+    line-height: 28rem;
+    font-size: 40px sans-serif;
+}
