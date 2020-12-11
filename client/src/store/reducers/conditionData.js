@@ -4,40 +4,58 @@ import shuffle from '../../utils/shuffleArray';
 
 const scenarioInstance = new Scenarios();
 
-// for 3 scenarios
-const motives = [shuffle(['good', 'bad'])[0], shuffle(['good', 'bad'])[0], shuffle(['good', 'bad'])[0]]; // that's for randomised beliefs - motives
-const conditions = shuffle(['independent', 'shared', 'sequential']);
+// for 4 structures
+const conditions = shuffle(['independent', 'lr', 'rl', 'both']);
+
 const neighbourBeliefs = {
-    // unethical beliefs
-    bad: [
-        { a: 30/2, b: 80/2 },
-        { a: 20/2, b: 50/2 }
+    independent: [
+        { a: ['deepskyblue','red','red','red','red','red','red','red','red','red'], 
+          b: ['deepskyblue','deepskyblue','red','red','red','red','red','red','red','red']},
+        { a: ['deepskyblue','red','red','red','red','red','red','red','red','red'], 
+          b: ['deepskyblue','deepskyblue','red','red','red','red','red','red','red','red'] }
     ],
-    // ethical beliefs
-    good: [
-        { a: 80/2, b: 30/2 },
-        { a: 50/2, b: 20/2 }
+
+    lr: [
+        { a: ['deepskyblue','red','red','red','red','red','red','red','red','red'], 
+          b: ['red','red','red','red','red','red','red','red','red','red']},
+        { a: ['red','red','red','red','red','red','red','red','red','red'], 
+          b: ['deepskyblue','red','red','red','red','red','red','red','red','red'] }
+    ],
+
+    rl: [
+        { a: ['red','red','red','red','red','red','red','red','red','red'], 
+          b: ['deepskyblue','red','red','red','red','red','red','red','red','red']},
+        { a: ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
+          b: ['red','red','red','red','red','red','red','red','red','red'] }
+    ],
+
+    both: [
+        { a: ['red','red','red','red','red','red','deepskyblue','red','red','red'], 
+          b: ['red','red','red','red','deepskyblue','red','red','red','red','red']},
+        { a: ['red','red','red','red','red','red','red','red','red','red'], 
+          b: ['deepskyblue','deepskyblue','deepskyblue','red','red','red','red','red','red','red'] }
     ]
 };
-// const neighbourBeliefsPosNegIndex = [shuffle(['good', 'bad'])[0], shuffle(['good', 'bad'])[0], shuffle(['good', 'bad'])[0]];
-// const neighbourBeliefsOrder = [shuffle(neighbourBeliefs[neighbourBeliefsPosNegIndex[0]]), shuffle(neighbourBeliefs[neighbourBeliefsPosNegIndex[1]]), shuffle(neighbourBeliefs[neighbourBeliefsPosNegIndex[2]])];
-const neighbourBeliefsOrder = [shuffle(neighbourBeliefs[motives[0]]), shuffle(neighbourBeliefs[motives[1]]), shuffle(neighbourBeliefs[motives[2]])]; // that's for aligned beliefs - motives
-const names = shuffle([0, 1, 2, 3]);
-const neighbour1Names = shuffle([0, 1, 2, 3]);
-const neighbour2Names = shuffle([0, 1, 2, 3]);
-const scenariosOrder = shuffle([0, 1, 2]); 
+
+const neighbourBeliefsOrder = [shuffle(neighbourBeliefs[conditions[0]])[0], 
+                               shuffle(neighbourBeliefs[conditions[1]])[0], 
+                               shuffle(neighbourBeliefs[conditions[2]])[0],
+                               shuffle(neighbourBeliefs[conditions[3]])[0]]; // randomising the belief pairs selected for each condition (which has a random order)
+
+const neighbour1Names = shuffle([0, 1, 2, 3]); // to randomise which name of the first neighbor
+const neighbour2Names = shuffle([0, 1, 2, 3]); // to randomise the name of the second neighbor 
+const scenariosOrder = shuffle([0, 1, 2, 3]);  // cover story for each fisherman 
+
 const conditionData = [
-    scenarioInstance.generateScenario(scenariosOrder[0], names[0], neighbour1Names[0], neighbour2Names[0], 'A', motives[0], neighbourBeliefsOrder[0], conditions[0]),
-    scenarioInstance.generateScenario(scenariosOrder[1], names[1], neighbour1Names[1], neighbour2Names[1], 'A', motives[1], neighbourBeliefsOrder[1], conditions[1]),
-    scenarioInstance.generateScenario(scenariosOrder[2], names[2], neighbour1Names[2], neighbour2Names[2], 'A', motives[2], neighbourBeliefsOrder[2], conditions[2]),
+    scenarioInstance.generateScenario(scenariosOrder[0], neighbour1Names[0], neighbour2Names[0], neighbourBeliefsOrder[0], conditions[0]),
+    scenarioInstance.generateScenario(scenariosOrder[1], neighbour1Names[1], neighbour2Names[1], neighbourBeliefsOrder[1], conditions[1]),
+    scenarioInstance.generateScenario(scenariosOrder[2], neighbour1Names[2], neighbour2Names[2], neighbourBeliefsOrder[2], conditions[2]),
+    scenarioInstance.generateScenario(scenariosOrder[3], neighbour1Names[3], neighbour2Names[3], neighbourBeliefsOrder[3], conditions[3])
 ];
 
 const initialState = {
-    neighbourBeliefsPosNegIndex: motives,
-    namesIdx: names,
     conditions: conditions,
     neighbour1NamesIdx: neighbour1Names,
-    motivesIdx: motives,
     conditionNumber: 0, // running number, the only that gets changed while in experiment
     conditionData: conditionData,
     scenariosOrder: scenariosOrder,

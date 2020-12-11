@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Agent from '../Agent/Agent';
+import Button from '../../components/Button/Button';
 import Action from '../Action/Action';
 import Scores from '../Scores/Scores';
 import classes from './GameFrame.module.css';
@@ -8,12 +10,17 @@ import classes from './GameFrame.module.css';
 
 
 const GameFrame = props => {
+
     
+    const colors = {red: 'RED', deepskyblue: 'BLUE'};
+    const dispatch = useDispatch();
+    const scenario = useSelector(state => state.conditionData.conditionData[state.conditionData.conditionNumber]);
+    console.log(scenario);
     const setColors = () => {
-        setColorB('red');
-        setColorC('deepskyblue');
-        setColorMessageB('Red');
-        setColorMessageC('Blue');
+        setColorB(scenario.neighbourBeliefs.a[scoreCounter]);
+        setColorC(scenario.neighbourBeliefs.b[scoreCounter]);
+        setColorMessageB(colors[scenario.neighbourBeliefs.a[scoreCounter]]);
+        setColorMessageC(colors[scenario.neighbourBeliefs.b[scoreCounter]]);
         setDisplayObserve('none');
         setDisplayNext('');
     };
@@ -94,53 +101,55 @@ const GameFrame = props => {
     const [displayC8, setDisplayC8] = useState('none');
     const [displayC9, setDisplayC9] = useState('none');
     const [displayC10, setDisplayC10] = useState('none');
+
+  
    
 
     return (
         <div className={classes.GameFrame} style={{display: props.display}}>
+             {props.children}
             {/* game interface */}
             <Agent agent_id="instr_frame" >BELIEFS OF OTHERS</Agent> 
             
             {/* agent B */}
             <Agent color={colorB} agent_id="B_2">{sayColorB}</Agent>
-            <Agent agent_id="B_2name">NIKOS</Agent>
+            <Agent agent_id="B_2name">{scenario.neighbour1Name.name}</Agent>
 
             
             {/* agent C */}
             <Agent color={colorC} agent_id="C_2">{sayColorC}</Agent>
-            <Agent agent_id="C_2name">NEIL</Agent>
+            <Agent agent_id="C_2name">{scenario.neighbour2Name.name}</Agent>
 
             {/* score history */}
             <Scores score_id="instr_frame" >HISTORY</Scores> 
-            <Scores score_id="B_name" >NIKOS</Scores>
-            <Scores score_id="C_name" >NEIL</Scores>
+            <Scores score_id="B_name" >{scenario.neighbour1Name.name}</Scores>
+            <Scores score_id="C_name" >{scenario.neighbour2Name.name}</Scores>
 
             {/* B Scores */}
-            <Scores id="B1" score_id="B1" display={displayB1}></Scores> 
-            <Scores id="B2"  score_id="B1" display={displayB2}  top={'17%'} ></Scores> 
-            <Scores id="B3" score_id="B1" display={displayB3} top={'24%'} ></Scores>  
-            <Scores id="B4" score_id="B1" display={displayB4} top={'31%'} ></Scores> 
-            <Scores id="B5" score_id="B1" display={displayB5} top={'39%'} ></Scores> 
-            <Scores id="B6" score_id="B1" display={displayB6} top={'46%'} ></Scores> 
-            <Scores id="B7" score_id="B1" display={displayB7} top={'53%'} ></Scores> 
-            <Scores id="B8" score_id="B1" display={displayB8} top={'60%'} ></Scores> 
-            <Scores id="B9" score_id="B1" display={displayB9} top={'67%'} ></Scores> 
-            <Scores id="B10" score_id="B1" display={displayB10} top={'74%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[0]} id="B1" score_id="B1" display={displayB1}></Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[1]} id="B2" score_id="B1" display={displayB2}  top={'17%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[2]} id="B3" score_id="B1" display={displayB3} top={'24%'} ></Scores>  
+            <Scores background={scenario.neighbourBeliefs.a[3]} id="B4" score_id="B1" display={displayB4} top={'31%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[4]} id="B5" score_id="B1" display={displayB5} top={'39%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[5]} id="B6" score_id="B1" display={displayB6} top={'46%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[6]} id="B7" score_id="B1" display={displayB7} top={'53%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[7]} id="B8" score_id="B1" display={displayB8} top={'60%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[8]} id="B9" score_id="B1" display={displayB9} top={'67%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[9]} id="B10" score_id="B1" display={displayB10} top={'74%'} ></Scores> 
 
     
 
             {/* C scores  */}
-            <Scores id="C1" score_id="C1" display={displayC1}></Scores>  
-
-            <Scores id="C2" score_id="C1" display={displayC2} top={'17%'}></Scores> 
-            <Scores id="C3" score_id="C1" display={displayC3} top={'24%'} ></Scores> 
-            <Scores id="C4" score_id="C1" display={displayC4} top={'31%'} ></Scores> 
-            <Scores id="C5" score_id="C1" display={displayC5} top={'39%'} ></Scores> 
-            <Scores id="C6" score_id="C1" display={displayC6} top={'46%'} ></Scores> 
-            <Scores id="C7" score_id="C1" display={displayC7} top={'53%'} ></Scores> 
-            <Scores id="C8" score_id="C1" display={displayC8} top={'60%'} ></Scores> 
-            <Scores id="C9" score_id="C1" display={displayC9} top={'67%'} ></Scores> 
-            <Scores id="C10" score_id="C1" display={displayC10} top={'74%'} ></Scores>   
+            <Scores background={scenario.neighbourBeliefs.b[0]} id="C1" score_id="C1" display={displayC1}></Scores>  
+            <Scores background={scenario.neighbourBeliefs.b[1]} id="C2" score_id="C1" display={displayC2} top={'17%'}></Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[2]} id="C3" score_id="C1" display={displayC3} top={'24%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[3]} id="C4" score_id="C1" display={displayC4} top={'31%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[4]} id="C5" score_id="C1" display={displayC5} top={'39%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[5]} id="C6" score_id="C1" display={displayC6} top={'46%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[6]} id="C7" score_id="C1" display={displayC7} top={'53%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[7]} id="C8" score_id="C1" display={displayC8} top={'60%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[8]} id="C9" score_id="C1" display={displayC9} top={'67%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[9]} id="C10" score_id="C1" display={displayC10} top={'74%'} ></Scores>   
 
     
 
@@ -149,7 +158,9 @@ const GameFrame = props => {
             <Action onClick={resetColors} display={displayNext} action_id="button">Next Round</Action>
             <Action action_id="border_frame"></Action>
             
-            {props.children}
+           
+
+            <Button position={'absolute'} left={'40%'} top={'105%'} clicked={props.goToGame}>Next</Button>
         </div>
         
     );

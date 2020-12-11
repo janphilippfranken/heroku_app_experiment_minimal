@@ -15,12 +15,14 @@
     grid-area: text;
     padding: 2rem;
     margin-bottom: .5rem;
+    height: 40rem;
 }
 
 .GameContainer {
     display: grid;
     grid-template-columns: 1fr 1fr; 
     grid-column-gap: 1rem;     
+    
 }
 
 .item {

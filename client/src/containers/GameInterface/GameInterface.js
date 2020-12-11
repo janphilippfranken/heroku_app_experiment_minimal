@@ -4,9 +4,10 @@ import GameFrame from '../../components/GameFrame/GameFrame';
 import StructureFrame from '../../components/StructureFrame/StructureFrame';
 import PlanetFrame from '../../components/PlanetFrame/PlanetFrame';
 import NextPlanetFrame from '../../components/NextPlanet/NextPlanetFrame';
+import { incrementCondition } from '../../store/actions/conditionData';
+import { changePhase, PHASES } from '../../store/actions/gamePhase';
 
-
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
 import classes from '../../SASS/containers/GameInterface.module.scss';
@@ -23,7 +24,11 @@ const GAME_PHASES = {
 };
 
 const GameInterface = props => {
+
     const dispatch = useDispatch();
+    const conditionNumber = useSelector(state => state.conditionData.conditionNumber);
+    const scenario = useSelector(state => state.conditionData.conditionData[state.conditionData.conditionNumber]);
+    
 
     useEffect(() => {
         dispatch(setTimer(true, 1, 5));
@@ -53,9 +58,15 @@ const GameInterface = props => {
             setGamePhase(GAME_PHASES.nextPlanet)
         }
         else if (gamePhase === GAME_PHASES.nextPlanet) {
+
+            if (conditionNumber === 3) {
+                return dispatch(changePhase(PHASES.debrief));
+            }
+
             setPlanetDisplay('none');
             setNextPlanetDisplay('')
             setGamePhase(GAME_PHASES.observeBeliefs)
+            dispatch(incrementCondition());
         }
     };
 
@@ -63,21 +74,17 @@ const GameInterface = props => {
     return (
         <div className={classes.GameInterface}>
         <div className={classes.GameForm}>
-            <h2>Your Journey</h2>
+            <h2>{scenario.title}</h2>
             <hr />
 
             {/* <div className={classes.ParagraphContainer}> */}
                
             <div className={classes.GameContainer}>
-                <GameFrame display={beliefDisplay}></GameFrame>
-                <StructureFrame display={structureDisplay}/>
-                <PlanetFrame display={planetDisplay}/>
-                <NextPlanetFrame display={nextPlanetDisplay}></NextPlanetFrame>
-            </div>       
-
-            
-            <Button clicked={goToGameHandler.bind(this, gamePhase)}>Continue</Button>
-            
+                <GameFrame display={beliefDisplay} goToGame={goToGameHandler.bind(this, GAME_PHASES.selectStructure)} ></GameFrame>
+                <StructureFrame display={structureDisplay} goToGame={goToGameHandler.bind(this, GAME_PHASES.selectPlanet)}></StructureFrame>
+                <PlanetFrame display={planetDisplay} goToGame={goToGameHandler.bind(this, GAME_PHASES.nextPlanet)}></PlanetFrame>
+                <NextPlanetFrame display={nextPlanetDisplay} goToGame={goToGameHandler.bind(this, gamePhase)}></NextPlanetFrame>
+            </div>                   
         </div>
     </div>
     );

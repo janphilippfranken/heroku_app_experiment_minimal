@@ -13,11 +13,11 @@
 .B1 {
     position: absolute;
   
-    left:89%;
+    left:74%;
     top:10%; 
     width: 1.5rem;
 	height: 1.5rem;
-    background-color: red;
+    background: red;
     font: 20px Arial, sans-serif;
     font-weight: bold;
     vertical-align: middle;
@@ -28,11 +28,11 @@
 
 .C1 {
     position:absolute;
-    left:74%;
+    left:89%;
     top:10%; 
     width: 1.5rem;
 	height: 1.5rem;
-    background-color: deepskyblue;
+    background: deepskyblue;
     font: 20px Arial, sans-serif;
     font-weight: bold;
     vertical-align: middle;

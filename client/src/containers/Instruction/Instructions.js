@@ -4,7 +4,7 @@ import InsTask from './InsTask';
 import InsSummary from './InsSummary';
 import InsQuiz from './InsQuiz';
 
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { setTimer } from '../../store/actions/timer';
 
