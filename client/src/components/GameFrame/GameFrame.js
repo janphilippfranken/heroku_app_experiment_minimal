@@ -16,6 +16,7 @@ const GameFrame = props => {
     const dispatch = useDispatch();
     const scenario = useSelector(state => state.conditionData.conditionData[state.conditionData.conditionNumber]);
     console.log(scenario);
+    
     const setColors = () => {
         setColorB(scenario.neighbourBeliefs.a[scoreCounter]);
         setColorC(scenario.neighbourBeliefs.b[scoreCounter]);
@@ -65,6 +66,7 @@ const GameFrame = props => {
             setDisplayC10('');
             setDisplayNext('none');
             setDisplayObserve('none');
+            setButtonDisplay('');
         }
     };
 
@@ -76,6 +78,7 @@ const GameFrame = props => {
     const [displayObserve, setDisplayObserve] = useState('true')
     const [displayNext, setDisplayNext] = useState('none')
     const [scoreCounter, setScoreCounter] = useState(0);
+    const [buttonDisplay, setButtonDisplay] = useState('none');
 
 
     // B displays 
@@ -102,6 +105,33 @@ const GameFrame = props => {
     const [displayC9, setDisplayC9] = useState('none');
     const [displayC10, setDisplayC10] = useState('none');
 
+    
+    const hideHistory = () => {
+        setDisplayC1('none');
+        setDisplayC2('none');
+        setDisplayC3('none');
+        setDisplayC4('none');
+        setDisplayC5('none');
+        setDisplayC6('none');
+        setDisplayC7('none');
+        setDisplayC8('none');
+        setDisplayC9('none');
+        setDisplayC10('none');
+        setDisplayB1('none');
+        setDisplayB2('none');
+        setDisplayB3('none');
+        setDisplayB4('none');
+        setDisplayB5('none');
+        setDisplayB6('none');
+        setDisplayB7('none');
+        setDisplayB8('none');
+        setDisplayB9('none');
+        setDisplayB10('none');
+        props.goToGame()
+        setButtonDisplay('none');
+        setDisplayObserve('');
+        setScoreCounter(0);
+    };
   
    
 
@@ -160,7 +190,7 @@ const GameFrame = props => {
             
            
 
-            <Button position={'absolute'} left={'40%'} top={'105%'} clicked={props.goToGame}>Next</Button>
+            <Button disabled={buttonDisplay} position={'absolute'} left={'40%'} top={'105%'} clicked={hideHistory}>Next</Button>
         </div>
         
     );

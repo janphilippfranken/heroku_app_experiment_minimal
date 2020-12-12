@@ -5,40 +5,53 @@ import Action from '../Action/Action';
 import Scores from '../Scores/Scores';
 import { useDispatch, useSelector } from 'react-redux';
 import classes from './PlanetFrame.module.css';
+import { storeSELECTION } from '../../store/actions/participantData';
 
 
 
 const PlanetFrame = props => {
-
+    const dispatch = useDispatch();
+    const conditionNumber = useSelector(state => state.conditionData.conditionNumber);
     const scenario = useSelector(state => state.conditionData.conditionData[state.conditionData.conditionNumber]);
-    
+    const [buttonDisplay, setButtonDisplay] = useState('none');
+    const [confDisplay, setConfDisplay]= useState('none');
 
     const selectPlanetRED = () => {
         setPlanetSelectRED('1.0');
         setPlanetSelectBLUE('0.2');
+        setConfDisplay('');
+        setPlanetSelected('red')
     };
 
     const selectPlanetBLUE = () => {
         setPlanetSelectBLUE('1.0');
         setPlanetSelectRED('0.2');
+        setConfDisplay('');
+        setPlanetSelected('blue')
     };
 
     const selectLowConfidence = () => {
         setLowConfidence('1.0');
         setMediumConfidence('0.2');
         setHighConfidence('0.2');
+        setButtonDisplay('');
+        setConfidence(0);
     }; 
 
     const selectMediumConfidence = () => {
         setLowConfidence('0.2');
         setMediumConfidence('1.0');
         setHighConfidence('0.2');
+        setButtonDisplay('');
+        setConfidence(1);
     }; 
 
     const selectHighConfidence = () => {
         setLowConfidence('0.2');
         setMediumConfidence('0.2');
         setHighConfidence('1.0');
+        setButtonDisplay('');
+        setConfidence(2);
     }; 
     
 
@@ -47,6 +60,20 @@ const PlanetFrame = props => {
     const [lowConfidence, setLowConfidence] = useState('.2');
     const [mediumConfidence, setMediumConfidence] = useState('.2');
     const [highConfidence, setHighConfidence] = useState('.2');
+    const [confidence, setConfidence] = useState('0');
+    const [planetSelected, setPlanetSelected] = useState('none');
+
+    const onNextHandler = () => {
+        // dispatch(storeSELECTION({selectedPlanet: planetSelected, confidence: confidence, conditionNumber: conditionNumber}));
+        props.goToGame();
+        setButtonDisplay('none');
+        setPlanetSelectBLUE('0.2');
+        setPlanetSelectRED('0.2');
+        setConfDisplay('none');
+        setLowConfidence('0.2');
+        setMediumConfidence('0.2');
+        setHighConfidence('0.2');
+    };
   
    
     return (
@@ -55,23 +82,23 @@ const PlanetFrame = props => {
             <Agent left={'7%'} width={'35rem'} agent_id="instr_frame" >Which Planet did the fisherman travel?</Agent> 
             
             {/* Planet Blue */}
-            <Agent onClick={selectPlanetBLUE} top={'8%'} left={'12%'} opacity={PlanetSelectBLUE} agent_id="BPlanet">
+            <Agent onClick={selectPlanetBLUE} top={'8%'} left={scenario.planetPosition[0]} opacity={PlanetSelectBLUE} agent_id="BPlanet">
                 <h3>BLUE</h3>    
             </Agent> 
             
 
             {/* Planet Red */}
-            <Agent onClick={selectPlanetRED} top={'8%'} left={'34%'} opacity={PlanetSelectRED} agent_id="RPlanet" >
+            <Agent onClick={selectPlanetRED} top={'8%'} left={scenario.planetPosition[1]} opacity={PlanetSelectRED} agent_id="RPlanet" >
                 <h3>RED</h3> 
             </Agent> 
             
-            <Agent left={'6%'} top={'57%'} width={'35rem'} agent_id="instr_frame" >Select your confidence</Agent> 
+            <Agent display={confDisplay} left={'6%'} top={'57%'} width={'35rem'} agent_id="instr_frame" >Select your confidence</Agent> 
             
 
             {/* Confidence */}
-            <Action onClick={selectLowConfidence} opacity={lowConfidence} action_id='ConfidenceLow'>Low Confidence</Action>
-            <Action onClick={selectMediumConfidence} opacity={mediumConfidence} action_id='ConfidenceMedium'>Medium Confidence</Action>
-            <Action onClick={selectHighConfidence} opacity={highConfidence} action_id='ConfidenceHigh'>High Confidence</Action>
+            <Action display={confDisplay}  onClick={selectLowConfidence} opacity={lowConfidence} action_id='ConfidenceLow'>Low Confidence</Action>
+            <Action display={confDisplay}  onClick={selectMediumConfidence} opacity={mediumConfidence} action_id='ConfidenceMedium'>Medium Confidence</Action>
+            <Action display={confDisplay}  onClick={selectHighConfidence} opacity={highConfidence} action_id='ConfidenceHigh'>High Confidence</Action>
 
             {/* Scores */}
             {/* score history */}
@@ -115,7 +142,7 @@ const PlanetFrame = props => {
 
             {props.children}
 
-            <Button position={'absolute'} left={'40%'} top={'105%'} clicked={props.goToGame}>Next</Button>
+            <Button disabled={buttonDisplay} position={'absolute'} left={'40%'} top={'105%'} clicked={onNextHandler}>Next</Button>
         </div>
         
     );

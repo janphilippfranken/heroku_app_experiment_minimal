@@ -40,11 +40,17 @@ export default class Scenario {
             ['73%', '69%'] 
         ]);
 
+        this.planetPosition = shuffle([
+            '12%',
+            '34%'
+        ]);
+
     }
 
     generateScenario = (scenarioId, neighbour1NameId, neighbour2NameId, neighbourBeliefs, cond) => {        
         const title = this.titles[scenarioId];
         const structureOrder = this.structureOrder;
+        const planetPosition = this.planetPosition; 
         const neighbour1Name = this.neighbour1NameData[neighbour1NameId];
         const neighbour2Name = this.neighbour2NameData[neighbour2NameId]
         const neighbBeliefs = neighbourBeliefs;
@@ -53,6 +59,7 @@ export default class Scenario {
         return {
             condition: condition,
             structureOrder: structureOrder,
+            planetPosition: planetPosition,
             title: title,
             neighbour1Name: neighbour1Name,
             neighbour2Name: neighbour2Name,

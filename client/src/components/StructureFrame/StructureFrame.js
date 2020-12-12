@@ -16,13 +16,15 @@ const StructureFrame = props => {
     const dispatch = useDispatch();
     const conditionNumber = useSelector(state => state.conditionData.conditionNumber);
     const scenario = useSelector(state => state.conditionData.conditionData[state.conditionData.conditionNumber]);
-  
+    const [buttonDisplay, setButtonDisplay] = useState('none');
+
     const selectNoLink = () => {
         setNoLink('1.0');
         setLRLink('.2');
         setRLLink('.2');
         setBothLink('.2');
         setSelectedStructure('0')
+        setButtonDisplay('');
 
     };
 
@@ -32,6 +34,7 @@ const StructureFrame = props => {
         setRLLink('.2');
         setBothLink('.2');
         setSelectedStructure('1')
+        setButtonDisplay('');
     };
 
     const selectRLLink = () => {
@@ -40,6 +43,7 @@ const StructureFrame = props => {
         setRLLink('1.0');
         setBothLink('.2');
         setSelectedStructure('2')
+        setButtonDisplay('');
     };
 
     const selectBothLink = () => {
@@ -48,6 +52,7 @@ const StructureFrame = props => {
         setRLLink('.2');
         setBothLink('1.0');
         setSelectedStructure('3')
+        setButtonDisplay('');
     };
 
     const [noLink, setNoLink] = useState('0.2');
@@ -57,15 +62,22 @@ const StructureFrame = props => {
     const [selectedStructure, setSelectedStructure] = useState('0'); // 0 = independent, 1 = lr, 2 =rl, 3=both
 
     const onNextHandler = () => {
-        dispatch(storeSTRUCTURE({causalStructure: selectedStructure, conditionNumber: conditionNumber}));
-        console.log(selectedStructure);
-      
+        // dispatch(storeSTRUCTURE({causalStructure: selectedStructure, conditionNumber: conditionNumber}));
+        // console.log(selectedStructure);
+        props.goToGame();
+        setNoLink('0.2');
+        setLRLink('0.2');
+        setRLLink('0.2');
+        setBothLink('0.2');
+        setButtonDisplay('none');
     };
     
+
     return (
         <div className={classes.GameFrame} style={{display: props.display}}>
             {/* game interface */}
-            <Agent left={'18%'} agent_id="instr_frame" >Did {scenario.neighbour1Name.name} and {scenario.neighbour2Name.name} talk? (click on statement)</Agent> 
+
+            <Agent width={'40rem'} left={'3%'} agent_id="instr_frame" >Did {scenario.neighbour1Name.name} and {scenario.neighbour2Name.name} talk? <br /> (click on statement)</Agent> 
             
             {/* agent B */}
             <Agent agent_id="B_2">{scenario.neighbour1Name.name}</Agent>
@@ -136,7 +148,7 @@ const StructureFrame = props => {
 
             <Action action_id="border_frame"></Action>
 
-            <Button position={'absolute'} left={'40%'} top={'105%'} clicked={props.goToGame}>Next</Button>
+            <Button disabled={buttonDisplay} position={'absolute'} left={'40%'} top={'105%'} clicked={onNextHandler}>Next</Button>
 
             {props.children}
 

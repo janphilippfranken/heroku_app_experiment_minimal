@@ -45,6 +45,7 @@ const neighbourBeliefsOrder = [shuffle(neighbourBeliefs[conditions[0]])[0],
 const neighbour1Names = shuffle([0, 1, 2, 3]); // to randomise which name of the first neighbor
 const neighbour2Names = shuffle([0, 1, 2, 3]); // to randomise the name of the second neighbor 
 const scenariosOrder = shuffle([0, 1, 2, 3]);  // cover story for each fisherman 
+const planetPosition = shuffle(['12%','34%']);
 
 const conditionData = [
     scenarioInstance.generateScenario(scenariosOrder[0], neighbour1Names[0], neighbour2Names[0], neighbourBeliefsOrder[0], conditions[0]),
@@ -56,6 +57,8 @@ const conditionData = [
 const initialState = {
     conditions: conditions,
     neighbour1NamesIdx: neighbour1Names,
+    neighbour2NamesIdx: neighbour2Names,
+    scenariosOrder: scenariosOrder,
     conditionNumber: 0, // running number, the only that gets changed while in experiment
     conditionData: conditionData,
     scenariosOrder: scenariosOrder,
