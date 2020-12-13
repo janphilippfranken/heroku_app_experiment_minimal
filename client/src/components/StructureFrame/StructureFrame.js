@@ -8,8 +8,6 @@ import Scores from '../Scores/Scores';
 import classes from './StructureFrame.module.css';
 
 
-    
-
 
 const StructureFrame = props => {
 
@@ -62,8 +60,8 @@ const StructureFrame = props => {
     const [selectedStructure, setSelectedStructure] = useState('0'); // 0 = independent, 1 = lr, 2 =rl, 3=both
 
     const onNextHandler = () => {
-        // dispatch(storeSTRUCTURE({causalStructure: selectedStructure, conditionNumber: conditionNumber}));
-        // console.log(selectedStructure);
+        dispatch(storeSTRUCTURE({causalStructure: selectedStructure, conditionNumber: conditionNumber}));
+        console.log(selectedStructure);
         props.goToGame();
         setNoLink('0.2');
         setLRLink('0.2');

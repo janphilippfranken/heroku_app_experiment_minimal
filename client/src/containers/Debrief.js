@@ -43,7 +43,7 @@ const Debrief = props => {
             engaging.split(' ').join('').length === 0) {
             setShowModal(true);
         } else {
-            axios.post(`https://belief-updating-condition-2.firebaseio.com/${participantToken}.json`, {
+            axios.post(`https://dbn1-exp-jpf-sv-default-rtdb.firebaseio.com/${participantToken}.json`, {
                 participantData: participantData,
                 conditionsData: conditionsData,
                 debriefData: debriefData,

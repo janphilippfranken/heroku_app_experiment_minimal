@@ -64,7 +64,7 @@ const PlanetFrame = props => {
     const [planetSelected, setPlanetSelected] = useState('none');
 
     const onNextHandler = () => {
-        // dispatch(storeSELECTION({selectedPlanet: planetSelected, confidence: confidence, conditionNumber: conditionNumber}));
+        dispatch(storeSELECTION({selectedPlanet: planetSelected, confidence: confidence, conditionNumber: conditionNumber}));
         props.goToGame();
         setButtonDisplay('none');
         setPlanetSelectBLUE('0.2');

@@ -155,7 +155,6 @@
 }
 
 .ConnectionR {
-
     position: absolute;
     border: 0px solid #666;
 	border-radius: 0px;
@@ -166,9 +165,10 @@
     background-color: transparent;
     justify-content: center;
     border-top: 2.5rem solid transparent;
-    border-left: 3rem solid grey;
+    border-right: 3rem solid grey;
     border-bottom: 2.5rem solid transparent;
     box-shadow: 0px 0px 0px #888;
+
 }
 
 .ConnectionL {

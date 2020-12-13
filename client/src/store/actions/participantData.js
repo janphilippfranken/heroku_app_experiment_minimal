@@ -9,7 +9,8 @@ export const storeSTRUCTURE = structureData => {
 };
 
 export const storeSELECTION = selectionData => {
-    const selectedPLanet = selectionData.planet;
+    const selectedPLanet = selectionData.selectedPlanet;
     const confidence = selectionData.confidence;
-    return { type: STORE_SELECTION, selectionData: {selectedPLanet: selectedPLanet, confidence: confidence}, conditionNumber: selectionData.conditionNumber};
+    console.log(selectionData);
+    return { type: STORE_SELECTION, selectionData: {selectedPlanet: selectedPLanet, confidence: confidence}, conditionNumber: selectionData.conditionNumber};
 };
