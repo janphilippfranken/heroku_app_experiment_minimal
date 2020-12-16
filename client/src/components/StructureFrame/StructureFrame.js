@@ -75,7 +75,7 @@ const StructureFrame = props => {
         <div className={classes.GameFrame} style={{display: props.display}}>
             {/* game interface */}
 
-            <Agent width={'40rem'} left={'3%'} agent_id="instr_frame" >Did {scenario.neighbour1Name.name} and {scenario.neighbour2Name.name} talk? <br /> (click on statement)</Agent> 
+            <Agent width={'40rem'} left={'3%'} agent_id="instr_frame" >Did {scenario.neighbour1Name.name} and {scenario.neighbour2Name.name} influence each other? <br /> (click on statement)</Agent> 
             
             {/* agent B */}
             <Agent agent_id="B_2">{scenario.neighbour1Name.name}</Agent>
@@ -94,9 +94,9 @@ const StructureFrame = props => {
 
             {/* Connections */}
             <Agent onClick={selectNoLink} opacity={noLink} agent_id="ConnectionTail" left={'22.5%'} top={scenario.structureOrder[0][0]} width={'14rem'}>No Conversation</Agent>
-            <Agent onClick={selectLRLink} opacity={LRLink} agent_id="ConnectionTail" left={'22.5%'} top={scenario.structureOrder[1][0]} width={'14rem'}>{scenario.neighbour1Name.name} talked to {scenario.neighbour2Name.name}</Agent>
-            <Agent onClick={selectRLLink}  opacity={RLLink}  agent_id="ConnectionTail" left={'22.5%'} top={scenario.structureOrder[2][0]} width={'14rem'}>{scenario.neighbour2Name.name} talked to {scenario.neighbour1Name.name}</Agent>
-            <Agent onClick={selectBothLink} opacity={BothLink} agent_id="ConnectionTail" left={'22.5%'} top={scenario.structureOrder[3][0]} width={'14rem'}>Both talked to each other</Agent>
+            <Agent onClick={selectLRLink} opacity={LRLink} agent_id="ConnectionTail" left={'22.5%'} top={scenario.structureOrder[1][0]} width={'14rem'}>{scenario.neighbour1Name.name} influenced {scenario.neighbour2Name.name}</Agent>
+            <Agent onClick={selectRLLink}  opacity={RLLink}  agent_id="ConnectionTail" left={'22.5%'} top={scenario.structureOrder[2][0]} width={'14rem'}>{scenario.neighbour2Name.name} influenced {scenario.neighbour1Name.name}</Agent>
+            <Agent onClick={selectBothLink} opacity={BothLink} agent_id="ConnectionTail" left={'22.5%'} top={scenario.structureOrder[3][0]} width={'14rem'}>Both influenced each other</Agent>
 
             
             <Agent agent_id="ConnectionR" left={'43%'} top={scenario.structureOrder[1][1]}> </Agent>
