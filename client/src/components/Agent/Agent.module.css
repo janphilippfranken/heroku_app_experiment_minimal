@@ -168,6 +168,8 @@
     border-right: 3rem solid grey;
     border-bottom: 2.5rem solid transparent;
     box-shadow: 0px 0px 0px #888;
+    transform: rotate(180deg); 
+    transform-origin: center center;
 
 }
 
