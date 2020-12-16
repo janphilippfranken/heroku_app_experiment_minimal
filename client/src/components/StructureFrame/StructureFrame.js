@@ -21,7 +21,7 @@ const StructureFrame = props => {
         setLRLink('.2');
         setRLLink('.2');
         setBothLink('.2');
-        setSelectedStructure('0')
+        setSelectedStructure('independent')
         setButtonDisplay('');
 
     };
@@ -31,7 +31,7 @@ const StructureFrame = props => {
         setLRLink('1.0');
         setRLLink('.2');
         setBothLink('.2');
-        setSelectedStructure('1')
+        setSelectedStructure('lr')
         setButtonDisplay('');
     };
 
@@ -40,7 +40,7 @@ const StructureFrame = props => {
         setLRLink('.2');
         setRLLink('1.0');
         setBothLink('.2');
-        setSelectedStructure('2')
+        setSelectedStructure('rl')
         setButtonDisplay('');
     };
 
@@ -49,7 +49,7 @@ const StructureFrame = props => {
         setLRLink('.2');
         setRLLink('.2');
         setBothLink('1.0');
-        setSelectedStructure('3')
+        setSelectedStructure('both')
         setButtonDisplay('');
     };
 
