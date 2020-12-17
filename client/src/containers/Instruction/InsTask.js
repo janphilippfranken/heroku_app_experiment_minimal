@@ -10,7 +10,7 @@ const InsTask= props => {
         <div className={Classes.InsTask}>
             
             <div className={Classes.InnerContainer}>
-                <h1>Instructions: Overview</h1>
+                <h1>Instructions: Task</h1>
                 <hr />           
                 <div className={Classes.InsReminder}>
                     <p><i>*** Please read carefully. You will complete a comprehension quiz at the end. ***</i></p>
@@ -18,11 +18,13 @@ const InsTask= props => {
                 </div> 
                 <p>You will be travelling to four different villages. In each village, there is a space fisherman that went to one of the two planets to catch fish. You <b>do not know</b> which planet the space fisherman travelled.</p><br></br>
                 
-                <p>Each space fisherman gives you <b>one fish</b> from their catch. Additionally, the space fisherman gives one fish to each of <b>two villagers</b>.</p><br></br>
+                <p>Your task is to <b>decide</b> whether the space fisherman travelled the RED or BLUE planet to catch their fish. You will be paid a bonus of 50 cent each time you selected the correct planet that was visited by a village's space fisherman (total bonus = 4 * 50 cent = $2.00).</p><br></br>
+
+                <p>In each village, the local space fisherman gives you <b>one fish</b> from their catch. Additionally, the space fisherman gives one fish to each of <b>two villagers</b>. You <b>do not know</b> which color the fish had.</p><br></br>
+
+                <p><b>Before</b> selecting a planet, you will will talk to the two villagers to learn which planet <b>they believe</b> the fisherman travelled.</p><br></br>
                 
-                <p>In each village, your task is to <b>decide</b> whether the space fisherman travelled the RED or BLUE planet to catch their fish. You will be paid a bonus of 50cents for each correct selectsion (total bonus = 4 * 50cents = $2.00).</p><br></br>
-                
-                <p>You can make your decision based on consideirng...s.</p><br></br>
+                <p><b>Important:</b> The two villagers might <b>talk to each other</b> and <b>influence</b> their beliefs. Thus, you will observe their beliefs <b>multiple times</b> to find out about their relationships with each other.</p><br></br>
                 <hr />
                 <img src={fishermanImage} alt="planets"/>
                 <Button clicked={props.goToInstruction}>Next</Button>

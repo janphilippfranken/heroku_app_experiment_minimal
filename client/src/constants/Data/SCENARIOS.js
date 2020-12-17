@@ -27,10 +27,10 @@ export default class Scenario {
         ];
 
         this.titles = [
-            'Welcome to village A!',
-            'Welcome to village B!',
-            'Welcome to village C!',
-            'Welcome to village D!'
+            'Welcome to Scarborough!',
+            'Welcome to Misty Cliffs!',
+            'Welcome to Sunset!',
+            'Welcome to Witsand!'
         ];
 
         this.structureOrder = shuffle([

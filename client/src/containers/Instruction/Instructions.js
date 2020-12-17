@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import InsOverview from './InsOverview';
 import InsTask from './InsTask';
+import InsTask2 from './InsTask2';
 import InsSummary from './InsSummary';
 import InsQuiz from './InsQuiz';
 
@@ -11,6 +12,7 @@ import { setTimer } from '../../store/actions/timer';
 const INS_PHASES = {
     overview: 'INSTRUCTIONS_OVERVIEW',
     task: 'INSTRUCTIONS_TASK',
+    task2: 'INSTRUCTIONS_TASK_2',
     summary: 'SUMMARY',
     comprehensionQuiz: 'QUIZ'
 };
@@ -32,7 +34,9 @@ const Instructions = props => {
     if (instructionsPhase === INS_PHASES.overview) {
         currentInstruction = <InsOverview goToInstruction={goToInstructionHandler.bind(this, INS_PHASES.task)}/>;
     } else if (instructionsPhase === INS_PHASES.task) {
-        currentInstruction = <InsTask goToInstruction={goToInstructionHandler.bind(this, INS_PHASES.summary)} />;
+        currentInstruction = <InsTask goToInstruction={goToInstructionHandler.bind(this, INS_PHASES.task2)} />;
+    } else if (instructionsPhase === INS_PHASES.task2) {
+        currentInstruction = <InsTask2 goToInstruction={goToInstructionHandler.bind(this, INS_PHASES.summary)} />;
     } else if (instructionsPhase === INS_PHASES.summary) {
         currentInstruction = <InsSummary goToInstruction={goToInstructionHandler.bind(this, INS_PHASES.comprehensionQuiz)} />;
     } else if (instructionsPhase === INS_PHASES.comprehensionQuiz) {

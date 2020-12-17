@@ -139,7 +139,7 @@ const GameFrame = props => {
         <div className={classes.GameFrame} style={{display: props.display}}>
              {props.children}
             {/* game interface */}
-            <Agent agent_id="instr_frame" >BELIEFS OF OTHERS</Agent> 
+            <Agent width={'400px'} agent_id="instr_frame" >BELIEFS OF VILLAGERS</Agent> 
             
             {/* agent B */}
             <Agent color={colorB} agent_id="B_2">{sayColorB}</Agent>

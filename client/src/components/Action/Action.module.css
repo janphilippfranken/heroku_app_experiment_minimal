@@ -267,6 +267,22 @@
     opacity: 0.2;
 }
 
+.ConfidenceVeryLow {
+    opacity: 0.2;
+    position: absolute;
+    left:2%;
+    top:65%; 
+    background-color: lightgray;
+    font: 15px Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    cursor: pointer;
+    overflow: scroll;
+}
+
 
 .ConfidenceLow {
     opacity: 0.2;
@@ -304,6 +320,23 @@
     opacity: 0.2;
     position: absolute;
     left:41%;
+    top:65%; 
+    background-color: lightgray;
+    font: 15px Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    cursor: pointer;
+    overflow: scroll;
+}
+
+
+.ConfidenceVeryHigh {
+    opacity: 0.2;
+    position: absolute;
+    left:54%;
     top:65%; 
     background-color: lightgray;
     font: 15px Arial, sans-serif;

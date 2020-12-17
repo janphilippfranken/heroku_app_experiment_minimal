@@ -25,7 +25,6 @@ const Layout = props => {
         currentGamePhase = <Ethics />;
     } else if (gamePhase[PHASES.notes]) {
         currentGamePhase = <Notes />;
-        
     } else if (gamePhase[PHASES.instruction]) {
         currentGamePhase = <Instructions />;
     } else if (gamePhase[PHASES.experiment]) {

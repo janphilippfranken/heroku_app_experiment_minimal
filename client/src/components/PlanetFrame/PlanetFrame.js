@@ -30,36 +30,65 @@ const PlanetFrame = props => {
         setPlanetSelected('blue')
     };
 
-    const selectLowConfidence = () => {
-        setLowConfidence('1.0');
+    const selectVeryLowConfidence = () => {
+        setVeryLowConfidence('1.0');
+        setLowConfidence('0.2');
         setMediumConfidence('0.2');
         setHighConfidence('0.2');
+        setVeryHighConfidence('0.2');
         setButtonDisplay('');
         setConfidence(0);
     }; 
 
-    const selectMediumConfidence = () => {
-        setLowConfidence('0.2');
-        setMediumConfidence('1.0');
+
+    const selectLowConfidence = () => {
+        setVeryLowConfidence('0.2');
+        setLowConfidence('1.0');
+        setMediumConfidence('0.2');
         setHighConfidence('0.2');
+        setVeryHighConfidence('0.2');
         setButtonDisplay('');
         setConfidence(1);
     }; 
 
+    const selectMediumConfidence = () => {
+        setVeryLowConfidence('0.2');
+        setLowConfidence('0.2');
+        setMediumConfidence('1.0');
+        setHighConfidence('0.2');
+        setVeryHighConfidence('0.2');
+        setButtonDisplay('');
+        setConfidence(2);
+    }; 
+
     const selectHighConfidence = () => {
+        setVeryLowConfidence('0.2');
         setLowConfidence('0.2');
         setMediumConfidence('0.2');
         setHighConfidence('1.0');
+        setVeryHighConfidence('0.2');
         setButtonDisplay('');
-        setConfidence(2);
+        setConfidence(3);
+    }; 
+
+    const selectVeryHighConfidence = () => {
+        setVeryLowConfidence('0.2');
+        setLowConfidence('0.2');
+        setMediumConfidence('0.2');
+        setHighConfidence('0.2');
+        setVeryHighConfidence('1.0');
+        setButtonDisplay('');
+        setConfidence(4);
     }; 
     
 
     const [PlanetSelectRED, setPlanetSelectRED] = useState('.2');
     const [PlanetSelectBLUE, setPlanetSelectBLUE] = useState('.2');
+    const [veryLowConfidence, setVeryLowConfidence] = useState('.2');
     const [lowConfidence, setLowConfidence] = useState('.2');
     const [mediumConfidence, setMediumConfidence] = useState('.2');
     const [highConfidence, setHighConfidence] = useState('.2');
+    const [veryHighConfidence, setVeryHighConfidence] = useState('.2');
     const [confidence, setConfidence] = useState('0');
     const [planetSelected, setPlanetSelected] = useState('none');
 
@@ -70,9 +99,11 @@ const PlanetFrame = props => {
         setPlanetSelectBLUE('0.2');
         setPlanetSelectRED('0.2');
         setConfDisplay('none');
+        setVeryLowConfidence('0.2');
         setLowConfidence('0.2');
         setMediumConfidence('0.2');
         setHighConfidence('0.2');
+        setVeryHighConfidence('0.2');
     };
   
    
@@ -92,13 +123,15 @@ const PlanetFrame = props => {
                 <h3>RED</h3> 
             </Agent> 
             
-            <Agent display={confDisplay} left={'6%'} top={'57%'} width={'35rem'} agent_id="instr_frame" >Select your confidence</Agent> 
+            <Agent display={confDisplay} left={'6%'} top={'57%'} width={'35rem'} agent_id="instr_frame" >How confident are you?</Agent> 
             
 
             {/* Confidence */}
-            <Action display={confDisplay}  onClick={selectLowConfidence} opacity={lowConfidence} action_id='ConfidenceLow'>Low Confidence</Action>
-            <Action display={confDisplay}  onClick={selectMediumConfidence} opacity={mediumConfidence} action_id='ConfidenceMedium'>Medium Confidence</Action>
-            <Action display={confDisplay}  onClick={selectHighConfidence} opacity={highConfidence} action_id='ConfidenceHigh'>High Confidence</Action>
+            <Action display={confDisplay}  onClick={selectVeryLowConfidence} opacity={veryLowConfidence} action_id='ConfidenceVeryLow'>Not Confident at all</Action>
+            <Action display={confDisplay}  onClick={selectLowConfidence} opacity={lowConfidence} action_id='ConfidenceLow'>Not Confident</Action>
+            <Action display={confDisplay}  onClick={selectMediumConfidence} opacity={mediumConfidence} action_id='ConfidenceMedium'>Neutral</Action>
+            <Action display={confDisplay}  onClick={selectHighConfidence} opacity={highConfidence} action_id='ConfidenceHigh'>Confident</Action>
+            <Action display={confDisplay}  onClick={selectVeryHighConfidence} opacity={veryHighConfidence} action_id='ConfidenceVeryHigh'>Highly Confident</Action>
 
             {/* Scores */}
             {/* score history */}

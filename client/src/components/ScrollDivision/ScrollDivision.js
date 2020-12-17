@@ -4,7 +4,7 @@ import classes from './ScrollDivision.module.css';
 
 const scrollDivision = ( props ) => {
   return (
-    <div className={classes.ScrollDivision}>{props.children}</div>
+    <div className={classes.ScrollDivision} onScroll={props.scroll}>{props.children}</div>
   );
 }
 
