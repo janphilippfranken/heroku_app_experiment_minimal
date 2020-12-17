@@ -14,7 +14,7 @@ const InsTask= props => {
         debugger;
         console.log(e.target.scrollHeight);
         console.log(e.target.scrollTop);
-        if (e.target.scrollTop > 1650) {
+        if (e.target.scrollTop + e.target.offsetHeight === e.target.scrollHeight) {
             setBtnDisplay(true);
         }
     };
@@ -30,7 +30,7 @@ const InsTask= props => {
                    
                 </div> 
                 <ScrollDivision scroll={showBtn}>
-                <p>In each village, you first receive a fish from the fisherman (scroll down):</p><br></br>
+                <p>In each village, you first receive a fish from the fisherman:</p><br></br>
                 <img src={fishImage} alt="planets"/><br></br><br></br>
                 <p>You then observe the beliefs of villagers by clicking the ``<b>Observe Beliefs</b>'' button:</p><br></br>
                 <img src={observeImage} alt="planets"/><br></br><br></br>
@@ -40,7 +40,8 @@ const InsTask= props => {
                 <img src={planetImage} alt="planets"/>
                 </ScrollDivision >
                 <hr />
-                {btnDisplay && <Button clicked={props.goToInstruction}>Next</Button>}
+                {/* {btnDisplay && <Button clicked={props.goToInstruction}>Next</Button>} */}
+                {btnDisplay ? <Button clicked={props.goToInstruction}>Next</Button>: <Button >Please scroll down</Button>}
             </div>
         </div>
     );
