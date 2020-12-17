@@ -26,7 +26,7 @@ const InsTask= props => {
                 <h1>Instructions: Procedure</h1>
                 <hr />           
                 <div className={Classes.InsReminder}>
-                    <p><i>*** Please read carefully. You will complete a comprehension quiz at the end. ***</i></p>
+                    <p><i>*** Scroll through the division below to see details. ***</i></p>
                    
                 </div> 
                 <ScrollDivision scroll={showBtn}>
@@ -40,8 +40,8 @@ const InsTask= props => {
                 <img src={planetImage} alt="planets"/>
                 </ScrollDivision >
                 <hr />
-                {/* {btnDisplay && <Button clicked={props.goToInstruction}>Next</Button>} */}
-                {btnDisplay ? <Button clicked={props.goToInstruction}>Next</Button>: <Button >Please scroll down</Button>}
+                {btnDisplay && <Button clicked={props.goToInstruction}>Next</Button>}
+                {/* {btnDisplay ? <Button clicked={props.goToInstruction}>Next</Button>: <Button >Please scroll down</Button>} */}
             </div>
         </div>
     );
