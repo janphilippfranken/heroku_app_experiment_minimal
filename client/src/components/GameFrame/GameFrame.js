@@ -15,8 +15,8 @@ const GameFrame = props => {
     const colors = {red: 'RED', deepskyblue: 'BLUE'};
     const dispatch = useDispatch();
     const scenario = useSelector(state => state.conditionData.conditionData[state.conditionData.conditionNumber]);
-    console.log(scenario);
-    
+
+
     const setColors = () => {
         setColorB(scenario.neighbourBeliefs.a[scoreCounter]);
         setColorC(scenario.neighbourBeliefs.b[scoreCounter]);

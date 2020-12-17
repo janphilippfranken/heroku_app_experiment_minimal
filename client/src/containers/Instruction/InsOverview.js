@@ -16,10 +16,10 @@ const InsOverview = props => {
                     <p><i>*** Please read carefully. You will complete a comprehension quiz at the end. ***</i></p>
                    
                 </div> 
-                <p>Imagine there are two colored planets. One planet is red, and the other planet is blue. 
-                    Both planets are inhabited by a strange space fish. On the red planet, 3/4 of the fish are red, 
-                    and 1/4 is blue. On the blue planet, the proportions are reversed: 3/4 of the fish are blue, 
-                    and 1/4 is red.</p>
+                <p>Imagine there are two colored planets. One planet is <b>RED</b>, and the other planet is <b>BLUE</b>. 
+                    Both planets are inhabited by a strange space fish. On the <b>RED planet</b>, 3/4 of the fish are RED, 
+                    and 1/4 are BLUE. On the <b>BLUE planet</b> , the proportions are <b>reversed</b>: 3/4 of the fish are BLUE, 
+                    and 1/4 are RED.</p>
                 <hr />
                 <img src={planetImage} alt="planets"/>
                 <Button clicked={props.goToInstruction}>Next</Button>

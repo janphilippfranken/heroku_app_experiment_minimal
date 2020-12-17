@@ -1,0 +1,19 @@
+
+.FishFrame {
+    background-color: grey;
+    position: relative;
+    width: 65rem;
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+    height: 30rem;
+    text-align: center;
+    background-color: transparent;
+    border: 8px solid #666;
+    border-radius: 30px;
+    box-shadow: 2px 2px 4px #888;
+    border-style: none!important;
+    background: transparent;
+	box-shadow: 0px 0px 0px #888;
+}
+
+

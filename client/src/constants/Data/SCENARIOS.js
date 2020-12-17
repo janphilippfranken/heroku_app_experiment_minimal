@@ -27,10 +27,10 @@ export default class Scenario {
         ];
 
         this.titles = [
-            'Village 1',
-            'VIllage 2',
-            'Village 3',
-            'Village 4'
+            'Welcome to village A!',
+            'Welcome to village B!',
+            'Welcome to village C!',
+            'Welcome to village D!'
         ];
 
         this.structureOrder = shuffle([
@@ -47,7 +47,7 @@ export default class Scenario {
 
     }
 
-    generateScenario = (scenarioId, neighbour1NameId, neighbour2NameId, neighbourBeliefs, cond) => {        
+    generateScenario = (scenarioId, neighbour1NameId, neighbour2NameId, neighbourBeliefs, cond, targetBelief) => {        
         const title = this.titles[scenarioId];
         const structureOrder = this.structureOrder;
         const planetPosition = this.planetPosition; 
@@ -55,6 +55,7 @@ export default class Scenario {
         const neighbour2Name = this.neighbour2NameData[neighbour2NameId]
         const neighbBeliefs = neighbourBeliefs;
         const condition = cond;
+        const tarBelief = targetBelief;
 
         return {
             condition: condition,
@@ -64,6 +65,7 @@ export default class Scenario {
             neighbour1Name: neighbour1Name,
             neighbour2Name: neighbour2Name,
             neighbourBeliefs: neighbBeliefs,
+            targetBelief: tarBelief
         }
     }
 };

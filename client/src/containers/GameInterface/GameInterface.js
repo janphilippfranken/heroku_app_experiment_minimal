@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../../components/Button/Button';
+import FishFrame from '../../components/Fish/FishFrame';
 import GameFrame from '../../components/GameFrame/GameFrame';
 import StructureFrame from '../../components/StructureFrame/StructureFrame';
 import PlanetFrame from '../../components/PlanetFrame/PlanetFrame';
@@ -17,6 +18,7 @@ import { setTimer } from '../../store/actions/timer';
 // Game Interface contains the interactive interface during which 
 // participants can observe states of others or tell them something
 const GAME_PHASES = {
+    observeFIsh: 'OBSERVE_FISH',
     observeBeliefs: 'OBSERVE_BELIEFS',
     selectStructure: 'SELECT_STRUCTURE',
     selectPlanet: 'SELECT_PLANET',
@@ -34,15 +36,23 @@ const GameInterface = props => {
         dispatch(setTimer(true, 1, 5));
     }, [dispatch]);
 
-    const [gamePhase, setGamePhase] = useState(GAME_PHASES.selectStructure);
-    const [beliefDisplay, setBeliefDisplay] = useState('');
+    const [gamePhase, setGamePhase] = useState(GAME_PHASES.observeFish);
+    const [fishDisplay, setFishDisplay] = useState('');
+    const [beliefDisplay, setBeliefDisplay] = useState('none');
     const [structureDisplay, setStructureDisplay] = useState('none');
     const [planetDisplay, setPlanetDisplay] = useState('none');
     const [nextPlanetDisplay, setNextPlanetDisplay] = useState('none');
 
 
     const goToGameHandler = gamePhase => {
-        if (gamePhase === GAME_PHASES.observeBeliefs) {
+        if (gamePhase === GAME_PHASES.observeFish) {
+            setFishDisplay('');
+            setBeliefDisplay('none');
+            setStructureDisplay('none');
+            setNextPlanetDisplay('none');
+            setGamePhase(GAME_PHASES.selectStructure)
+        } else if (gamePhase === GAME_PHASES.observeBeliefs) {
+            setFishDisplay('none');
             setBeliefDisplay('');
             setStructureDisplay('none');
             setNextPlanetDisplay('none');
@@ -65,7 +75,7 @@ const GameInterface = props => {
 
             setPlanetDisplay('none');
             setNextPlanetDisplay('')
-            setGamePhase(GAME_PHASES.observeBeliefs)
+            setGamePhase(GAME_PHASES.observeFish)
             dispatch(incrementCondition());
         }
     };
@@ -80,6 +90,7 @@ const GameInterface = props => {
             {/* <div className={classes.ParagraphContainer}> */}
                
             <div className={classes.GameContainer}>
+                <FishFrame display={fishDisplay} goToGame={goToGameHandler.bind(this, GAME_PHASES.observeBeliefs)} > </FishFrame>
                 <GameFrame display={beliefDisplay} goToGame={goToGameHandler.bind(this, GAME_PHASES.selectStructure)} ></GameFrame>
                 <StructureFrame display={structureDisplay} goToGame={goToGameHandler.bind(this, GAME_PHASES.selectPlanet)}></StructureFrame>
                 <PlanetFrame display={planetDisplay} goToGame={goToGameHandler.bind(this, GAME_PHASES.nextPlanet)}></PlanetFrame>
