@@ -14,7 +14,7 @@ const InsTask= props => {
         debugger;
         console.log(e.target.scrollHeight);
         console.log(e.target.scrollTop);
-        if (e.target.scrollTop + e.target.offsetHeight === e.target.scrollHeight) {
+        if (e.target.scrollTop + e.target.offsetHeight >= e.target.scrollHeight) {
             setBtnDisplay(true);
         }
     };
@@ -38,9 +38,11 @@ const InsTask= props => {
                 <img src={relationshipImage} alt="planets"/><br></br><br></br>
                 <p>Finally, you will be asked to select one of the two planets and rate <b>how confident</b> your are in your decision:</p>
                 <img src={planetImage} alt="planets"/>
-                </ScrollDivision >
                 <hr />
-                {btnDisplay && <Button clicked={props.goToInstruction}>Next</Button>}
+                <Button clicked={props.goToInstruction}>Next</Button>
+                {/* {btnDisplay && <Button clicked={props.goToInstruction}>Next</Button>} */}
+                </ScrollDivision >
+              
                 {/* {btnDisplay ? <Button clicked={props.goToInstruction}>Next</Button>: <Button >Please scroll down</Button>} */}
             </div>
         </div>
