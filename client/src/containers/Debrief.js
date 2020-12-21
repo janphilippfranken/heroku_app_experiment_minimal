@@ -14,7 +14,7 @@ const Debrief = props => {
     const conditionsData = useSelector(state => state.conditionData.conditionData);
     const [engaging, setEngaging] = useState('');
     const [difficulty, setDifficulty] = useState('');
-    const [polor, setPolor] = useState('');
+    // const [polor, setPolor] = useState('');
     const [age, setAge] = useState('');
     const [sex, setSex] = useState('');
     const [prior, setPrior] = useState('');
@@ -26,7 +26,7 @@ const Debrief = props => {
         const debriefData = {
             engaging: engaging,
             difficutly: difficulty,
-            politicalOrientation: polor,
+            // politicalOrientation: polor,
             age: age,
             gender: sex,
             priorStrategy: prior,
@@ -38,7 +38,7 @@ const Debrief = props => {
             post.split(' ').join('').length === 0 ||
             age.split(' ').join('').length === 0 ||
             sex.split(' ').join('').length === 0 ||
-            polor.split(' ').join('').length === 0 ||
+            // polor.split(' ').join('').length === 0 ||
             difficulty.split(' ').join('').length === 0 ||
             engaging.split(' ').join('').length === 0) {
             setShowModal(true);
@@ -133,7 +133,7 @@ const Debrief = props => {
                             <option value="0">0 - Not difficult at all</option>
                         </select>
                     </div>
-                    <div className={Classes.PoliticalOrientationContainer}>
+                    {/* <div className={Classes.PoliticalOrientationContainer}>
                         <label htmlFor="politicalOrientation">Please rate your <b>POLITICAL ORIENTATION</b>:<span>*</span></label>
                         <select id="politicalOrientation" value={polor} onChange={e => setPolor(e.target.value)}>
                             <option value="--" defaultValue></option>
@@ -145,13 +145,13 @@ const Debrief = props => {
                             <option value="2">2 - Liberal (left-wing)</option>
                             <option value="1">1 - Very liberal (left-wing)</option>
                         </select>
-                    </div>
+                    </div> */}
                     <div className={Classes.PriorContainer}>
-                        <label htmlFor="prior">What were you thinking when providing your <b>initial judgement</b>? Did you have a specific strategy?<span>*</span></label>
+                        <label htmlFor="prior">How did you learn about the <b>relationship</b> between villagers? Did you have a specific strategy?<span>*</span></label>
                         <textarea id="prior" value={prior} onChange={e => setPrior(e.target.value)} />
                     </div>
                     <div className={Classes.PosteriorContainer}>
-                        <label htmlFor="posterior">What were you thinking when providing your <b>final judgement</b>? Did you have a specific strategy?<span>*</span></label>
+                        <label htmlFor="posterior">How did you decide which <b>planet</b> to select? Did you have a specific strategy?<span>*</span></label>
                         <textarea id="posterior" value={post} onChange={e => setPost(e.target.value)} />
                     </div>
                     <div className={Classes.CommentsContainer}>

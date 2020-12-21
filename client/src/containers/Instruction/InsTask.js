@@ -24,7 +24,7 @@ const InsTask= props => {
 
                 <p><b>Before</b> selecting a planet, you will will talk to the two villagers to learn which planet <b>they believe</b> the fisherman travelled.</p><br></br>
                 
-                <p><b>Important:</b> The two villagers might <b>talk to each other</b> and <b>influence</b> their beliefs. Thus, you will observe their beliefs <b>multiple times</b> to find out about their relationships with each other.</p><br></br>
+                <p><b>Important:</b> The two villagers might <b>talk to each other</b> and <b>influenced</b> their beliefs. Thus, you will observe their beliefs <b>multiple times</b> to find out about their relationships with each other.</p><br></br>
                 <hr />
                 <img src={fishermanImage} alt="planets"/>
                 <Button clicked={props.goToInstruction}>Next</Button>
