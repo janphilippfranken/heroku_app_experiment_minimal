@@ -17,7 +17,7 @@
     width: 1.5rem;
 	height: 1.5rem;
     background: red;
-    font: 20px Arial, sans-serif;
+    font:15px Arial, sans-serif;
     font-weight: bold;
     vertical-align: middle;
     display: flex;
@@ -32,7 +32,7 @@
     width: 1.5rem;
 	height: 1.5rem;
     background: deepskyblue;
-    font: 20px Arial, sans-serif;
+    font: 15px Arial, sans-serif;
     font-weight: bold;
     vertical-align: middle;
     display: flex;

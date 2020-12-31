@@ -6,6 +6,8 @@ import Scores from '../Scores/Scores';
 import { useDispatch, useSelector } from 'react-redux';
 import classes from './PlanetFrame.module.css';
 import { storeSELECTION } from '../../store/actions/participantData';
+import blueFishImage from '../../static/images/blue_fish.png';
+import redFishImage from '../../static/images/red_fish.png';
 
 
 
@@ -15,6 +17,10 @@ const PlanetFrame = props => {
     const scenario = useSelector(state => state.conditionData.conditionData[state.conditionData.conditionNumber]);
     const [buttonDisplay, setButtonDisplay] = useState('none');
     const [confDisplay, setConfDisplay]= useState('none');
+    const fish = scenario.targetBelief;
+
+    const displayFish = {'red': ['', 'none'],
+                         'deepskyblue': ['none', '']};
 
     const selectPlanetRED = () => {
         setPlanetSelectRED('1.0');
@@ -166,7 +172,15 @@ const PlanetFrame = props => {
             <Scores background={scenario.neighbourBeliefs.b[8]} id="C9" score_id="C1"  top={'67%'} >{scenario.neighbourBeliefs.bc[8].toString()}</Scores> 
             <Scores background={scenario.neighbourBeliefs.b[9]} id="C10" score_id="C1" top={'74%'} >{scenario.neighbourBeliefs.bc[9].toString()}</Scores>   
 
-    
+            {/* legend */}
+            <Agent width={'200px'} top={'65%'} left={'1%'} agent_id="legend" >YOUR FISH:</Agent> 
+            <Agent width={'100px'} top={'72%'} left={'0%'} agent_id="Fish" display={displayFish[fish][0]}>
+            <img position={'absolute'} left={'80%'} top={'50%'} height={'50px'} src={redFishImage} alt="fish"/>
+            </Agent>
+            <Agent width={'100px'} top={'72%'} left={'0%'} agent_id="Fish" display={displayFish[fish][1]}>
+            <img position={'absolute'} left={'80%'} top={'50%'} height={'50px'} src={blueFishImage} alt="fish"/>
+            </Agent>
+
     
 
             

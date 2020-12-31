@@ -26,7 +26,7 @@ const InsTask= props => {
                 
                 <p><b>Important:</b> The two villagers might <b>talk to each other</b> and <b>influenced</b> their beliefs. Thus, you will observe their beliefs <b>multiple times</b> to find out about their relationships with each other.</p><br></br>
 
-                <p><b>Important:</b> You <b>do not</b> know when the two villagers received their fish. Therefore, pay careful attention to both their <b>beliefs and confidence</b> when finding out about their relationships with each other.</p><br></br>
+                <p><b>Important:</b> You <b>do not</b> know when the two villagers received their fish. Therefore, pay careful attention to both their <b>beliefs and confidence</b> when finding out about their relationships with each other. Also, be aware that their beliefs <b>might not</b> always be informative as they are sometimes forced to make a judgement without having seen a fish before.</p><br></br>
                
                 <hr />
                 <img src={fishermanImage} alt="planets"/>

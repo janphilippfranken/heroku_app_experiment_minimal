@@ -157,10 +157,10 @@ const GameFrame = props => {
             <Agent width={'200px'} top={'76%'} left={'1%'} agent_id="legend" >CONFIDENCE LEGEND:</Agent> 
             <Agent width={'400px'} top={'80%'} left={'1%'} agent_id="legend" >1 (very unconfident) - 3 (very confident)</Agent> 
             <Agent width={'200px'} top={'65%'} left={'1%'} agent_id="legend" >YOUR FISH:</Agent> 
-            <Agent width={'100px'} top={'66%'} left={'7%'} agent_id="Fish" display={displayFish[fish][0]}>
+            <Agent width={'100px'} top={'71%'} left={'0%'} agent_id="Fish" display={displayFish[fish][0]}>
             <img position={'absolute'} left={'80%'} top={'50%'} height={'50px'} src={redFishImage} alt="fish"/>
             </Agent>
-            <Agent width={'100px'} top={'66%'} left={'8%'} agent_id="Fish" display={displayFish[fish][1]}>
+            <Agent width={'100px'} top={'71%'} left={'0%'} agent_id="Fish" display={displayFish[fish][1]}>
             <img position={'absolute'} left={'80%'} top={'50%'} height={'50px'} src={blueFishImage} alt="fish"/>
             </Agent>
 
