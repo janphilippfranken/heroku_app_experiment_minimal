@@ -18,9 +18,9 @@ const InsTask= props => {
                 </div> 
                 <p>You will be travelling to four different villages. In each village, there is a space fisherman that went to one of the two planets to catch fish. You <b>do not know</b> which planet the space fisherman travelled.</p><br></br>
                 
-                <p>Your task is to <b>decide</b> whether the space fisherman travelled the RED or BLUE planet to catch their fish. You will be paid a bonus of 50 cent each time you selected the correct planet that was visited by a village's space fisherman (total bonus = 4 * 50 cent = $2.00).</p><br></br>
+                <p>Your task is to <b>decide</b> whether the space fisherman travelled the RED or BLUE planet to catch their fish. You will be paid a bonus of £0.50 each time you selected the correct planet that was visited by a village's space fisherman (max. total bonus = 4 * £0.50 cent = £2.00).</p><br></br>
 
-                <p>In each village, the local space fisherman gives you <b>one fish</b> from their catch. Additionally, the space fisherman gives <b>one fish</b> to each of <b>two villagers</b>. You <b>do not know</b> the color of these.</p><br></br>
+                <p>In each village, the local space fisherman gives you <b>one fish</b> from their catch. Additionally, the space fisherman gives <b>one fish</b> to each of <b>two villagers</b>. You <b>do not know</b> the color of their fish.</p><br></br>
 
                 <p><b>Before</b> selecting a planet, you will will talk to the two villagers to learn which planet <b>they believe</b> the fisherman travelled and how <b>confident</b> they are in their beliefs.</p><br></br>
                 

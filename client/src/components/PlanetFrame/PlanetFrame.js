@@ -128,9 +128,9 @@ const PlanetFrame = props => {
 
             {/* Confidence */}
             {/* <Action display={confDisplay}  onClick={selectVeryLowConfidence} opacity={veryLowConfidence} action_id='ConfidenceVeryLow'>Not Confident at all</Action> */}
-            <Action display={confDisplay}  onClick={selectLowConfidence} opacity={lowConfidence} action_id='ConfidenceLow'>1 (not confident)</Action>
-            <Action display={confDisplay}  onClick={selectMediumConfidence} opacity={mediumConfidence} action_id='ConfidenceMedium'>2 (slightly confident)</Action>
-            <Action display={confDisplay}  onClick={selectHighConfidence} opacity={highConfidence} action_id='ConfidenceHigh'>3 (confident)</Action>
+            <Action display={confDisplay}  onClick={selectLowConfidence} opacity={lowConfidence} action_id='ConfidenceLow'>1 (very unconfident)</Action>
+            <Action display={confDisplay}  onClick={selectMediumConfidence} opacity={mediumConfidence} action_id='ConfidenceMedium'>2</Action>
+            <Action display={confDisplay}  onClick={selectHighConfidence} opacity={highConfidence} action_id='ConfidenceHigh'>3 (very confident)</Action>
             {/* <Action display={confDisplay}  onClick={selectVeryHighConfidence} opacity={veryHighConfidence} action_id='ConfidenceVeryHigh'>Highly Confident</Action> */}
 
             {/* Scores */}

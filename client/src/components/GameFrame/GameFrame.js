@@ -28,8 +28,8 @@ const GameFrame = props => {
         setColorC(scenario.neighbourBeliefs.b[scoreCounter]);
         // setOpacityB(scenario.neighbourBeliefs.ac[scoreCounter]);
         // setOpacityC(scenario.neighbourBeliefs.bc[scoreCounter]);
-        setColorMessageB(scenario.neighbourBeliefs.ac[scoreCounter]);
-        setColorMessageC(scenario.neighbourBeliefs.bc[scoreCounter]);
+        setColorMessageB('confidence: ' + scenario.neighbourBeliefs.ac[scoreCounter]);
+        setColorMessageC('confidence: ' + scenario.neighbourBeliefs.bc[scoreCounter]);
         setDisplayObserve('none');
         setDisplayNext('');
     };
@@ -154,15 +154,13 @@ const GameFrame = props => {
             <Agent width={'400px'} agent_id="instr_frame" >BELIEFS OF VILLAGERS</Agent> 
 
             {/* legend */}
-            <Agent width={'200px'} top={'40%'} left={'2%'} agent_id="legend" >LEGEND:</Agent> 
-            <Agent width={'200px'} top={'45%'} left={'2%'} agent_id="legend" >1: not confident</Agent> 
-            <Agent width={'200px'} top={'50%'} left={'2%'} agent_id="legend" >2: slightly confident</Agent> 
-            <Agent width={'200px'} top={'55%'} left={'2%'} agent_id="legend" >3: confident</Agent> 
-            <Agent width={'200px'} top={'65%'} left={'2%'} agent_id="legend" >YOUR FISH:</Agent> 
-            <Agent width={'100px'} top={'66.5%'} left={'8%'} agent_id="Fish" display={displayFish[fish][0]}>
+            <Agent width={'200px'} top={'76%'} left={'1%'} agent_id="legend" >CONFIDENCE LEGEND:</Agent> 
+            <Agent width={'400px'} top={'80%'} left={'1%'} agent_id="legend" >1 (very unconfident) - 3 (very confident)</Agent> 
+            <Agent width={'200px'} top={'65%'} left={'1%'} agent_id="legend" >YOUR FISH:</Agent> 
+            <Agent width={'100px'} top={'66%'} left={'7%'} agent_id="Fish" display={displayFish[fish][0]}>
             <img position={'absolute'} left={'80%'} top={'50%'} height={'50px'} src={redFishImage} alt="fish"/>
             </Agent>
-            <Agent width={'100px'} top={'66.5%'} left={'8%'} agent_id="Fish" display={displayFish[fish][1]}>
+            <Agent width={'100px'} top={'66%'} left={'8%'} agent_id="Fish" display={displayFish[fish][1]}>
             <img position={'absolute'} left={'80%'} top={'50%'} height={'50px'} src={blueFishImage} alt="fish"/>
             </Agent>
 

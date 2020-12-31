@@ -35,7 +35,7 @@ const InsTask= props => {
                 <img src={fishImage} alt="planets"/><br></br><br></br>
                 <p>You then observe the beliefs of villagers by clicking the ``<b>Observe Beliefs</b>'' button:</p><br></br>
                 <img src={observeImage} alt="planets"/><br></br><br></br>
-                <p>Beliefs of villagers can either be blue or red. In addition to their beliefs, villagers also tell you how confident they are in their beliefs on a <b>scale from 1-3</b>. Specifically, they can be 1: not confident; 2: slightly confident; or 3: confident. The <b>more confident</b> they are, the more likely they think the space fisherman travelled the selected planet. The confidence is displayed together with their beliefs:</p><br></br>
+                <p>Beliefs of villagers can either be blue or red. In addition to their beliefs, villagers also tell you how confident they are in their beliefs on a <b>scale from 1 (very unconfident) - 3 (very confident)</b>. The <b>more confident</b> they are, the more likely they think the space fisherman travelled the selected planet. The confidence is displayed together with their beliefs:</p><br></br>
                 <img src={confImage} alt="planets"/><br></br><br></br>
                 <p>After observing the beliefs of villagers, you will provide a <b>guess about their relationship</b>:</p><br></br>
                 <img src={relationshipImage} alt="planets"/><br></br><br></br>
