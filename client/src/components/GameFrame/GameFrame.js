@@ -5,23 +5,31 @@ import Button from '../../components/Button/Button';
 import Action from '../Action/Action';
 import Scores from '../Scores/Scores';
 import classes from './GameFrame.module.css';
-
+import blueFishImage from '../../static/images/blue_fish.png';
+import redFishImage from '../../static/images/red_fish.png';
     
 
 
 const GameFrame = props => {
 
     
+
+    
     const colors = {red: 'RED', deepskyblue: 'BLUE'};
     const dispatch = useDispatch();
     const scenario = useSelector(state => state.conditionData.conditionData[state.conditionData.conditionNumber]);
+    const fish = scenario.targetBelief;
 
+    const displayFish = {'red': ['', 'none'],
+                         'deepskyblue': ['none', '']};
 
     const setColors = () => {
         setColorB(scenario.neighbourBeliefs.a[scoreCounter]);
         setColorC(scenario.neighbourBeliefs.b[scoreCounter]);
-        setColorMessageB(colors[scenario.neighbourBeliefs.a[scoreCounter]]);
-        setColorMessageC(colors[scenario.neighbourBeliefs.b[scoreCounter]]);
+        // setOpacityB(scenario.neighbourBeliefs.ac[scoreCounter]);
+        // setOpacityC(scenario.neighbourBeliefs.bc[scoreCounter]);
+        setColorMessageB(scenario.neighbourBeliefs.ac[scoreCounter]);
+        setColorMessageC(scenario.neighbourBeliefs.bc[scoreCounter]);
         setDisplayObserve('none');
         setDisplayNext('');
     };
@@ -29,6 +37,8 @@ const GameFrame = props => {
     const resetColors = () => {
         setColorB('lightgrey');
         setColorC('lightgrey');
+        setOpacityB(1);
+        setOpacityC(1);
         setColorMessageB('?')
         setColorMessageC('?')
         setDisplayObserve('')
@@ -73,6 +83,8 @@ const GameFrame = props => {
 
     const [colorB, setColorB] = useState('lightgrey')
     const [colorC, setColorC] = useState('lightgrey')
+    const [opacityB, setOpacityB] = useState(1)
+    const [opacityC, setOpacityC] = useState(1)
     const [sayColorB, setColorMessageB] = useState('?')
     const [sayColorC, setColorMessageC] = useState('?')
     const [displayObserve, setDisplayObserve] = useState('true')
@@ -140,9 +152,22 @@ const GameFrame = props => {
              {props.children}
             {/* game interface */}
             <Agent width={'400px'} agent_id="instr_frame" >BELIEFS OF VILLAGERS</Agent> 
-            
+
+            {/* legend */}
+            <Agent width={'200px'} top={'40%'} left={'2%'} agent_id="legend" >LEGEND:</Agent> 
+            <Agent width={'200px'} top={'45%'} left={'2%'} agent_id="legend" >1: not confident</Agent> 
+            <Agent width={'200px'} top={'50%'} left={'2%'} agent_id="legend" >2: slightly confident</Agent> 
+            <Agent width={'200px'} top={'55%'} left={'2%'} agent_id="legend" >3: confident</Agent> 
+            <Agent width={'200px'} top={'65%'} left={'2%'} agent_id="legend" >YOUR FISH:</Agent> 
+            <Agent width={'100px'} top={'66.5%'} left={'8%'} agent_id="Fish" display={displayFish[fish][0]}>
+            <img position={'absolute'} left={'80%'} top={'50%'} height={'50px'} src={redFishImage} alt="fish"/>
+            </Agent>
+            <Agent width={'100px'} top={'66.5%'} left={'8%'} agent_id="Fish" display={displayFish[fish][1]}>
+            <img position={'absolute'} left={'80%'} top={'50%'} height={'50px'} src={blueFishImage} alt="fish"/>
+            </Agent>
+
             {/* agent B */}
-            <Agent color={colorB} agent_id="B_2">{sayColorB}</Agent>
+            <Agent color={colorB}  agent_id="B_2">{sayColorB}</Agent>
             <Agent agent_id="B_2name">{scenario.neighbour1Name.name}</Agent>
 
             
@@ -156,30 +181,30 @@ const GameFrame = props => {
             <Scores score_id="C_name" >{scenario.neighbour2Name.name}</Scores>
 
             {/* B Scores */}
-            <Scores background={scenario.neighbourBeliefs.a[0]} id="B1" score_id="B1" display={displayB1}></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[1]} id="B2" score_id="B1" display={displayB2}  top={'17%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[2]} id="B3" score_id="B1" display={displayB3} top={'24%'} ></Scores>  
-            <Scores background={scenario.neighbourBeliefs.a[3]} id="B4" score_id="B1" display={displayB4} top={'31%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[4]} id="B5" score_id="B1" display={displayB5} top={'39%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[5]} id="B6" score_id="B1" display={displayB6} top={'46%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[6]} id="B7" score_id="B1" display={displayB7} top={'53%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[7]} id="B8" score_id="B1" display={displayB8} top={'60%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[8]} id="B9" score_id="B1" display={displayB9} top={'67%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[9]} id="B10" score_id="B1" display={displayB10} top={'74%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[0]} id="B1" score_id="B1" display={displayB1}>{scenario.neighbourBeliefs.ac[0].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[1]} id="B2" score_id="B1" display={displayB2}  top={'17%'} >{scenario.neighbourBeliefs.ac[1].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[2]} id="B3" score_id="B1" display={displayB3} top={'24%'} >{scenario.neighbourBeliefs.ac[2].toString()}</Scores>  
+            <Scores background={scenario.neighbourBeliefs.a[3]} id="B4" score_id="B1" display={displayB4} top={'31%'} >{scenario.neighbourBeliefs.ac[3].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[4]} id="B5" score_id="B1" display={displayB5} top={'39%'} >{scenario.neighbourBeliefs.ac[4].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[5]} id="B6" score_id="B1" display={displayB6} top={'46%'} >{scenario.neighbourBeliefs.ac[5].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[6]} id="B7" score_id="B1" display={displayB7} top={'53%'} >{scenario.neighbourBeliefs.ac[6].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[7]} id="B8" score_id="B1" display={displayB8} top={'60%'} >{scenario.neighbourBeliefs.ac[7].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[8]} id="B9" score_id="B1" display={displayB9} top={'67%'} >{scenario.neighbourBeliefs.ac[8].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[9]} id="B10" score_id="B1" display={displayB10} top={'74%'} >{scenario.neighbourBeliefs.ac[9].toString()}</Scores> 
 
     
 
             {/* C scores  */}
-            <Scores background={scenario.neighbourBeliefs.b[0]} id="C1" score_id="C1" display={displayC1}></Scores>  
-            <Scores background={scenario.neighbourBeliefs.b[1]} id="C2" score_id="C1" display={displayC2} top={'17%'}></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[2]} id="C3" score_id="C1" display={displayC3} top={'24%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[3]} id="C4" score_id="C1" display={displayC4} top={'31%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[4]} id="C5" score_id="C1" display={displayC5} top={'39%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[5]} id="C6" score_id="C1" display={displayC6} top={'46%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[6]} id="C7" score_id="C1" display={displayC7} top={'53%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[7]} id="C8" score_id="C1" display={displayC8} top={'60%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[8]} id="C9" score_id="C1" display={displayC9} top={'67%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[9]} id="C10" score_id="C1" display={displayC10} top={'74%'} ></Scores>   
+            <Scores background={scenario.neighbourBeliefs.b[0]} id="C1" score_id="C1" display={displayC1}>{scenario.neighbourBeliefs.bc[0].toString()}</Scores>  
+            <Scores background={scenario.neighbourBeliefs.b[1]} id="C2" score_id="C1" display={displayC2} top={'17%'}>{scenario.neighbourBeliefs.bc[1].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[2]} id="C3" score_id="C1" display={displayC3} top={'24%'} >{scenario.neighbourBeliefs.bc[2].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[3]} id="C4" score_id="C1" display={displayC4} top={'31%'} >{scenario.neighbourBeliefs.bc[3].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[4]} id="C5" score_id="C1" display={displayC5} top={'39%'} >{scenario.neighbourBeliefs.bc[4].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[5]} id="C6" score_id="C1" display={displayC6} top={'46%'} >{scenario.neighbourBeliefs.bc[5].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[6]} id="C7" score_id="C1" display={displayC7} top={'53%'} >{scenario.neighbourBeliefs.bc[6].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[7]} id="C8" score_id="C1" display={displayC8} top={'60%'} >{scenario.neighbourBeliefs.bc[7].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[8]} id="C9" score_id="C1" display={displayC9} top={'67%'} >{scenario.neighbourBeliefs.bc[8].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[9]} id="C10" score_id="C1" display={displayC10} top={'74%'} >{scenario.neighbourBeliefs.bc[9].toString()}</Scores>   
 
     
 

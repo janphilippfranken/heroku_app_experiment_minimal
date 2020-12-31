@@ -41,8 +41,8 @@ export default class Scenario {
         ]);
 
         this.planetPosition = shuffle([
-            '12%',
-            '34%'
+            '8%',
+            '38%'
         ]);
 
     }

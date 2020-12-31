@@ -114,34 +114,34 @@ const StructureFrame = props => {
             <Scores score_id="B_name" >{scenario.neighbour1Name.name}</Scores>
             <Scores score_id="C_name" >{scenario.neighbour2Name.name}</Scores>
 
+           
             {/* B Scores */}
-            <Scores background={scenario.neighbourBeliefs.a[0]} id="B1" score_id="B1" ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[1]} id="B2" score_id="B1"   top={'17%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[2]} id="B3" score_id="B1"  top={'24%'} ></Scores>  
-            <Scores background={scenario.neighbourBeliefs.a[3]} id="B4" score_id="B1"  top={'31%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[4]} id="B5" score_id="B1"  top={'39%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[5]} id="B6" score_id="B1" top={'46%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[6]} id="B7" score_id="B1" top={'53%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[7]} id="B8" score_id="B1"  top={'60%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[8]} id="B9" score_id="B1"  top={'67%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[9]} id="B10" score_id="B1"  top={'74%'} ></Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[0]} id="B1" score_id="B1" >{scenario.neighbourBeliefs.ac[0].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[1]} id="B2" score_id="B1"  top={'17%'} >{scenario.neighbourBeliefs.ac[1].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[2]} id="B3" score_id="B1" top={'24%'} >{scenario.neighbourBeliefs.ac[2].toString()}</Scores>  
+            <Scores background={scenario.neighbourBeliefs.a[3]} id="B4" score_id="B1" top={'31%'} >{scenario.neighbourBeliefs.ac[3].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[4]} id="B5" score_id="B1"  top={'39%'} >{scenario.neighbourBeliefs.ac[4].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[5]} id="B6" score_id="B1" top={'46%'} >{scenario.neighbourBeliefs.ac[5].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[6]} id="B7" score_id="B1" top={'53%'} >{scenario.neighbourBeliefs.ac[6].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[7]} id="B8" score_id="B1" top={'60%'} >{scenario.neighbourBeliefs.ac[7].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[8]} id="B9" score_id="B1"  top={'67%'} >{scenario.neighbourBeliefs.ac[8].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[9]} id="B10" score_id="B1"  top={'74%'} >{scenario.neighbourBeliefs.ac[9].toString()}</Scores> 
 
-    
     
 
             {/* C scores  */}
-            <Scores background={scenario.neighbourBeliefs.b[0]} id="C1" score_id="C1" ></Scores>  
-            <Scores background={scenario.neighbourBeliefs.b[1]} id="C2" score_id="C1"  top={'17%'}></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[2]} id="C3" score_id="C1"  top={'24%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[3]} id="C4" score_id="C1"  top={'31%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[4]} id="C5" score_id="C1"  top={'39%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[5]} id="C6" score_id="C1"  top={'46%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[6]} id="C7" score_id="C1"  top={'53%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[7]} id="C8" score_id="C1"  top={'60%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[8]} id="C9" score_id="C1"  top={'67%'} ></Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[9]} id="C10" score_id="C1"  top={'74%'} ></Scores>   
+            <Scores background={scenario.neighbourBeliefs.b[0]} id="C1" score_id="C1" >{scenario.neighbourBeliefs.bc[0].toString()}</Scores>  
+            <Scores background={scenario.neighbourBeliefs.b[1]} id="C2" score_id="C1"  top={'17%'}>{scenario.neighbourBeliefs.bc[1].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[2]} id="C3" score_id="C1"  top={'24%'} >{scenario.neighbourBeliefs.bc[2].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[3]} id="C4" score_id="C1"  top={'31%'} >{scenario.neighbourBeliefs.bc[3].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[4]} id="C5" score_id="C1"  top={'39%'} >{scenario.neighbourBeliefs.bc[4].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[5]} id="C6" score_id="C1"  top={'46%'} >{scenario.neighbourBeliefs.bc[5].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[6]} id="C7" score_id="C1"  top={'53%'} >{scenario.neighbourBeliefs.bc[6].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[7]} id="C8" score_id="C1"  top={'60%'} >{scenario.neighbourBeliefs.bc[7].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[8]} id="C9" score_id="C1"  top={'67%'} >{scenario.neighbourBeliefs.bc[8].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[9]} id="C10" score_id="C1" top={'74%'} >{scenario.neighbourBeliefs.bc[9].toString()}</Scores>   
 
-            
+    
           
 
             <Action action_id="border_frame"></Action>

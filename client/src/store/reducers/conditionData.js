@@ -10,31 +10,47 @@ const targetBeliefOrder = [shuffle([0,1]),shuffle([0,1])];
 
 const neighbourBeliefs = {
     independent: [
-        { a: ['red','red','red','red','red','red','red','red','red','red'], 
-          b: ['deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue']},
-        { b:['red','red','red','red','red','red','red','red','red','red'], 
-          a: ['deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue']}
-    ],
+        { a: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
+          ac: [1,1,1, 3,3,3,3,3,3,3],
+          b: ['red', 'deepskyblue','red','red','red','red','red','red','red','red'],
+          bc: [1,1,1, 3,3,3,3,3,3,3]},
+        { a: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
+          ac: [1,1,1, 3,3,3,3,3,3,3],
+          b: ['red', 'deepskyblue','red','red','red','red','red','red','red','red'],
+          bc: [1,1,1, 3,3,3,3,3,3,3]}
+        ],
 
     lr: [
-        { a: ['red','red','red','red','red','red','red','red','red','red'], 
-          b: ['deepskyblue','deepskyblue','deepskyblue','deepskyblue','red','red','red','red','red','red']},
-        { b:['red','red','red','red','red','red','red','red','red','red'], 
-          a: ['deepskyblue','deepskyblue','deepskyblue','deepskyblue','red','red','red','red','red','red']}
+        { a: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
+          ac: [1,1,1, 3,3,3,3,3,3,3],
+          b: ['red','deepskyblue','red','red','deepskyblue','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue'], 
+          bc: [1,1,1,1, 1, 3, 1,1, 1, 2]},
+        { a: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
+          ac: [1,1,1, 3,3,3,3,3,3,3],
+          b: ['red','deepskyblue','red','red','deepskyblue','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue'], 
+          bc: [1,1,1,1, 1, 3, 1,1, 1, 2]}
     ],
 
     rl: [
-        { a: ['red','red','red','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
-          b: ['deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue']},
-        { b:['red','red','red','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
-          a: ['deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue']}
+      { a: ['red','deepskyblue','red','red','red','red','deepskyblue','red','red','red'], 
+        ac: [1,1,1,1, 1, 2, 1,1, 1, 2],
+        b: ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
+        bc: [1,1,1, 3, 3, 3, 3, 3, 3, 3]},
+        { a: ['red','deepskyblue','deepskyblue','deepskyblue','red','red','deepskyblue','red','red','red'], 
+        ac: [1,1,1,1, 1, 2, 1,1, 1, 2],
+        b: ['red','deepskyblue','deepskyblue','red','red','red','red','red','red','red'], 
+        bc: [1,1,1, 3, 3, 3, 3, 3, 3, 3]}
     ],
 
     both: [
-        { a: ['red','red','red','red','deepskyblue','red','red','red','red','red'], 
-          b: ['deepskyblue','deepskyblue','deepskyblue','deepskyblue','red','red','red','red','red','red']},
-        { b:['red','red','red','red','deepskyblue','red','red','red','red','red'], 
-          a: ['deepskyblue','deepskyblue','deepskyblue','deepskyblue','red','red','red','red','red','red']}
+      { a: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
+        ac: [1, 1, 1, 3, 2, 2, 1, 1, 1, 1],
+        b: ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
+        bc: [1, 1, 1, 3, 2, 2, 1, 1, 1, 1]},
+        { a: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
+        ac: [1, 1, 1, 3, 2, 2, 1, 1, 1, 1],
+        b: ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
+        bc: [1, 1, 1, 3, 2, 2, 1, 1, 1, 1]}
     ]
 };
 
