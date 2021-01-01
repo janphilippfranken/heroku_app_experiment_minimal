@@ -1,6 +1,7 @@
 export const STORE_STRUCTURE = 'STORE_STRUCTURE' ;
 export const STORE_SELECTION = 'STORE_SELECTION';
 
+
 const w = window;
 
 export const storeSTRUCTURE = structureData => {
@@ -14,3 +15,4 @@ export const storeSELECTION = selectionData => {
     console.log(selectionData);
     return { type: STORE_SELECTION, selectionData: {selectedPlanet: selectedPLanet, confidence: confidence}, conditionNumber: selectionData.conditionNumber};
 };
+

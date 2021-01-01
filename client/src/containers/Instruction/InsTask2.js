@@ -39,7 +39,7 @@ const InsTask= props => {
                 <img src={confImage} alt="planets"/><br></br><br></br>
                 <p>After observing the beliefs of villagers, you will provide a <b>guess about their relationship</b>:</p><br></br>
                 <img src={relationshipImage} alt="planets"/><br></br><br></br>
-                <p>Finally, you will be asked to select one of the two planets and rate <b>how confident</b> your are in your decision:</p>
+                <p>Finally, you will be asked to select one of the two planets and rate <b>how confident</b> you are in your decision:</p>
                 <img src={planetImage} alt="planets"/>
                 <hr />
                 <Button clicked={props.goToInstruction}>Next</Button>

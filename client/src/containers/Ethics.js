@@ -3,26 +3,51 @@ import React from 'react';
 import Button from '../components/Button/Button';
 
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-
+import { useEffect, useState } from 'react';
+import TryAgainModal from '../components/TryAgainModal';
 import Classes from '../SASS/containers/Ethics.module.scss';
+import debriefClasses from '../SASS/containers/Debrief.module.scss';
 import { setTimer } from '../store/actions/timer';
 import { changePhase, PHASES } from '../store/actions/gamePhase';
+import { storePID } from '../store/actions/participantID';
 
 const Ethics = props => {
     
     const dispatch = useDispatch();
+    const [PID, setPID] = useState('');
+    const [showErrorModal, setShowErrorModal] = useState(false);
 
     useEffect(() => {
         dispatch(setTimer(true, 1, 5));
     }, [dispatch]);
 
-    const goToNotesHandler = () => {
-        dispatch(changePhase(PHASES.notes));
+    const getPID = (e) => {
+        setPID(e.target.value);
     };
+
+    const closeErrorModalHandler = () => {
+        setShowErrorModal(false);
+    };
+
+    const goToNotesHandler = () => {
+        if (PID.length === 24) {
+            dispatch(changePhase(PHASES.notes));
+            dispatch(storePID({PID: PID}));
+        }
+        else {
+            setShowErrorModal(true);
+        }
+    };
+
+    const tryAgainErrorModal = (
+        <TryAgainModal onCloseModal={closeErrorModalHandler}>
+            <h2>Your Prolific ID does not have the correct format! Please make sure to enter the right ID (24 characters) <span role="img" aria-label="emoji">&#128517;</span></h2>
+        </TryAgainModal>
+    );
 
     return (
         <div className={Classes.Ethics}>
+            {showErrorModal && tryAgainErrorModal}
             <div className={Classes.EthicsForm}>
                 <h2>Information for the participants</h2>
                 <hr />
@@ -46,6 +71,8 @@ const Ethics = props => {
                     <p>If you have any questions about what you’ve just read, please feel free to ask, or contact us later. You can contact us by email at <a href="mailto:jp.franken@ed.ac.uk">jp.franken@ed.ac.uk</a>. This project has been approved by PPLS Ethics committee with the approval number APPROVAL NUMBER   . If you have questions or comments regarding your own or your child’s rights as a participant, they can be contacted at 0131 650 4020 or <a href="mailto:ppls.ethics@ed.ac.uk">ppls.ethics@ed.ac.uk</a>.</p>
                 </div>
 
+                <br></br>
+
                 <p>By accepting this HIT, you consent to the following:</p>
                 <hr />
                 <ol>
@@ -56,7 +83,14 @@ const Ethics = props => {
                 </ol>
                 <hr />
                 <br />
-                <Button clicked={goToNotesHandler}>Accept Hit</Button>
+                <div className={Classes.ParagraphContainer}>
+                    <div className={debriefClasses.CommentsContainer}>
+                        <label htmlFor="comments">Before you accept and continue, please copy your Prolific Worker ID in the box below. <b>Note</b>: Its essential that you copy your ID right, otherwise you may not be eligible for payment.</label><br></br>
+                        <textarea id="comments" value={PID} onChange={getPID} />
+                    </div>
+                </div>
+               
+                <Button clicked={goToNotesHandler}>Accept Hit and Continue</Button>
             </div>
         </div>
     );

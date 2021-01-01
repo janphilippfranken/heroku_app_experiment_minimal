@@ -11,7 +11,8 @@ const End = props => {
             <div className={Classes.InnerContainer}>
                 <h1>You reached the end!!</h1>
                 <hr />
-                <p>Use this code to get paid or to withdraw your data at any point: {participantToken}</p>
+                <p>Use this code to get paid or to withdraw your data at any point: 84C57C3F</p>
+                     {/* {participantToken}</p> */}
                 <hr />
                 <img src='https://www.nownovel.com/include/images/icons/round_mountain.png' alt="thank you" />
             </div>

@@ -10,6 +10,7 @@ import { changePhase, PHASES } from '../store/actions/gamePhase';
 const Debrief = props => {
     const dispatch = useDispatch();
     const participantToken = useSelector(state => state.participantToken);
+    const participantID = useSelector(state => state.participantID);
     const participantData = useSelector(state => state.participantData);
     const conditionsData = useSelector(state => state.conditionData.conditionData);
     const [engaging, setEngaging] = useState('');
@@ -23,6 +24,7 @@ const Debrief = props => {
     const [showModal, setShowModal] = useState(false);
 
     const submitDebriefHandler = () => {
+        console.log(participantID);
         const debriefData = {
             engaging: engaging,
             difficutly: difficulty,
@@ -44,6 +46,7 @@ const Debrief = props => {
             setShowModal(true);
         } else {
             axios.post(`https://dbn1-exp-jpf-sv-default-rtdb.firebaseio.com/${participantToken}.json`, {
+                PID: participantID,
                 participantData: participantData,
                 conditionsData: conditionsData,
                 debriefData: debriefData,

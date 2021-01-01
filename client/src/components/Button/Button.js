@@ -10,7 +10,7 @@ const button = ( props ) => {
   return (
     <button
       disabled={props.disabled}
-      className={classesNames.join(' ')} style={{position: props.position, top: props.top, left: props.left}}
+      className={classesNames.join(' ')} style={{display: props.display, position: props.position, top: props.top, left: props.left}}
       onClick={props.clicked}><span>{props.children}</span></button>
   );
 }

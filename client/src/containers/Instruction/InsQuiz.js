@@ -72,7 +72,7 @@ const InsQuiz = props => {
                     <li className={Classes.Q2}>2. You will travel to four different villages and decide whether a local space fisherman travelled the red or blue planet to catch their fish.</li>
                     <li className={Classes.Q3}>3. Each fisherman gives you three fish from their catch.</li>
                     <li className={Classes.Q4}>4. You will will talk to the two villagers to learn which planet they believe the fisherman travelled. <b>Their beliefs are valuable</b> to you as they can <b>improve your chances</b> of selecting the right planet and winning a bonus.</li>
-                    <li className={Classes.Q5}>5. The two villagers might talk to each other and influence their beliefs. Also, you do not know when the two villagers received their fish. As such, their beliefs <b>might not</b> always be informative as they are sometimes forced to make a judgement without having seen a fish before.</li>
+                    <li className={Classes.Q5}>5. The two villagers might talk to each other and influence their beliefs. Also, you do not know when the two villagers received their fish. As such, their beliefs <b>might not</b> always be informative as they are sometimes forced to make a judgement without having received a fish from the fisherman.</li>
                     <li className={Classes.Q6}>6. You will only observe the beliefs of the villagers once.</li>
                 </div>
                 <hr />
