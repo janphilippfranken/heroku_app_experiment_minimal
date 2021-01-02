@@ -37,9 +37,9 @@ const InsTask= props => {
                 <img src={observeImage} alt="planets"/><br></br><br></br>
                 <p>Beliefs of villagers can either be blue or red. In addition to their beliefs, villagers also tell you how confident they are in their beliefs on a <b>scale from 1 (very unconfident) - 3 (very confident)</b>. The <b>more confident</b> they are, the more likely they think the space fisherman travelled the selected planet. The confidence is displayed together with their beliefs:</p><br></br>
                 <img src={confImage} alt="planets"/><br></br><br></br>
-                <p>After observing the beliefs of villagers, you will provide a <b>guess about their relationship</b>:</p><br></br>
+                <p>After observing the beliefs of villagers, you will provide a <b>guess about their relationship</b> and receive a bonus of £0.25 for each correct selection:</p><br></br>
                 <img src={relationshipImage} alt="planets"/><br></br><br></br>
-                <p>Finally, you will be asked to select one of the two planets and rate <b>how confident</b> you are in your decision:</p>
+                <p>Finally, you will be asked to select one of the two planets and rate <b>how confident</b> you are in your decision (again, receiving a bonus of £0.25 for each correct selection):</p>
                 <img src={planetImage} alt="planets"/>
                 <hr />
                 <Button clicked={props.goToInstruction}>Next</Button>
