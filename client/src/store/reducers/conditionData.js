@@ -25,10 +25,10 @@ const neighbourBeliefs = {
           ac: [1,1,1, 3,3,3,3,3,3,3],
           b: ['red','deepskyblue','red','red','deepskyblue','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue'], 
           bc: [1,1,1,1, 1, 3, 1,1, 1, 2]},
-        { a: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
-          ac: [1,1,1, 3,3,3,3,3,3,3],
-          b: ['red','deepskyblue','red','red','deepskyblue','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue'], 
-          bc: [1,1,1,1, 1, 3, 1,1, 1, 2]}
+        { a: ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
+          ac: [1,1,1, 3, 3, 3, 3, 3, 3, 3],
+          b: ['red','deepskyblue','red','red','red','red','deepskyblue','red','red','red'], 
+          bc: [1,1,1,1, 1, 2, 1,1, 1, 2]}
     ],
 
     rl: [
@@ -36,9 +36,9 @@ const neighbourBeliefs = {
         ac: [1,1,1,1, 1, 2, 1,1, 1, 2],
         b: ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
         bc: [1,1,1, 3, 3, 3, 3, 3, 3, 3]},
-        { a: ['red','deepskyblue','deepskyblue','deepskyblue','red','red','deepskyblue','red','red','red'], 
+        { a: ['red','deepskyblue','red','red','deepskyblue','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue'], 
         ac: [1,1,1,1, 1, 2, 1,1, 1, 2],
-        b: ['red','deepskyblue','deepskyblue','red','red','red','red','red','red','red'], 
+        b: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
         bc: [1,1,1, 3, 3, 3, 3, 3, 3, 3]}
     ],
 
@@ -47,9 +47,9 @@ const neighbourBeliefs = {
         ac: [1, 1, 1, 3, 2, 2, 1, 1, 1, 1],
         b: ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
         bc: [1, 1, 1, 3, 2, 2, 1, 1, 1, 1]},
-        { a: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
+        { a: ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
         ac: [1, 1, 1, 3, 2, 2, 1, 1, 1, 1],
-        b: ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
+        b: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
         bc: [1, 1, 1, 3, 2, 2, 1, 1, 1, 1]}
     ]
 };
@@ -58,14 +58,14 @@ const targetBeliefs = ['red','deepskyblue'];
 const randOrder = shuffle([0,1,2,3]);
 
 const targetBeliefsOrder = [targetBeliefs[targetBeliefOrder[0][0]],
+                            targetBeliefs[targetBeliefOrder[0][1]],
                             targetBeliefs[targetBeliefOrder[1][0]],
-                            targetBeliefs[targetBeliefOrder[1][1]],
-                            targetBeliefs[targetBeliefOrder[0][1]]];
+                            targetBeliefs[targetBeliefOrder[1][1]]];
 
 const neighbourBeliefsOrder = [neighbourBeliefs[conditions[randOrder[0]]][targetBeliefOrder[0][0]], 
-                               neighbourBeliefs[conditions[randOrder[1]]][targetBeliefOrder[1][0]], 
-                               neighbourBeliefs[conditions[randOrder[2]]][targetBeliefOrder[1][1]],
-                               neighbourBeliefs[conditions[randOrder[3]]][targetBeliefOrder[0][1]]]; // randomising the belief pairs selected for each condition (which has a random order)
+                               neighbourBeliefs[conditions[randOrder[1]]][targetBeliefOrder[0][1]], 
+                               neighbourBeliefs[conditions[randOrder[2]]][targetBeliefOrder[1][0]],
+                               neighbourBeliefs[conditions[randOrder[3]]][targetBeliefOrder[1][1]]]; // randomising the belief pairs selected for each condition (which has a random order)
 
 const neighbour1Names = shuffle([0, 1, 2, 3]); // to randomise which name of the first neighbor
 const neighbour2Names = shuffle([0, 1, 2, 3]); // to randomise the name of the second neighbor 

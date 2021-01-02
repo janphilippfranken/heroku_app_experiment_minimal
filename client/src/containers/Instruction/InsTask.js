@@ -24,7 +24,7 @@ const InsTask= props => {
 
                 <p><b>Before</b> selecting a planet, you will will talk to the two villagers to learn which planet <b>they believe</b> the fisherman travelled and how <b>confident</b> they are in their beliefs.</p><br></br>
                 
-                <p><b>Important:</b> The two villagers might <b>talk to each other</b> and <b>influence</b> their beliefs. Thus, you will observe their beliefs <b>multiple times</b> and provide a guess about their relationships with each other. You will be paid an additional £0.25 each time you selected the correct relationship (max. bonus = 4 £0.25 cent = £1.00).</p><br></br>
+                <p><b>Important:</b> The two villagers might <b>talk to each other</b> and <b>influence</b> their beliefs. Thus, you will observe their beliefs <b>multiple times</b> and provide a guess about their relationships with each other. You will be paid an additional £0.25 each time you selected the correct relationship (max. bonus = 4 * £0.25 cent = £1.00).</p><br></br>
 
                 <p><b>Important:</b> You <b>do not</b> know <b>when</b> the two villagers received their fish. Therefore, you need to pay careful attention to both their <b>beliefs and confidence</b> when finding out about their relationships with each other. Also, be aware that their beliefs <b>might not</b> always be informative as they are sometimes forced to make a judgement before having received a fish from the fisherman.</p><br></br>
                
