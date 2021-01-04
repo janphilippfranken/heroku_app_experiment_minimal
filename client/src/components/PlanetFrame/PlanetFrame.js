@@ -18,6 +18,7 @@ const PlanetFrame = props => {
     const [buttonDisplay, setButtonDisplay] = useState('none');
     const [confDisplay, setConfDisplay]= useState('none');
     const fish = scenario.targetBelief;
+    const [selPlanetColor, setSelPlanetColor] = useState('none'); 
 
     const displayFish = {'red': ['', 'none'],
                          'deepskyblue': ['none', '']};
@@ -28,6 +29,7 @@ const PlanetFrame = props => {
         setConfDisplay('');
         setPlanetSelected('red')
         setConfColor('red');
+        setSelPlanetColor('red');
     };
 
     const selectPlanetBLUE = () => {
@@ -36,6 +38,7 @@ const PlanetFrame = props => {
         setConfDisplay('');
         setPlanetSelected('blue')
         setConfColor('deepskyblue');
+        setSelPlanetColor('blue');
     };
 
     const selectVeryLowConfidence = () => {
@@ -137,9 +140,9 @@ const PlanetFrame = props => {
 
             {/* Confidence */}
             {/* <Action display={confDisplay}  onClick={selectVeryLowConfidence} opacity={veryLowConfidence} action_id='ConfidenceVeryLow'>Not Confident at all</Action> */}
-            <Action background={confColor} display={confDisplay}  onClick={selectLowConfidence} opacity={lowConfidence} action_id='ConfidenceLow'>1 (very unconfident)</Action>
+            <Action background={confColor} display={confDisplay}  onClick={selectLowConfidence} opacity={lowConfidence} action_id='ConfidenceLow'>1 (very unconfident {selPlanetColor})</Action>
             <Action background={confColor} display={confDisplay}  onClick={selectMediumConfidence} opacity={mediumConfidence} action_id='ConfidenceMedium'>2</Action>
-            <Action background={confColor} display={confDisplay}  onClick={selectHighConfidence} opacity={highConfidence} action_id='ConfidenceHigh'>3 (very confident)</Action>
+            <Action background={confColor} display={confDisplay}  onClick={selectHighConfidence} opacity={highConfidence} action_id='ConfidenceHigh'>3 (very confident {selPlanetColor})</Action>
             {/* <Action display={confDisplay}  onClick={selectVeryHighConfidence} opacity={veryHighConfidence} action_id='ConfidenceVeryHigh'>Highly Confident</Action> */}
 
             {/* Scores */}
