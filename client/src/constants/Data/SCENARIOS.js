@@ -47,7 +47,7 @@ export default class Scenario {
 
     }
 
-    generateScenario = (scenarioId, neighbour1NameId, neighbour2NameId, neighbourBeliefs, cond, targetBelief) => {        
+    generateScenario = (scenarioId, neighbour1NameId, neighbour2NameId, neighbourBeliefs, cond, targetBelief, left_right) => {        
         const title = this.titles[scenarioId];
         const structureOrder = this.structureOrder;
         const planetPosition = this.planetPosition; 
@@ -56,6 +56,7 @@ export default class Scenario {
         const neighbBeliefs = neighbourBeliefs;
         const condition = cond;
         const tarBelief = targetBelief;
+        const lr = left_right;
 
         return {
             condition: condition,
@@ -65,7 +66,9 @@ export default class Scenario {
             neighbour1Name: neighbour1Name,
             neighbour2Name: neighbour2Name,
             neighbourBeliefs: neighbBeliefs,
-            targetBelief: tarBelief
+            targetBelief: tarBelief,
+            left_right: lr,
+
         }
     }
 };

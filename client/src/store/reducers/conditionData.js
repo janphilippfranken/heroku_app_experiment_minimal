@@ -6,66 +6,115 @@ const scenarioInstance = new Scenarios();
 
 // for 4 structures
 const conditions = ['independent', 'lr', 'rl', 'both'];
-const targetBeliefOrder = [shuffle([0,1]),shuffle([0,1])];  
+const targetBeliefOrder = shuffle([0,0,1,1]);  
+const left_right = shuffle(['left', 'right']); // if left or right is against target belief 
 
 const neighbourBeliefs = {
+  left: {
     independent: [
         { a: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
-          ac: [1,1,1,2,2,2,2,2,2,2],
+          ac: [1,1,1,3,3,3,3,3,3,3],
           b: ['red', 'deepskyblue','red','red','red','red','red','red','red','red'],
-          bc: [1,1,1,2,2,2,2,2,2,2]},
-        { a: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
-          ac: [1,1,1,2,2,2,2,2,2,2],
-          b: ['red', 'deepskyblue','red','red','red','red','red','red','red','red'],
-          bc: [1,1,1,2,2,2,2,2,2,2]}
+          bc:  [1,1,1,3,3,3,3,3,3,3]},
+        { a: ['red', 'deepskyblue','red','red','red','red','red','red','red','red'], 
+          ac:  [1,1,1,3,3,3,3,3,3,3],
+          b: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'],
+          bc:  [1,1,1,3,3,3,3,3,3,3]}
         ],
 
     lr: [
         { a: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
-          ac: [1,1,1,2,2,2,2,2,2,2],
+          ac: [1,1,1,3,3,3,3,3,3,3],
           b: ['red','deepskyblue','red','red','deepskyblue','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue'], 
-          bc: [1,1,1,1,1,2,1,1,1,1]},
+          bc: [1,1,1,1,2,3,1,1,2,2]},
         { a: ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
-          ac: [1,1,1,2,2,2,2,2,2,2],
+          ac: [1,1,1,3,3,3,3,3,3,3],
           b: ['red','deepskyblue','red','red','red','red','deepskyblue','red','red','red'], 
-          bc: [1,1,1,1,1,2,1,1,1,1]}
+          bc: [1,1,1,1,2,3,1,1,2,2]}
     ],
 
     rl: [
       { a: ['red','deepskyblue','red','red','red','red','deepskyblue','red','red','red'], 
-        ac: [1,1,1,1,1,2,1,1,1,1],
+        ac: [1,1,1,1,2,3,1,1,2,2],
         b: ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
-        bc: [1,1,1,2,2,2,2,2,2,2]},
+        bc: [1,1,1,3,3,3,3,3,3,3]},
         { a: ['red','deepskyblue','red','red','deepskyblue','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue'], 
-        ac: [1,1,1,1,1,2,1,1,1,1],
+        ac: [1,1,1,1,2,3,1,1,2,2],
         b: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
-        bc: [1,1,1,2,2,2,2,2,2,2]}
+        bc: [1,1,1,3,3,3,3,3,3,3]}
     ],
 
     both: [
       { a: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
-        ac: [1, 1, 1, 2, 1, 1, 1, 1, 1, 1],
+        ac: [1, 1, 1, 3, 2, 2, 1, 1, 1, 1],
         b: ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
-        bc: [1, 1, 1, 2, 1, 1, 1, 1, 1, 1]},
+        bc:[1, 1, 1, 3, 2, 2, 1, 1, 1, 1]},
         { a: ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
-        ac: [1, 1, 1, 2, 1, 1, 1, 1, 1, 1],
+        ac: [1, 1, 1, 3, 2, 2, 1, 1, 1, 1],
         b: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
-        bc: [1, 1, 1, 2, 1, 1, 1, 1, 1, 1]}
+        bc: [1, 1, 1, 3, 2, 2, 1, 1, 1, 1]}
     ]
+  },
+
+  right: {
+    independent: [
+      { a: ['red', 'deepskyblue','red','red','red','red','red','red','red','red'], 
+        ac: [1,1,1,3,3,3,3,3,3,3],
+        b: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'],
+        bc:  [1,1,1,3,3,3,3,3,3,3]},
+      { a: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'],
+        ac:  [1,1,1,3,3,3,3,3,3,3],
+        b: ['red', 'deepskyblue','red','red','red','red','red','red','red','red'],
+        bc:  [1,1,1,3,3,3,3,3,3,3]}
+      ],
+
+    lr: [
+        { a: ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
+          ac: [1,1,1,3,3,3,3,3,3,3],
+          b: ['red','deepskyblue','red','red','red','red','deepskyblue','red','red','red'],
+          bc: [1,1,1,1,2,3,1,1,2,2]},
+        { a:  ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'],
+          ac: [1,1,1,3,3,3,3,3,3,3],
+          b:  ['red','deepskyblue','red','red','deepskyblue','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue'], 
+          bc: [1,1,1,1,2,3,1,1,2,2]}
+    ],
+
+    rl: [
+      { a:  ['red','deepskyblue','red','red','deepskyblue','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue'],
+        ac: [1,1,1,1,2,3,1,1,2,2],
+        b: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
+        bc: [1,1,1,3,3,3,3,3,3,3]},
+        { a: ['red','deepskyblue','red','red','red','red','deepskyblue','red','red','red'], 
+        ac: [1,1,1,1,2,3,1,1,2,2],
+        b: ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
+        bc: [1,1,1,3,3,3,3,3,3,3]}
+    ],
+
+    both: [
+      { a: ['red','deepskyblue','red','red','red','red','red','red','red','red'],
+        ac: [1, 1, 1, 3, 2, 2, 1, 1, 1, 1],
+        b: ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'], 
+        bc:[1, 1, 1, 3, 2, 2, 1, 1, 1, 1]},
+        { a:  ['red','deepskyblue','red','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue','deepskyblue'],  
+        ac: [1, 1, 1, 3, 2, 2, 1, 1, 1, 1],
+        b:  ['red','deepskyblue','red','red','red','red','red','red','red','red'], 
+        bc: [1, 1, 1, 3, 2, 2, 1, 1, 1, 1]}
+    ] 
+  }
 };
 
 const targetBeliefs = ['red','deepskyblue'];
 const randOrder = shuffle([0,1,2,3]);
 
-const targetBeliefsOrder = [targetBeliefs[targetBeliefOrder[0][0]],
-                            targetBeliefs[targetBeliefOrder[0][1]],
-                            targetBeliefs[targetBeliefOrder[1][0]],
-                            targetBeliefs[targetBeliefOrder[1][1]]];
+const targetBeliefsOrder = [targetBeliefs[targetBeliefOrder[0]],
+                            targetBeliefs[targetBeliefOrder[1]],
+                            targetBeliefs[targetBeliefOrder[2]],
+                            targetBeliefs[targetBeliefOrder[3]]];
 
-const neighbourBeliefsOrder = [neighbourBeliefs[conditions[randOrder[0]]][targetBeliefOrder[0][0]], 
-                               neighbourBeliefs[conditions[randOrder[1]]][targetBeliefOrder[0][1]], 
-                               neighbourBeliefs[conditions[randOrder[2]]][targetBeliefOrder[1][0]],
-                               neighbourBeliefs[conditions[randOrder[3]]][targetBeliefOrder[1][1]]]; // randomising the belief pairs selected for each condition (which has a random order)
+const neighbourBeliefsOrder = [neighbourBeliefs[left_right[0]][conditions[randOrder[0]]][targetBeliefOrder[0]], 
+                               neighbourBeliefs[left_right[0]][conditions[randOrder[1]]][targetBeliefOrder[1]], 
+                               neighbourBeliefs[left_right[0]][conditions[randOrder[2]]][targetBeliefOrder[2]],
+                               neighbourBeliefs[left_right[0]][conditions[randOrder[3]]][targetBeliefOrder[3]]]; // randomising the belief pairs selected for each condition (which has a random order)
 
 const neighbour1Names = shuffle([0, 1, 2, 3]); // to randomise which name of the first neighbor
 const neighbour2Names = shuffle([0, 1, 2, 3]); // to randomise the name of the second neighbor 
@@ -73,10 +122,10 @@ const scenariosOrder = shuffle([0, 1, 2, 3]);  // cover story for each fisherman
 
 
 const conditionData = [
-    scenarioInstance.generateScenario(scenariosOrder[0], neighbour1Names[0], neighbour2Names[0], neighbourBeliefsOrder[0], conditions[randOrder[0]], targetBeliefsOrder[0]),
-    scenarioInstance.generateScenario(scenariosOrder[1], neighbour1Names[1], neighbour2Names[1], neighbourBeliefsOrder[1], conditions[randOrder[1]], targetBeliefsOrder[1]),
-    scenarioInstance.generateScenario(scenariosOrder[2], neighbour1Names[2], neighbour2Names[2], neighbourBeliefsOrder[2], conditions[randOrder[2]], targetBeliefsOrder[2]),
-    scenarioInstance.generateScenario(scenariosOrder[3], neighbour1Names[3], neighbour2Names[3], neighbourBeliefsOrder[3], conditions[randOrder[3]], targetBeliefsOrder[3])
+    scenarioInstance.generateScenario(scenariosOrder[0], neighbour1Names[0], neighbour2Names[0], neighbourBeliefsOrder[0], conditions[randOrder[0]], targetBeliefsOrder[0],left_right[0]),
+    scenarioInstance.generateScenario(scenariosOrder[1], neighbour1Names[1], neighbour2Names[1], neighbourBeliefsOrder[1], conditions[randOrder[1]], targetBeliefsOrder[1],left_right[0]),
+    scenarioInstance.generateScenario(scenariosOrder[2], neighbour1Names[2], neighbour2Names[2], neighbourBeliefsOrder[2], conditions[randOrder[2]], targetBeliefsOrder[2],left_right[0]),
+    scenarioInstance.generateScenario(scenariosOrder[3], neighbour1Names[3], neighbour2Names[3], neighbourBeliefsOrder[3], conditions[randOrder[3]], targetBeliefsOrder[3],left_right[0])
 ];
 
 const initialState = {
@@ -89,7 +138,7 @@ const initialState = {
     scenarioOrder: scenariosOrder,
     neighbourBeliefsOrder: neighbourBeliefsOrder,
     targetBeliefsOrder: targetBeliefsOrder,
-    randOrder: randOrder
+    randOrder: randOrder,
 };
 
 
