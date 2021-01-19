@@ -30,7 +30,7 @@ const Ethics = props => {
     };
 
     const goToNotesHandler = () => {
-        if (PID.length === 24) {
+        if (PID.length === 0) {
             dispatch(changePhase(PHASES.notes));
             dispatch(storePID({PID: PID}));
         }
@@ -52,7 +52,7 @@ const Ethics = props => {
                 <h2>Information for the participants</h2>
                 <hr />
                 <div className={Classes.ParagraphContainer}>
-                    <p><b>Nature of the study.&nbsp;</b>You are about to participate in an experiment in which you will travel to fictional villages that each received a catch of fish from a space fisherman fishing on either a blue or red planet. For each village, you have to judge whether the space fisherman travelled the blue or red planet to catch their fish. After the experiment, we will ask you to provide some basic demographics (e.g., age). Your session should last for around 10 minutes and your responses will be recorded. You will be given full instructions shortly and will be able to ask any questions you may have.</p>
+                    <p><b>Nature of the study.&nbsp;</b>You are about to participate in an experiment in which you will travel to fictional villages and buy a fish from a catch of a space fisherman fishing on either a blue or red planet. For each village, you have to judge whether the space fisherman travelled the blue or red planet to catch their fish. After the experiment, we will ask you to provide some basic demographics (e.g., age). Your session should last for around 10 minutes and your responses will be recorded. You will be given full instructions shortly and will be able to ask any questions you may have.</p>
                 </div>
                 <div className={Classes.ParagraphContainer}>
                     <p><b>Compensation.&nbsp;</b> You will be paid £1.00 for your participation + up to $£2.00 bonus based on your performance.</p>

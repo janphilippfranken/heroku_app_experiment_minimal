@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Button from '../../components/Button/Button';
 import relationshipImage from '../../static/images/select_relationship.png';
 import planetImage from '../../static/images/select_planet.png';
-import fishImage from '../../static/images/fish.png';
+import fishImage from '../../static/images/fish_instruct.png';
 import observeImage from '../../static/images/observe_beliefs.png';
 import confImage from '../../static/images/confidence_meaning.png';
 import Classes from '../../SASS/containers/Instruction/InsTask2.module.scss';
@@ -31,7 +31,7 @@ const InsTask= props => {
                    
                 </div> 
                 <ScrollDivision scroll={showBtn}>
-                <p>In each village, you first receive a fish from the fisherman:</p><br></br>
+                <p>In each village, you first cook your fish and observe the color:</p><br></br>
                 <img src={fishImage} alt="planets"/><br></br><br></br>
                 <p>You then observe the beliefs of villagers by clicking the ``<b>Observe Beliefs</b>'' button:</p><br></br>
                 <img src={observeImage} alt="planets"/><br></br><br></br>

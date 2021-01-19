@@ -68,11 +68,11 @@ const InsQuiz = props => {
                     <input type="radio" name="5" className={[Classes.F5, 'input'].join(" ")} />
                     <input type="radio" name="6" className={[Classes.T6, 'input'].join(" ")} />
                     <input type="radio" name="6" className={[Classes.F6, 'input'].join(" ")} />
-                    <li className={Classes.Q1}>1. On the RED planet, 3/4 of the fish are RED, and 1/4 are BLUE. On the BLUE planet, 3/4 of the fish are BLUE, and 1/4 are RED.</li>
+                    <li className={Classes.Q1}>1. On the RED planet, fish are mainly red. On the BLUE planet, fish are mainly blue.</li>
                     <li className={Classes.Q2}>2. You will travel to four different villages and decide whether a local space fisherman travelled the red or blue planet to catch their fish.</li>
                     <li className={Classes.Q3}>3. Each fisherman gives you three fish from their catch.</li>
-                    <li className={Classes.Q4}>4. You will will talk to the two villagers to learn which planet they believe the fisherman travelled. <b>Their beliefs are valuable</b> to you as they can <b>improve your chances</b> of selecting the right planet and winning a bonus.</li>
-                    <li className={Classes.Q5}>5. The two villagers might talk to each other and influence their beliefs. Also, you do not know when the two villagers received their fish. As such, their beliefs <b>might not</b> always be informative as they are sometimes forced to make a judgement before having received a fish from the fisherman.</li>
+                    <li className={Classes.Q4}>4. You will will talk to two villagers to learn which planet they believe the fisherman travelled. <b>Their beliefs are valuable</b> to you as they can <b>improve your chances</b> of selecting the right planet and winning a bonus.</li>
+                    <li className={Classes.Q5}>5. The two villagers might talk to each other and influence their beliefs. Also, you do not know when the two villagers cooked their fish. As such, their beliefs <b>might not</b> always be informative as they are sometimes making a judgement before they finished cooking their fish.</li>
                     <li className={Classes.Q6}>6. You will only observe the beliefs of the villagers once.</li>
                 </div>
                 <hr />

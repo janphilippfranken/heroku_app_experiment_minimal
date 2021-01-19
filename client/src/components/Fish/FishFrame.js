@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Agent from '../Agent/Agent';
-import blueFishImage from '../../static/images/blue_fish.png';
-import redFishImage from '../../static/images/red_fish.png';
+import blueFishImage from '../../static/images/blue_fish_cooked.png';
+import redFishImage from '../../static/images/red_fish_cooked.png';
 import Button from '../../components/Button/Button';
 import Classes from './FishFrame.module.css';
 
@@ -23,13 +23,14 @@ const FishFrame = props => {
         <div className={Classes.FishFrame}  style={{display: props.display}}>
              {props.children}
             <Agent width={'400px'} agent_id="Fish" display={displayFish[fish][0]}>
-            <p>In this village, the fisherman gave you a <b>RED</b> fish!</p>
-            <img position={'absolute'} left={'80%'} top={'50%'} height={'200px'} src={redFishImage} alt="fish"/>
-            </Agent>
+            <p>In this village, cooking revealed that the fish is <b>RED</b>!</p>
+            <img position={'absolute'} left={'80%'} top={'30%'} height={'300px'} src={redFishImage} alt="fish"/>
+            </Agent><br></br><br></br>
             <Agent width={'400px'} agent_id="Fish" display={displayFish[fish][1]}>
-            <p>In this village, the fisherman gave you a <b>BLUE</b> fish!</p>
-            <img position={'absolute'} left={'80%'} top={'50%'} height={'200px'} src={blueFishImage} alt="fish"/>
+            <p>In this village, cooking revealed that the fish is <b>BLUE</b>!</p>
+            <img position={'absolute'} left={'80%'} top={'30%'} height={'300px'} src={blueFishImage} alt="fish"/>
         </Agent>
+        
         <Button position={'absolute'} left={'40%'} top={'105%'} clicked={props.goToGame}>Next</Button>
    </div>        
     );
