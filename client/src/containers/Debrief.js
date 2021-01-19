@@ -20,6 +20,7 @@ const Debrief = props => {
     const [sex, setSex] = useState('');
     const [prior, setPrior] = useState('');
     const [post, setPost] = useState('');
+    const [both, setBoth] = useState('');
     const [comment, setComment] = useState('');
     const [showModal, setShowModal] = useState(false);
 
@@ -33,11 +34,13 @@ const Debrief = props => {
             gender: sex,
             priorStrategy: prior,
             posteriorStrategy: post,
+            bothStrategy: both,
             comment: comment
         };
 
         if (prior.split(' ').join('').length === 0 ||
             post.split(' ').join('').length === 0 ||
+            both.split(' ').join('').length === 0 ||
             age.split(' ').join('').length === 0 ||
             sex.split(' ').join('').length === 0 ||
             // polor.split(' ').join('').length === 0 ||
@@ -153,10 +156,17 @@ const Debrief = props => {
                         <label htmlFor="prior">How did you learn about the <b>relationship</b> between villagers? Did you have a specific strategy?<span>*</span></label>
                         <textarea id="prior" value={prior} onChange={e => setPrior(e.target.value)} />
                     </div>
+
+                    <div className={Classes.BothContainer}>
+                        <label htmlFor="both2">How did you decide which <b>planet</b> to select in the case that <b>BOTH</b> villagers influenced each other?<span>*</span></label>
+                        <textarea id="both2" value={both} onChange={e => setBoth(e.target.value)} />
+                    </div> 
+
                     <div className={Classes.PosteriorContainer}>
                         <label htmlFor="posterior">How did you decide which <b>planet</b> to select? How did you use your knwoledge of villagers' relationships with each other to make a decision?<span>*</span></label>
                         <textarea id="posterior" value={post} onChange={e => setPost(e.target.value)} />
                     </div>
+
                     <div className={Classes.CommentsContainer}>
                         <label htmlFor="comments">Do you have any comments regarding the experiment?</label>
                         <textarea id="comments" value={comment} onChange={e => setComment(e.target.value)} />

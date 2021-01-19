@@ -23,11 +23,11 @@ const FishFrame = props => {
         <div className={Classes.FishFrame}  style={{display: props.display}}>
              {props.children}
             <Agent width={'400px'} agent_id="Fish" display={displayFish[fish][0]}>
-            <p>In this village, cooking revealed that the fish is <b>RED</b>!</p>
+            <p>In this village, cooking revealed that your fish is <b>RED</b>!</p>
             <img position={'absolute'} left={'80%'} top={'30%'} height={'300px'} src={redFishImage} alt="fish"/>
             </Agent><br></br><br></br>
             <Agent width={'400px'} agent_id="Fish" display={displayFish[fish][1]}>
-            <p>In this village, cooking revealed that the fish is <b>BLUE</b>!</p>
+            <p>In this village, cooking revealed that your fish is <b>BLUE</b>!</p>
             <img position={'absolute'} left={'80%'} top={'30%'} height={'300px'} src={blueFishImage} alt="fish"/>
         </Agent>
         
