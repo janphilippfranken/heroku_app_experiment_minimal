@@ -154,7 +154,7 @@ const Debrief = props => {
                         <textarea id="prior" value={prior} onChange={e => setPrior(e.target.value)} />
                     </div>
                     <div className={Classes.PosteriorContainer}>
-                        <label htmlFor="posterior">How did you decide which <b>planet</b> to select? Did you have a specific strategy?<span>*</span></label>
+                        <label htmlFor="posterior">How did you decide which <b>planet</b> to select? How did you use your knwoledge of villagers' relationships with each other to make a decision?<span>*</span></label>
                         <textarea id="posterior" value={post} onChange={e => setPost(e.target.value)} />
                     </div>
                     <div className={Classes.CommentsContainer}>
