@@ -44,10 +44,10 @@ const InsTask= props => {
                 <p>Before finishing cooking their fish and observing its color (and without hearing about the other crew member's belief) a crew member will be very unconfident:</p><br></br>
                 <img src={vunconfidentImage} alt="planets"/><br></br><br></br>
 
-                <p>When a crew member finished cooking their fish, their confidence increases:</p><br></br>
+                <p>After a crew member finished cooking their fish and hence observed the fish's color, their confidence increases:</p><br></br>
                 <img src={confidentImage} alt="planets"/><br></br><br></br>
 
-                <p>A crew member can also be influenced by another. If the influencing crew member has the same belief, this can further increase the confidence of the influenced crew member:</p><br></br>
+                <p>A crew member can also be influenced by the other crew member. If the influencing crew member has the same belief, this can further increase the confidence of the influenced crew member:</p><br></br>
                 <img src={vconfidentImage} alt="planets"/><br></br><br></br>
 
                 <p>Note: When beliefs are different, influence can also decrease the confidence of the influenced crew member or even change their belief entirely.</p><br></br>
