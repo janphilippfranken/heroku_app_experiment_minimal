@@ -11,7 +11,7 @@ const InsSummary = props => {
                 <h1>Instructions: Summary</h1>
                 <hr />
                 <p>Well done! Below is a short summary of your task, and there will be a <b>comprehension quiz on the next page</b> after which
-                you can start your trip to the first village. Good luck!<br /></p>
+                you can start your trip to the first space station. Good luck!<br /></p>
                 <hr />
                 <p>
                 1. There are two planets, one planet is RED, and the other planet is BLUE. On the <b>RED PLANET</b>, fish are mainly <b>RED</b>.

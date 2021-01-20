@@ -50,9 +50,9 @@ const InsTask= props => {
                 <p>A crew member can also be influenced by the other crew member. If the influencing crew member has the same belief, this can further increase the confidence of the influenced crew member:</p><br></br>
                 <img src={vconfidentImage} alt="planets"/><br></br><br></br>
 
-                <p>Note: When beliefs are different, influence can also decrease the confidence of the influenced crew member or even change their belief entirely.</p><br></br>
+                <p>Note: When beliefs are different, one crew member can decrease the confidence of the other crew member or even change their belief entirely.</p><br></br>
 
-                <p>From prior experience, you know that crew members are less influenced by each other's beliefs compared to directly observing the color of a fish. Specifically, influence from another crew member has around 1/4 of the impact on the belief of the influenced crew member as compared direct observation of a fish's color.</p><br></br>
+                <p>From prior experience, you know that crew members are less influenced by each other's beliefs compared to directly observing the color of a fish. Specifically, influence from another crew member has around 1/4 of the impact on the belief of the influenced crew member as compared to directly observing a fish's color.</p><br></br>
                 
                 <p>After observing beliefs and confidence of crew members, you will provide a <b>guess about their relationship</b> and receive a bonus of £0.25 for each correct selection:</p><br></br>
                 <img src={relationshipImage} alt="planets"/><br></br><br></br>
