@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Button from '../../components/Button/Button';
-import villagersImage from '../../static/images/villagers.png';
+import villagersImage from '../../static/images/crew.png';
 import visitImage from '../../static/images/planet_visit.png';
 import subjCookImage from '../../static/images/subj_cooking.png';
 import Classes from '../../SASS/containers/Instruction/InsTask.module.scss';
@@ -16,30 +16,32 @@ const InsTask= props => {
                 <h1>Instructions: Task</h1>
                 <hr />           
                 <div className={Classes.InsReminder}>
+                    <p><i>*** Please read carefully. You will complete a comprehension quiz at the end. ***</i></p>
                     <p><i>*** Scroll through the division below to see details. ***</i></p>
-                   
                 </div> 
                 <ScrollDivision>
-                <p>You will be travelling to four different villages. In each village, a local space fisherman returned from <b>one</b> of the two planets with a catch of fish. You <b>do not know</b> which planet the space fisherman travelled.</p><br></br>
-
+                <p>You are a food consultant travelling to <b>five</b> different space stations to advice the local crew on how to cook fish. Each space station has their own <b>local fish supplier</b> that went to <b>one</b> of the two planets to catch fish. Unfortunately, the crew did not know that the type of salt matters when cooking the space fish. As such, none of the crews recorded whether their local suppllier travelled the RED or BLUE planet to catch their fish.
+                    
+                </p><br></br>
+                    
                 <img src={visitImage} alt="planet_visit"/>
                 
-                <p>Your task is to <b>decide</b> whether the space fisherman travelled the RED or BLUE planet to catch their fish. You will be paid a bonus of £0.25 each time you selected the correct planet (max. bonus = 4 * £0.25 cent = £1.00).</p><br></br>
+                <p>To ensure that you give them the correct salt advice for as many fish as possible, you need to <b>decide</b> whether a local fish supplier travelled the RED or BLUE planet to catch their fish (Recall: Fish on the RED planet are mainly RED and have to be cooked with TABLE salt; fish from the BLUE planet are mainly BLUE and have to be cooked with HIMALAYAN SALT). You will be paid a bonus of £0.25 each time you selected the correct planet (max. bonus = 5 space stations * £0.25 cent = £1.25).</p><br></br>
 
-                <p>In each village, you first buy <b>one fish</b> from the space fisherman's catch. You then cook the fish to figure out the color.</p><br></br>  
+                <p>On each space station, you first decide to cook one fish from the supplier's catch to get an initial idea about which planet the supplier might have travelled. To not waste your salt, you just cook the fish without salt.</p><br></br>  
                 
                 <img src={subjCookImage} alt="subj_cooking"/>
 
-                <p>Additionally, <b>two villagers</b> buy one fish from the catch each. They also cook their fish and learn about the color of the fish. You do <b>not</b> know the color(s) of their fish.</p><br></br>
-
-                <p><b>Before</b> selecting a planet, you will will talk to the two villagers to learn which planet <b>they believe</b> the fisherman travelled and how <b>confident</b> they are in their beliefs.</p><br></br>
-                
+                <p>To prevent wasting additional fish yourself by using no salt or the wrong salt, you then ask two local crew members to cook one fish each to gather additional information about the origin of the supplier's catch.</p><br></br> 
+        
                 <img src={villagersImage} alt="villagers_cooking"/>
+    
+                <p>Unfortunately, you are not allowed to enter the kitchen while the two crew members are inside, meaning that you can not observe the color of their fish or ask them about their beliefs about which planet the supplier travelled directly. However, each crew member can communicate their beliefs to you via their space headlights. Conveniently, space headlights happen to have two colour settings (blue and red) to communicate either belief (supplier travelld BLUE Planet, supplier travelled RED Planet). Spcae headlights also have three brightness settings (1, 2 and 3), allowing crew members to communicate how confident they are in their beliefs.</p><br></br>                
 
-                <p><b>Important:</b> The two might <b>talk to each other</b> and <b>influence</b> their beliefs. Thus, you will observe their beliefs <b>multiple times</b> and provide a guess about their relationships with each other. You will be paid an additional £0.25 each time you selected the correct relationship (max. bonus = 4 * £0.25 cent = £1.00).</p><br></br>
+                <p><b>Important:</b> The two crew members might <b>talk to each other</b> and <b>influence</b> their beliefs. Thus, you will observe their belief signals <b>multiple times</b> and provide a guess about their relationships with each other. You will be paid an additional £0.25 each time you selected the correct relationship (max. bonus = 5 space stations * £0.25 cent = £1.25).</p><br></br>
 
-                <p><b>Important:</b> You <b>do not</b> know <b>when</b> the two villagers cook their fish and learn about the color of the fish. Therefore, you need to pay careful attention to both their <b>beliefs and confidence</b> when finding out about their relationships with each other. Also, be aware that their beliefs <b>might not</b> always be informative as you might sometimes ask them for a judgement before they finished cooking their fish.</p><br></br>
-               
+                <p><b>Important:</b> You <b>do not</b> know <b>when</b> the two crew members finish cooking their fish. Therefore, you need to pay careful attention to both their <b>belief signals and confidence</b> when finding out about their relationships with each other. Also, be aware that their beliefs <b>might not</b> always be informative as you might sometimes receive a signal from them before they finished cooking their fish.</p><br></br>
+                
                 <hr />
                 <Button clicked={props.goToInstruction}>Next</Button>
                 </ScrollDivision >

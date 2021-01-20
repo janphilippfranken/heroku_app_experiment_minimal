@@ -153,17 +153,17 @@ const Debrief = props => {
                         </select>
                     </div> */}
                     <div className={Classes.PriorContainer}>
-                        <label htmlFor="prior">How did you learn about the <b>relationship</b> between villagers? Did you have a specific strategy?<span>*</span></label>
+                        <label htmlFor="prior">How did you learn about the <b>relationship</b> between crew members? Did you have a specific strategy?<span>*</span></label>
                         <textarea id="prior" value={prior} onChange={e => setPrior(e.target.value)} />
                     </div>
 
                     <div className={Classes.BothContainer}>
-                        <label htmlFor="both2">How did you decide which <b>planet</b> to select in the case that <b>BOTH</b> villagers influenced each other?<span>*</span></label>
+                        <label htmlFor="both2">How did you decide which <b>planet</b> to select in the case that <b>BOTH</b> crew members influenced each other?<span>*</span></label>
                         <textarea id="both2" value={both} onChange={e => setBoth(e.target.value)} />
                     </div> 
 
                     <div className={Classes.PosteriorContainer}>
-                        <label htmlFor="posterior">How did you decide which <b>planet</b> to select? How did you use your knwoledge of villagers' relationships with each other to make a decision?<span>*</span></label>
+                        <label htmlFor="posterior">How did you decide which <b>planet</b> to select? How did you use your knwoledge of crew members' relationships with each other to make a decision?<span>*</span></label>
                         <textarea id="posterior" value={post} onChange={e => setPost(e.target.value)} />
                     </div>
 

@@ -27,17 +27,17 @@ const InsTask= props => {
                 <h1>Instructions: Procedure</h1>
                 <hr />           
                 <div className={Classes.InsReminder}>
+                    <p><i>*** Please read carefully. You will complete a comprehension quiz at the end. ***</i></p>
                     <p><i>*** Scroll through the division below to see details. ***</i></p>
-                   
                 </div> 
                 <ScrollDivision scroll={showBtn}>
-                <p>In each village, you first cook your fish and observe the color:</p><br></br>
+                <p>On each space station, you first cook one fish and observe the color (example below).</p><br></br>
                 <img src={fishImage} alt="planets"/><br></br><br></br>
-                <p>You then observe the beliefs of villagers by clicking the ``<b>Observe Beliefs</b>'' button:</p><br></br>
+                <p>You then observe the beliefs of the two crew members by clicking the ``<b>Observe Beliefs</b>'' button:</p><br></br>
                 <img src={observeImage} alt="planets"/><br></br><br></br>
-                <p>Beliefs of villagers can either be blue or red. In addition to their beliefs, villagers also tell you how confident they are in their beliefs on a <b>scale from 1 (very unconfident) - 3 (very confident)</b>. The <b>more confident</b> they are, the more likely they think the space fisherman travelled the selected planet. The confidence is displayed together with their beliefs:</p><br></br>
+                <p>Using their space headlights, crew members can either signal blue or red beliefs. In addition to their beliefs, crew members also signal you how confident they are in their beliefs on a <b>scale from 1 (very unconfident) - 3 (very confident)</b>. The <b>more confident</b> they are, the more likely they think the space fisherman travelled the selected planet. A crew member's confidence corresponds to the three brightness settings of their space headlights:</p><br></br>
                 <img src={confImage} alt="planets"/><br></br><br></br>
-                <p>After observing the beliefs of villagers, you will provide a <b>guess about their relationship</b> and receive a bonus of £0.25 for each correct selection:</p><br></br>
+                <p>After observing beliefs and confidence of crew members, you will provide a <b>guess about their relationship</b> and receive a bonus of £0.25 for each correct selection:</p><br></br>
                 <img src={relationshipImage} alt="planets"/><br></br><br></br>
                 <p>Finally, you will be asked to select one of the two planets and rate <b>how confident</b> you are in your decision (again, receiving a bonus of £0.25 for each correct selection):</p>
                 <img src={planetImage} alt="planets"/>

@@ -1,6 +1,6 @@
 import { STORE_STRUCTURE, STORE_SELECTION} from '../actions/participantData';
 
-const initialState = [{}, {}, {}, {}];
+const initialState = [{}, {}, {}, {}, {}];
 
 
 export default (state = initialState, action) => {

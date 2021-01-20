@@ -14,7 +14,10 @@ import redFishImage from '../../static/images/red_fish.png';
 const PlanetFrame = props => {
     const dispatch = useDispatch();
     const conditionNumber = useSelector(state => state.conditionData.conditionNumber);
+    console.log(conditionNumber);
+    console.log('condition number')
     const scenario = useSelector(state => state.conditionData.conditionData[state.conditionData.conditionNumber]);
+    console.log(scenario);
     const [buttonDisplay, setButtonDisplay] = useState('none');
     const [confDisplay, setConfDisplay]= useState('none');
     const fish = scenario.targetBelief;
@@ -122,7 +125,7 @@ const PlanetFrame = props => {
     return (
         <div className={classes.PlanetFrame} style={{display: props.display}}>
             {/* game interface */}
-            <Agent left={'7%'} width={'35rem'} agent_id="instr_frame" >Which Planet did the fisherman travel?</Agent> 
+            <Agent left={'7%'} width={'35rem'} agent_id="instr_frame" >WHICH PLANET DID THE SUPPLIER TRAVEL TO CATCH FISH?</Agent> 
             
             {/* Planet Blue */}
             <Agent onClick={selectPlanetBLUE} top={'8%'} left={scenario.planetPosition[0]} opacity={PlanetSelectBLUE} agent_id="BPlanet">

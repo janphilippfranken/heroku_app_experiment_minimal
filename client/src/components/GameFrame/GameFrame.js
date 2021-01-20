@@ -18,6 +18,7 @@ const GameFrame = props => {
     const colors = {red: 'RED', deepskyblue: 'BLUE'};
     const dispatch = useDispatch();
     const scenario = useSelector(state => state.conditionData.conditionData[state.conditionData.conditionNumber]);
+    console.log(scenario);
     const fish = scenario.targetBelief;
 
     const displayFish = {'red': ['', 'none'],
@@ -28,8 +29,8 @@ const GameFrame = props => {
         setColorC(scenario.neighbourBeliefs.b[scoreCounter]);
         setOpacityB(scenario.neighbourBeliefs.ac[scoreCounter]/3);
         setOpacityC(scenario.neighbourBeliefs.bc[scoreCounter]/3);
-        setColorMessageB('confidence: ' + scenario.neighbourBeliefs.ac[scoreCounter]);
-        setColorMessageC('confidence: ' + scenario.neighbourBeliefs.bc[scoreCounter]);
+        setColorMessageB(scenario.neighbourBeliefs.ac[scoreCounter]);
+        setColorMessageC(scenario.neighbourBeliefs.bc[scoreCounter]);
         setDisplayObserve('none');
         setDisplayNext('');
     };
@@ -151,7 +152,7 @@ const GameFrame = props => {
         <div className={classes.GameFrame} style={{display: props.display}}>
              {props.children}
             {/* game interface */}
-            <Agent width={'400px'} agent_id="instr_frame" >BELIEFS OF VILLAGERS</Agent> 
+            <Agent width={'400px'} agent_id="instr_frame" >BELIEFS OF CREW MEMBERS</Agent> 
 
             {/* legend */}
             <Agent width={'200px'} top={'76%'} left={'1%'} agent_id="legend" >CONFIDENCE LEGEND:</Agent> 
@@ -165,12 +166,12 @@ const GameFrame = props => {
             </Agent>
 
             {/* agent B */}
-            <Agent color={colorB}  agent_id="B_2">{sayColorB}</Agent>
+            <Agent color={colorB} opacity={scenario.neighbourBeliefs.ac[scoreCounter]/3} agent_id="B_2">{sayColorB}</Agent>
             <Agent agent_id="B_2name">{scenario.neighbour1Name.name}</Agent>
 
             
             {/* agent C */}
-            <Agent color={colorC} agent_id="C_2">{sayColorC}</Agent>
+            <Agent color={colorC} opacity={scenario.neighbourBeliefs.bc[scoreCounter]/3} agent_id="C_2">{sayColorC}</Agent>
             <Agent agent_id="C_2name">{scenario.neighbour2Name.name}</Agent>
 
             {/* score history */}

@@ -69,7 +69,7 @@ const GameInterface = props => {
         }
         else if (gamePhase === GAME_PHASES.nextPlanet) {
 
-            if (conditionNumber === 3) {
+            if (conditionNumber === 4) {
                 return dispatch(changePhase(PHASES.debrief));
             }
 

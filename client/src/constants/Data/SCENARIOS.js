@@ -16,21 +16,24 @@ export default class Scenario {
             { name: 'NIKOS', possessive: 'his', prefix: 'he', prefix2: 'him' },
             { name: 'CHRIS', possessive: 'her', prefix: 'she', prefix2: 'her' },
             { name: 'VUMI', possessive: 'his', prefix: 'he', prefix2: 'him' },
-            { name: 'JIM', possessive: 'her', prefix: 'she', prefix2: 'her' }
+            { name: 'JIM', possessive: 'her', prefix: 'she', prefix2: 'her' },
+            { name: 'MARC', possessive: 'her', prefix: 'she', prefix2: 'her' }
         ];
         
         this.neighbour2NameData = [
             { name: 'NEIL', possessive: 'his', prefix: 'he', prefix2: 'him' },
             { name: 'TIA', possessive: 'her', prefix: 'she', prefix2: 'her' },
             { name: 'ALICE', possessive: 'his', prefix: 'he', prefix2: 'him' },
-            { name: 'BOB', possessive: 'her', prefix: 'she', prefix2: 'her' }
+            { name: 'BOB', possessive: 'her', prefix: 'she', prefix2: 'her' },
+            { name: 'LIZ', possessive: 'her', prefix: 'she', prefix2: 'her' }
         ];
 
         this.titles = [
-            'Welcome to Scarborough!',
-            'Welcome to Misty Cliffs!',
-            'Welcome to Sunset!',
-            'Welcome to Witsand!'
+            'Welcome to Skylab!',
+            'Welcome to Almas!',
+            'Welcome to Salyut-1!',
+            'Welcome to Tiangong-1!',
+            'Welcome to Salyut-2s!'
         ];
 
         this.structureOrder = shuffle([
