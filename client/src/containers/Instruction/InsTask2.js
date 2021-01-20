@@ -3,6 +3,9 @@ import Button from '../../components/Button/Button';
 import relationshipImage from '../../static/images/select_relationship.png';
 import planetImage from '../../static/images/select_planet.png';
 import fishImage from '../../static/images/fish_instruct.png';
+import vunconfidentImage from '../../static/images/vunconfident.png';
+import confidentImage from '../../static/images/2confident.png';
+import vconfidentImage from '../../static/images/vconfident.png';
 import observeImage from '../../static/images/observe_beliefs.png';
 import confImage from '../../static/images/confidence_meaning.png';
 import Classes from '../../SASS/containers/Instruction/InsTask2.module.scss';
@@ -37,6 +40,20 @@ const InsTask= props => {
                 <img src={observeImage} alt="planets"/><br></br><br></br>
                 <p>Using their space headlights, crew members can either signal blue or red beliefs. In addition to their beliefs, crew members also signal you how confident they are in their beliefs on a <b>scale from 1 (very unconfident) - 3 (very confident)</b>. The <b>more confident</b> they are, the more likely they think the space fisherman travelled the selected planet. A crew member's confidence corresponds to the three brightness settings of their space headlights:</p><br></br>
                 <img src={confImage} alt="planets"/><br></br><br></br>
+
+                <p>Before finishing cooking their fish and observing its color (and without hearing about the other crew member's belief) a crew member will be very unconfident:</p><br></br>
+                <img src={vunconfidentImage} alt="planets"/><br></br><br></br>
+
+                <p>When a crew member finished cooking their fish, their confidence increases:</p><br></br>
+                <img src={confidentImage} alt="planets"/><br></br><br></br>
+
+                <p>A crew member can also be influenced by another. If the influencing crew member has the same belief, this can further increase the confidence of the influenced crew member:</p><br></br>
+                <img src={vconfidentImage} alt="planets"/><br></br><br></br>
+
+                <p>Note: When beliefs are different, influence can also decrease the confidence of the influenced crew member or even change their belief entirely.</p><br></br>
+
+                <p>From prior experience, you know that crew members are less influenced by each other's beliefs compared to directly observing the color of a fish. Specifically, influence from another crew member has around 1/4 of the impact on the belief of the influenced crew member as compared direct observation of a fish's color.</p><br></br>
+                
                 <p>After observing beliefs and confidence of crew members, you will provide a <b>guess about their relationship</b> and receive a bonus of £0.25 for each correct selection:</p><br></br>
                 <img src={relationshipImage} alt="planets"/><br></br><br></br>
                 <p>Finally, you will be asked to select one of the two planets and rate <b>how confident</b> you are in your decision (again, receiving a bonus of £0.25 for each correct selection):</p>

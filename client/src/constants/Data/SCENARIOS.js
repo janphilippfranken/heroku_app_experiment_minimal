@@ -33,7 +33,7 @@ export default class Scenario {
             'Welcome to Almas!',
             'Welcome to Salyut-1!',
             'Welcome to Tiangong-1!',
-            'Welcome to Salyut-2s!'
+            'Welcome to Salyut-2!'
         ];
 
         this.structureOrder = shuffle([

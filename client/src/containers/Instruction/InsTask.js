@@ -32,7 +32,7 @@ const InsTask= props => {
                 
                 <img src={subjCookImage} alt="subj_cooking"/>
 
-                <p>To prevent wasting additional fish yourself by using no salt or the wrong salt, you then ask two local crew members to cook one fish each to gather additional information about the origin of the supplier's catch.</p><br></br> 
+                <p>You then ask two local crew members to cook one fish each to gather additional information about the origin of the supplier's catch.</p><br></br> 
         
                 <img src={villagersImage} alt="villagers_cooking"/>
     
