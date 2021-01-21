@@ -30,7 +30,7 @@ const Ethics = props => {
     };
 
     const goToNotesHandler = () => {
-        if (PID.length === 0) {
+        if (PID.length === 24) {
             dispatch(changePhase(PHASES.notes));
             dispatch(storePID({PID: PID}));
         }

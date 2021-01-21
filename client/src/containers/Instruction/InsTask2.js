@@ -38,7 +38,7 @@ const InsTask= props => {
                 <img src={fishImage} alt="planets"/><br></br><br></br>
                 <p>You then observe the beliefs of the two crew members by clicking the ``<b>Observe Beliefs</b>'' button:</p><br></br>
                 <img src={observeImage} alt="planets"/><br></br><br></br>
-                <p>Using their space headlights, crew members can either signal blue or red beliefs. In addition to their beliefs, crew members also signal you how confident they are in their beliefs on a <b>scale from 1 (very unconfident) - 3 (very confident)</b>. The <b>more confident</b> they are, the more likely they think the space fisherman travelled the selected planet. A crew member's confidence corresponds to the three brightness settings of their space headlights:</p><br></br>
+                <p>Using their space headlights, crew members can either signal a blue belief (supplier travelled BLUE Planet) or red belief (supplier travelled RED Planet). In addition to their beliefs, crew members also signal you how confident they are in their beliefs on a <b>scale from 1 (very unconfident) - 3 (very confident)</b>. The <b>more confident</b> they are, the more likely they think the local supplier travelled the selected planet. A crew member's confidence corresponds to the three brightness settings of their space headlights:</p><br></br>
                 <img src={confImage} alt="planets"/><br></br><br></br>
 
                 <p>Before finishing cooking their fish and observing its color (and without hearing about the other crew member's belief) a crew member will be very unconfident:</p><br></br>
@@ -52,7 +52,7 @@ const InsTask= props => {
 
                 <p>Note: When beliefs are different, one crew member can decrease the confidence of the other crew member or even change their belief entirely.</p><br></br>
 
-                <p>From prior experience, you know that crew members are less influenced by each other's beliefs compared to directly observing the color of a fish. Specifically, influence from another crew member has around 1/4 of the impact on the belief of the influenced crew member as compared to directly observing a fish's color.</p><br></br>
+                <p>From prior experience, you know that crew members are less influenced by each other's beliefs compared to directly observing the color of a fish. For example, being influenced by a crew member that finished cooking their fish (and has not been influenced by anyone else) has around 1/4 of the impact on another crew member's belief as compared to directly observing a fish's color.</p><br></br>
                 
                 <p>After observing beliefs and confidence of crew members, you will provide a <b>guess about their relationship</b> and receive a bonus of £0.25 for each correct selection:</p><br></br>
                 <img src={relationshipImage} alt="planets"/><br></br><br></br>

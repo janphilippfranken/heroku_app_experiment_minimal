@@ -16,6 +16,8 @@ const StructureFrame = props => {
     const scenario = useSelector(state => state.conditionData.conditionData[state.conditionData.conditionNumber]);
     const [buttonDisplay, setButtonDisplay] = useState('none');
 
+    
+
     const selectNoLink = () => {
         setNoLink('1.0');
         setLRLink('.2');
@@ -50,6 +52,9 @@ const StructureFrame = props => {
         setRLLink('.2');
         setBothLink('1.0');
         setSelectedStructure('both')
+        if (scenario.condition === "bothExcite") {
+            setSelectedStructure('bothExcite')
+        };
         setButtonDisplay('');
     };
 
