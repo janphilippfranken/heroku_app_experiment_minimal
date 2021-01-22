@@ -17,6 +17,36 @@
     width: 1.5rem;
 	height: 1.5rem;
     background: red;
+    font:0px Arial, sans-serif; 
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.B1B {
+    position: absolute;
+    left:74%;
+    top:10%; 
+    width: 1.5rem;
+	height: 1.5rem;
+    background: transparent;
+    font:15px Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.C1B {
+    position: absolute;
+    left:89%;
+    top:10%; 
+    width: 1.5rem;
+	height: 1.5rem;
+    background: transparent;
     font:15px Arial, sans-serif;
     font-weight: bold;
     vertical-align: middle;
@@ -32,7 +62,7 @@
     width: 1.5rem;
 	height: 1.5rem;
     background: deepskyblue;
-    font: 15px Arial, sans-serif;
+    font: 0px Arial, sans-serif;
     font-weight: bold;
     vertical-align: middle;
     display: flex;
@@ -43,7 +73,7 @@
 .B_name {
     position: absolute;
     left:70%;
-    top:2%;  
+    top:7%;  
     width: 7.5rem;
 	height: 5rem;
     background-color: transparent;
@@ -57,7 +87,7 @@
 .C_name {
     position: absolute;
     left:85%;
-    top:2%; 
+    top:7%; 
     width: 7.5rem;
 	height: 5rem;
     background-color: transparent;
@@ -71,9 +101,9 @@
 /* frame above agents for instructions etc. */
 .instr_frame {
     position:absolute;
-    left:75%;
-    top:-9%; 
-    width: 7.5rem;
+    left:70%;
+    top:0%; 
+    width: 18rem;
 	height: 5rem;
     font: 30px Arial, sans-serif;
     font-weight: bold;

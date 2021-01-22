@@ -52,6 +52,20 @@
     align-items: center;
 }
 
+
+.B_22 {
+    position:absolute;
+    left:5%;
+    top:9%; 
+    background-color: transparent;
+    font: 15px Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .C {
     position: absolute;
     left:79%;
@@ -65,11 +79,27 @@
     align-items: center;
 }
 
+
 .C_2 {
     position: absolute;
     left:50%;
     top:9%; 
     background-color: lightgray;
+    font: 15px Arial, sans-serif;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.C_22 {
+    position: absolute;
+    left:50%;
+    top:9%; 
+    background: transparent;
     font: 15px Arial, sans-serif;
     font-weight: bold;
     vertical-align: middle;
@@ -270,6 +300,20 @@
 
 /* frame above agents for instructions etc. */
 .legend {
+    position:absolute;
+    left:15%;
+    top:80%; 
+    width: 350px;
+    height: 20px;
+    font: 30px Arial, sans-serif;
+    font-weight: bold;
+    border-style: none!important;
+    text-align: left;
+    background: transparent;
+	box-shadow: 0px 0px 0px #888;
+}
+
+.legendC {
     position:absolute;
     left:15%;
     top:80%; 

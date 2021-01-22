@@ -34,7 +34,7 @@ const InsTask= props => {
     
                 <p>Unfortunately, you are not allowed to enter the kitchen while the two crew members are inside, meaning that you can not observe the color of their fish or ask them about their beliefs about which planet the supplier travelled directly. However, each crew member can communicate their beliefs to you via their space headlights. Conveniently, space headlights happen to have two colour settings (blue and red) to communicate either belief (supplier travelld to the BLUE Planet, supplier travelled to the RED Planet). Space headlights also have three brightness settings (1, 2 and 3), allowing crew members to communicate how confident they are in their beliefs.</p><br></br>                
 
-                <p><b>Important:</b> While cooking, the two crew members might <b>talk to each other</b> and <b>influence</b> their beliefs. Thus, you will observe their belief signals <b>multiple times</b> and provide a guess about their relationships with each other.</p><br></br>
+                <p><b>Important:</b> While cooking, the two crew members might <b>talk to each other</b> and <b>influence</b> their beliefs. Thus, you will observe their belief signals <b>10 times</b> each and provide a guess about their relationships with each other.</p><br></br>
 
                 <p><b>Important:</b> You <b>do not</b> know when the two crew members have finished cooking their fish, and they might finish at different times. If they are communicating with each other, their signals could be based on what they have learned from the other person, in addition to, or instead of, what they have learned from their own fish.</p><br></br>
                 

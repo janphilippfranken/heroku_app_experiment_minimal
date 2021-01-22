@@ -33,7 +33,7 @@ const InsTask= props => {
                 <ScrollDivision scroll={showBtn}>
                 <p>On each space station, you first cook one fish and observe the color (example below).</p><br></br>
                 <img src={fishImage} alt="planets"/><br></br><br></br>
-                <p>You then observe the beliefs of the two crew members by clicking the ``<b>Observe Beliefs</b>'' button:</p><br></br>
+                <p>You then observe the belief signals of the two crew members by clicking the `<b>Observe</b>' button:</p><br></br>
                 <img src={observeImage} alt="planets"/><br></br><br></br>
                 <p>Using their space headlights, crew members can either signal a blue belief (supplier travelled to the BLUE Planet) or red belief (supplier travelled to the RED Planet). In addition to their beliefs, crew members also signal you how confident they are in their beliefs on a <b>scale from 1 (very unconfident) - 3 (very confident)</b>. The <b>more confident</b> they are, the more likely they think the local supplier travelled the selected planet. A crew member's confidence corresponds to the three brightness settings of their space headlights:</p><br></br>
                 <img src={confImage} alt="planets"/><br></br><br></br>

@@ -152,64 +152,88 @@ const GameFrame = props => {
         <div className={classes.GameFrame} style={{display: props.display}}>
              {props.children}
             {/* game interface */}
-            <Agent width={'400px'} agent_id="instr_frame" >BELIEFS OF CREW MEMBERS</Agent> 
+            <Agent width={'400px'} agent_id="instr_frame" >SIGNALS OF CREW MEMBERS</Agent> 
 
             {/* legend */}
-            <Agent width={'200px'} top={'76%'} left={'1%'} agent_id="legend" >CONFIDENCE LEGEND:</Agent> 
-            <Agent width={'400px'} top={'80%'} left={'1%'} agent_id="legend" >1 (very unconfident) - 3 (very confident)</Agent> 
-            <Agent width={'200px'} top={'65%'} left={'1%'} agent_id="legend" >YOUR FISH:</Agent> 
-            <Agent width={'100px'} top={'71%'} left={'0%'} agent_id="Fish" display={displayFish[fish][0]}>
-            <img position={'absolute'} left={'80%'} top={'50%'} height={'50px'} src={redFishImage} alt="fish"/>
+            {/* <Agent width={'200px'} top={'76%'} left={'1%'} agent_id="legend" >LEGEND:</Agent>  */}
+            <Agent width={'400px'} top={'80%'} left={'1%'} agent_id="legendC" >1 (very unconfident) - 3 (very confident)</Agent> 
+           {/* legend */}
+           <Agent width={'200px'} top={'-10%'} left={'70%'} agent_id="legend" >YOUR FISH:</Agent> 
+            <Agent width={'100px'} top={'-8%'} left={'88%'} agent_id="Fish" display={displayFish[fish][0]}>
+            <img position={'absolute'} left={'0%'} top={'0%'} height={'75px'} src={redFishImage} alt="fish"/>
             </Agent>
-            <Agent width={'100px'} top={'71%'} left={'0%'} agent_id="Fish" display={displayFish[fish][1]}>
-            <img position={'absolute'} left={'80%'} top={'50%'} height={'50px'} src={blueFishImage} alt="fish"/>
+            <Agent width={'100px'} top={'-8%'} left={'88%'} agent_id="Fish" display={displayFish[fish][1]}>
+            <img position={'absolute'} top={'0%'} left={'0%'} height={'75px'} src={blueFishImage} alt="fish"/>
             </Agent>
 
+
             {/* agent B */}
-            <Agent color={colorB} opacity={opacityB} agent_id="B_2">{sayColorB}</Agent>
+            <Agent opacity={opacityB} color={colorB} agent_id="B_2"></Agent>
+            <Agent  opacity={'1'} agent_id="B_22">{sayColorB}</Agent>
             <Agent agent_id="B_2name">{scenario.neighbour1Name.name}</Agent>
 
             
             {/* agent C */}
-            <Agent color={colorC} opacity={opacityC} agent_id="C_2">{sayColorC}</Agent>
+            <Agent color={colorC} opacity={opacityC} agent_id="C_2"></Agent>
+            <Agent  opacity={'1'} agent_id="C_22">{sayColorC}</Agent>
             <Agent agent_id="C_2name">{scenario.neighbour2Name.name}</Agent>
 
             {/* score history */}
-            <Scores score_id="instr_frame" >HISTORY</Scores> 
+            <Scores score_id="instr_frame" >SIGNAL SUMMARY</Scores> 
             <Scores score_id="B_name" >{scenario.neighbour1Name.name}</Scores>
             <Scores score_id="C_name" >{scenario.neighbour2Name.name}</Scores>
 
-            {/* B Scores */}
-            <Scores background={scenario.neighbourBeliefs.a[0]} opacity={scenario.neighbourBeliefs.ac[0]/3} id="B1" score_id="B1" display={displayB1}>{scenario.neighbourBeliefs.ac[0].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[1]} opacity={scenario.neighbourBeliefs.ac[1]/3} id="B2" score_id="B1" display={displayB2}  top={'17%'} >{scenario.neighbourBeliefs.ac[1].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[2]} opacity={scenario.neighbourBeliefs.ac[2]/3} id="B3" score_id="B1" display={displayB3} top={'24%'} >{scenario.neighbourBeliefs.ac[2].toString()}</Scores>  
-            <Scores background={scenario.neighbourBeliefs.a[3]} opacity={scenario.neighbourBeliefs.ac[3]/3} id="B4" score_id="B1" display={displayB4} top={'31%'} >{scenario.neighbourBeliefs.ac[3].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[4]} opacity={scenario.neighbourBeliefs.ac[4]/3} id="B5" score_id="B1" display={displayB5} top={'39%'} >{scenario.neighbourBeliefs.ac[4].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[5]} opacity={scenario.neighbourBeliefs.ac[5]/3} id="B6" score_id="B1" display={displayB6} top={'46%'} >{scenario.neighbourBeliefs.ac[5].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[6]} opacity={scenario.neighbourBeliefs.ac[6]/3} id="B7" score_id="B1" display={displayB7} top={'53%'} >{scenario.neighbourBeliefs.ac[6].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[7]} opacity={scenario.neighbourBeliefs.ac[7]/3} id="B8" score_id="B1" display={displayB8} top={'60%'} >{scenario.neighbourBeliefs.ac[7].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[8]} opacity={scenario.neighbourBeliefs.ac[8]/3} id="B9" score_id="B1" display={displayB9} top={'67%'} >{scenario.neighbourBeliefs.ac[8].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.a[9]} opacity={scenario.neighbourBeliefs.ac[9]/3} id="B10" score_id="B1" display={displayB10} top={'74%'} >{scenario.neighbourBeliefs.ac[9].toString()}</Scores> 
-
+            
+              {/* B Scores */}
+              <Scores background={scenario.neighbourBeliefs.a[0]} opacity={scenario.neighbourBeliefs.ac[0]/3} id="B1" score_id="B1"  top={'15%'} display={displayB1} >{scenario.neighbourBeliefs.ac[0].toString()}</Scores> 
+            <Scores opacity={'1'} id="B1B" score_id="B1B"  top={'15%'} display={displayB1}  >{scenario.neighbourBeliefs.ac[0].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[1]} opacity={scenario.neighbourBeliefs.ac[1]/3} id="B2" score_id="B1"   top={'22%'} display={displayB2} >{scenario.neighbourBeliefs.ac[1].toString()}</Scores> 
+            <Scores opacity={'1'} id="B1B" score_id="B1B"  top={'22%'} display={displayB2} >{scenario.neighbourBeliefs.ac[1].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[2]} opacity={scenario.neighbourBeliefs.ac[2]/3} id="B3" score_id="B1"  top={'29%'} display={displayB3} >{scenario.neighbourBeliefs.ac[2].toString()}</Scores>  
+            <Scores opacity={'1'} id="B1B" score_id="B1B"  top={'29%'} display={displayB3} >{scenario.neighbourBeliefs.ac[2].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[3]} opacity={scenario.neighbourBeliefs.ac[3]/3} id="B4" score_id="B1"  top={'36%'} display={displayB4} >{scenario.neighbourBeliefs.ac[3].toString()}</Scores> 
+            <Scores opacity={'1'} id="B1B" score_id="B1B"  top={'36%'} display={displayB4} >{scenario.neighbourBeliefs.ac[3].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[4]} opacity={scenario.neighbourBeliefs.ac[4]/3} id="B5" score_id="B1"  top={'44%'} display={displayB5} >{scenario.neighbourBeliefs.ac[4].toString()}</Scores> 
+            <Scores opacity={'1'} id="B1B" score_id="B1B"  top={'44%'} display={displayB5} >{scenario.neighbourBeliefs.ac[4].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[5]} opacity={scenario.neighbourBeliefs.ac[5]/3} id="B6" score_id="B1"  top={'51%'} display={displayB6} >{scenario.neighbourBeliefs.ac[5].toString()}</Scores> 
+            <Scores opacity={'1'} id="B1B" score_id="B1B"  top={'51%'} display={displayB6}>{scenario.neighbourBeliefs.ac[5].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[6]} opacity={scenario.neighbourBeliefs.ac[6]/3} id="B7" score_id="B1"  top={'58%'} display={displayB7}>{scenario.neighbourBeliefs.ac[6].toString()}</Scores> 
+            <Scores opacity={'1'} id="B1B" score_id="B1B"  top={'58%'} display={displayB7}>{scenario.neighbourBeliefs.ac[6].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[7]} opacity={scenario.neighbourBeliefs.ac[7]/3} id="B8" score_id="B1"  top={'65%'} display={displayB8}>{scenario.neighbourBeliefs.ac[7].toString()}</Scores> 
+            <Scores opacity={'1'} id="B1B" score_id="B1B"  top={'65%'} display={displayB8}>{scenario.neighbourBeliefs.ac[7].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[8]} opacity={scenario.neighbourBeliefs.ac[8]/3} id="B9" score_id="B1" top={'72%'} display={displayB9}>{scenario.neighbourBeliefs.ac[8].toString()}</Scores> 
+            <Scores opacity={'1'} id="B1B" score_id="B1B"  top={'72%'} display={displayB9} >{scenario.neighbourBeliefs.ac[8].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.a[9]} opacity={scenario.neighbourBeliefs.ac[9]/3} id="B10" score_id="B1" top={'79%'} display={displayB10}>{scenario.neighbourBeliefs.ac[9].toString()}</Scores> 
+            <Scores opacity={'1'} id="B1B" score_id="B1B"  top={'79%'} display={displayB10}>{scenario.neighbourBeliefs.ac[9].toString()}</Scores> 
     
 
             {/* C scores  */}
-            <Scores background={scenario.neighbourBeliefs.b[0]} opacity={scenario.neighbourBeliefs.bc[0]/3} id="C1" score_id="C1" display={displayC1}>{scenario.neighbourBeliefs.bc[0].toString()}</Scores>  
-            <Scores background={scenario.neighbourBeliefs.b[1]} opacity={scenario.neighbourBeliefs.bc[1]/3} id="C2" score_id="C1" display={displayC2} top={'17%'}>{scenario.neighbourBeliefs.bc[1].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[2]} opacity={scenario.neighbourBeliefs.bc[2]/3} id="C3" score_id="C1" display={displayC3} top={'24%'} >{scenario.neighbourBeliefs.bc[2].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[3]} opacity={scenario.neighbourBeliefs.bc[3]/3} id="C4" score_id="C1" display={displayC4} top={'31%'} >{scenario.neighbourBeliefs.bc[3].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[4]} opacity={scenario.neighbourBeliefs.bc[4]/3} id="C5" score_id="C1" display={displayC5} top={'39%'} >{scenario.neighbourBeliefs.bc[4].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[5]} opacity={scenario.neighbourBeliefs.bc[5]/3} id="C6" score_id="C1" display={displayC6} top={'46%'} >{scenario.neighbourBeliefs.bc[5].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[6]} opacity={scenario.neighbourBeliefs.bc[6]/3} id="C7" score_id="C1" display={displayC7} top={'53%'} >{scenario.neighbourBeliefs.bc[6].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[7]} opacity={scenario.neighbourBeliefs.bc[7]/3} id="C8" score_id="C1" display={displayC8} top={'60%'} >{scenario.neighbourBeliefs.bc[7].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[8]} opacity={scenario.neighbourBeliefs.bc[8]/3} id="C9" score_id="C1" display={displayC9} top={'67%'} >{scenario.neighbourBeliefs.bc[8].toString()}</Scores> 
-            <Scores background={scenario.neighbourBeliefs.b[9]} opacity={scenario.neighbourBeliefs.bc[9]/3} id="C10" score_id="C1" display={displayC10} top={'74%'} >{scenario.neighbourBeliefs.bc[9].toString()}</Scores>   
-
+            <Scores background={scenario.neighbourBeliefs.b[0]} opacity={scenario.neighbourBeliefs.bc[0]/3} id="C1" score_id="C1" top={'15%'} display={displayC1}>{scenario.neighbourBeliefs.bc[0].toString()}</Scores>  
+            <Scores opacity={'1'} id="C1B" score_id="C1B"  top={'15%'} display={displayC1}>{scenario.neighbourBeliefs.bc[0].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[1]} opacity={scenario.neighbourBeliefs.bc[1]/3} id="C2" score_id="C1"  top={'22%'} display={displayC2}>{scenario.neighbourBeliefs.bc[1].toString()}</Scores> 
+            <Scores opacity={'1'} id="C1B" score_id="C1B"  top={'22%'} display={displayC2}>{scenario.neighbourBeliefs.bc[1].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[2]} opacity={scenario.neighbourBeliefs.bc[2]/3} id="C3" score_id="C1" top={'29%'} display={displayC3}>{scenario.neighbourBeliefs.bc[2].toString()}</Scores> 
+            <Scores opacity={'1'} id="C1B" score_id="C1B"  top={'29%'} display={displayC3}>{scenario.neighbourBeliefs.bc[2].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[3]} opacity={scenario.neighbourBeliefs.bc[3]/3} id="C4" score_id="C1"  top={'36%'} display={displayC4}>{scenario.neighbourBeliefs.bc[3].toString()}</Scores> 
+            <Scores opacity={'1'} id="C1B" score_id="C1B"  top={'36%'} display={displayC4}>{scenario.neighbourBeliefs.bc[3].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[4]} opacity={scenario.neighbourBeliefs.bc[4]/3} id="C5" score_id="C1"  top={'44%'} display={displayC5}>{scenario.neighbourBeliefs.bc[4].toString()}</Scores> 
+            <Scores opacity={'1'} id="C1B" score_id="C1B"  top={'44%'} display={displayC5}>{scenario.neighbourBeliefs.bc[4].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[5]} opacity={scenario.neighbourBeliefs.bc[5]/3} id="C6" score_id="C1"  top={'51%'} display={displayC6}>{scenario.neighbourBeliefs.bc[5].toString()}</Scores> 
+            <Scores opacity={'1'} id="C1B" score_id="C1B"  top={'51%'} display={displayC6}>{scenario.neighbourBeliefs.bc[5].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[6]} opacity={scenario.neighbourBeliefs.bc[6]/3} id="C7" score_id="C1"  top={'58%'} display={displayC7}>{scenario.neighbourBeliefs.bc[6].toString()}</Scores> 
+            <Scores opacity={'1'} id="C1B" score_id="C1B"  top={'58%'} display={displayC7}>{scenario.neighbourBeliefs.bc[6].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[7]} opacity={scenario.neighbourBeliefs.bc[7]/3} id="C8" score_id="C1"  top={'65%'} display={displayC8}>{scenario.neighbourBeliefs.bc[7].toString()}</Scores> 
+            <Scores opacity={'1'} id="C1B" score_id="C1B"  top={'65%'} display={displayC8}>{scenario.neighbourBeliefs.bc[7].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[8]} opacity={scenario.neighbourBeliefs.bc[8]/3} id="C9" score_id="C1"  top={'72%'} display={displayC9}>{scenario.neighbourBeliefs.bc[8].toString()}</Scores> 
+            <Scores opacity={'1'} id="C1B" score_id="C1B"  top={'72%'} display={displayC9}>{scenario.neighbourBeliefs.bc[8].toString()}</Scores> 
+            <Scores background={scenario.neighbourBeliefs.b[9]} opacity={scenario.neighbourBeliefs.bc[9]/3} id="C10" score_id="C1" top={'79%'} display={displayC10}>{scenario.neighbourBeliefs.bc[9].toString()}</Scores>   
+            <Scores opacity={'1'} id="C1B" score_id="C1B"  top={'79%'} display={displayC10}>{scenario.neighbourBeliefs.bc[9].toString()}</Scores> 
+    
     
 
             {/* actions */}
-            <Action onClick={setColors} display={displayObserve} action_id="button">Observe Beliefs</Action>
-            <Action onClick={resetColors} display={displayNext} action_id="button">Next Round</Action>
+            <Action onClick={setColors} opacity={1} display={displayObserve} action_id="button">Observe</Action>
+            <Action onClick={resetColors} opacity={1} display={displayNext} action_id="button">Next Round</Action>
             <Action action_id="border_frame"></Action>
             
            
