@@ -32,7 +32,7 @@ const GameFrame = props => {
         setColorMessageB(scenario.neighbourBeliefs.ac[scoreCounter]);
         setColorMessageC(scenario.neighbourBeliefs.bc[scoreCounter]);
         setDisplayObserve('none');
-        setDisplayNext('');
+        setDisplayNext(''); 
     };
 
     const resetColors = () => {
@@ -166,12 +166,12 @@ const GameFrame = props => {
             </Agent>
 
             {/* agent B */}
-            <Agent color={colorB} opacity={scenario.neighbourBeliefs.ac[scoreCounter]/3} agent_id="B_2">{sayColorB}</Agent>
+            <Agent color={colorB} opacity={opacityB} agent_id="B_2">{sayColorB}</Agent>
             <Agent agent_id="B_2name">{scenario.neighbour1Name.name}</Agent>
 
             
             {/* agent C */}
-            <Agent color={colorC} opacity={scenario.neighbourBeliefs.bc[scoreCounter]/3} agent_id="C_2">{sayColorC}</Agent>
+            <Agent color={colorC} opacity={opacityC} agent_id="C_2">{sayColorC}</Agent>
             <Agent agent_id="C_2name">{scenario.neighbour2Name.name}</Agent>
 
             {/* score history */}
