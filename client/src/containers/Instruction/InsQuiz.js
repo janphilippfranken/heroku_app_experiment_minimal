@@ -69,10 +69,10 @@ const InsQuiz = props => {
                     <input type="radio" name="6" className={[Classes.T6, 'input'].join(" ")} />
                     <input type="radio" name="6" className={[Classes.F6, 'input'].join(" ")} />
                     <li className={Classes.Q1}>1. On the RED planet, fish are mainly red. On the BLUE planet, fish are mainly blue.</li>
-                    <li className={Classes.Q2}>2. You will travel to five different space stations and decide whether a local space fish supplier travelled the red or blue planet to catch their fish.</li>
+                    <li className={Classes.Q2}>2. You will travel to five different space stations and decide whether a local space fish supplier travelled the RED or BLUE planet to catch their fish.</li>
                     <li className={Classes.Q3}>3. On each space station, you cook three fish from their catch.</li>
                     <li className={Classes.Q4}>4. You will talk to two crew members to learn which planet they believe their supplier travelled. <b>Their beliefs are valuable</b> to you as they can <b>improve your chances</b> of selecting the right planet and thus giving the right salt advice.</li>
-                    <li className={Classes.Q5}>5. The two crew members might talk to each other and influence their beliefs. Also, you do not know when the two crew members finished cooking their fish. As such, their beliefs <b>might not</b> always be informative as they are sometimes signaling a belief before they finished cooking their fish.</li>
+                    <li className={Classes.Q5}>5. The two crew members might talk to each other and influence their beliefs.</li>
                     <li className={Classes.Q6}>6. You will only observe the beliefs of crew members once.</li>
                 </div>
                 <hr />

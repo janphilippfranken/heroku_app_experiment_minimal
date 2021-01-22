@@ -39,7 +39,7 @@ const InsOverview = props => {
                 <img src={cookImage} alt="cooking"/><br></br><br></br><br></br>
 
                 <p>
-                    <b>Important:</b> RED fish have to be cooked with <b>RED SALT</b>, while BLUE fish have to be cooked with <b>BLUE SALT</b>. If cooked with the wrong salt or no salt, a fish will become <b>toxic</b> and thus inedible.</p><br></br>
+                    <b>Important:</b> RED fish have to be cooked with <b>RED SALT</b>, while BLUE fish have to be cooked with <b>BLUE SALT</b>. If cooked with the wrong salt, a fish will become <b>toxic</b> and thus inedible.</p><br></br>
 
                     <img src={saltImage} alt="salt"/><br></br><br></br><br></br>
                     
