@@ -46,12 +46,10 @@ const InsQuiz = props => {
             {showErrorModal && tryAgainErrorModal}
             {showCorrectModal && tryAgainCorrectModal}
             <div className={Classes.InnerContainer}>
-                <h1>Instructions: Comprehension quiz</h1>
-                <hr />
-                <p>Please answer the following questions before starting the task. These are necessary for ensuring that you
-		        read and understood the instructions.</p>
+                <h1>Comprehension quiz</h1>
+                <hr />  
                 <div className={Classes.QuizContainer}>
-                    <p className={Classes.Qs}><b>Questions</b></p>
+                    {/* <p className={Classes.Qs}><b>Questions</b></p> */}
                     <p className={Classes.Ts}><b>True</b></p>
                     <p className={Classes.Fs}><b>False</b></p>
                     <hr className={Classes.Hr} />

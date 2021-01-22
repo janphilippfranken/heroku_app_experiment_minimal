@@ -13,7 +13,7 @@ const InsOverview = props => {
         <div className={Classes.InsOverview}>
             
             <div className={Classes.InnerContainer}>
-                <h1>Instructions: Background</h1>
+                <h1>Background</h1>
                 <hr />           
                 <div className={Classes.InsReminder}>
                     <p><i>*** Please read carefully. You will complete a comprehension quiz at the end. ***</i></p>

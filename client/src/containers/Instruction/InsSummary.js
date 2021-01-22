@@ -8,10 +8,7 @@ const InsSummary = props => {
     return (
         <div className={Classes.InsSummary}>
             <div className={Classes.InnerContainer}>
-                <h1>Instructions: Summary</h1>
-                <hr />
-                <p>Well done! Below is a short summary of your task, and there will be a <b>comprehension quiz on the next page</b> after which
-                you can start your trip to the first space station. Good luck!<br /></p>
+                <h1>Summary</h1> 
                 <hr />
                 <p>
                 1. On the <b>RED PLANET</b>, fish are mainly <b>RED</b>. On the <b>BLUE PLANET</b>, fish are mainly <b>BLUE</b>.<br></br><br></br>

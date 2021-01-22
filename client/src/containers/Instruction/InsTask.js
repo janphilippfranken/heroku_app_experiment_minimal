@@ -13,7 +13,7 @@ const InsTask= props => {
         <div className={Classes.InsTask}>
             
             <div className={Classes.InnerContainer}>
-                <h1>Instructions: Task</h1>
+                <h1>Task</h1>
                 <hr />           
                 <ScrollDivision>
                 <p>You are a food consultant travelling to <b>five</b> different space stations to advice the local crew on how to cook fish. Each space station has their own <b>local fish supplier</b> that went to <b>one</b> of the two planets to catch fish. Unfortunately, the crew did not know that the type of salt matters when cooking the space fish. As such, none of the crews recorded whether their local suppllier travelled the RED or BLUE planet to catch their fish.

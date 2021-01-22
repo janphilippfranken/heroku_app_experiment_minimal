@@ -28,7 +28,7 @@ const InsTask= props => {
         <div className={Classes.InsTask}>
             
             <div className={Classes.InnerContainer}>
-                <h1>Instructions: Procedure</h1>
+                <h1>Procedure</h1>
                 <hr />           
                 <ScrollDivision scroll={showBtn}>
                 <p>On each space station, you first cook one fish and observe the color (example below).</p><br></br>
