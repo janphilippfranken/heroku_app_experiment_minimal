@@ -67,7 +67,7 @@ const Ethics = props => {
                 <div className={Classes.ParagraphContainer}>
                     <p><b>Voluntary participation and right to withdraw.&nbsp;</b> Your participation is voluntary, and you may withdraw from the study at any time and for any reason. If you withdraw from the study during or after data gathering, we will delete your data and there is no penalty or loss of benefits to which you are otherwise entitled.</p></div>
                 <div className={Classes.ParagraphContainer}>
-                    <p>If you have any questions about what you've just read, please feel free to ask, or contact us later. You can contact us by email at <a href="mailto:jp.franken@ed.ac.uk">jp.franken@ed.ac.uk</a>. This project has been approved by PPLS Ethics committee with the Ref No: 323-1819/1. If you have questions or comments regarding your own or your child's rights as a participant, they can be contacted at 0131 650 4020 or ppls.ethics@ed.ac.uk.</p></div>
+                    <p>If you have any questions about what you've just read, please feel free to ask, or contact us later. You can contact us by email at <a href="mailto:jp.franken@ed.ac.uk">jp.franken@ed.ac.uk</a>. This project has been approved by PPLS Ethics committee with the Ref No: 172-2021/2. If you have questions or comments regarding your own or your child's rights as a participant, they can be contacted at 0131 650 4020 or ppls.ethics@ed.ac.uk.</p></div>
                 <br></br>
 
                 <p>By accepting this HIT, you consent to the following:</p>
