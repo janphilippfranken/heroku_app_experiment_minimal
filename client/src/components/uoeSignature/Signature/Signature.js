@@ -5,7 +5,7 @@ import classes from './Signature.module.css';
 const signature = ( props ) => {
   return (
     <div className={classes.Signature}>
-      <div>The University of Edinburgh</div>
+      <div>ANONYMOUS VERSION FOR COGSCI 2021 REVIEW</div>
     </div>
   );
 }

@@ -1,9 +1,9 @@
 import { CHANGE_PHASE, PHASES } from '../actions/gamePhase';
 
 const initialState = {
-    [PHASES.ethics]: true,
+    [PHASES.ethics]: false,
     [PHASES.notes]: false,
-    [PHASES.instruction]: false,
+    [PHASES.instruction]: true,
     [PHASES.experiment]: false,
     [PHASES.debrief]: false,
     [PHASES.end]: false
