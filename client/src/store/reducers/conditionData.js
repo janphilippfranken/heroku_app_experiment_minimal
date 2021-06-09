@@ -6,8 +6,8 @@ const scenarioInstance = new Scenarios();
 
 // for 4 structures - note there are two conditions for both influence each other (one with excitatory / one with inhibitory effects dependent on time fish is sampled)
 const conditions = ['independent', 'lr', 'rl', 'both', 'bothExcite'];
-const targetBeliefOrder = shuffle([shuffle([0, 0, 1, 1, 1]),shuffle([0, 0, 0, 1 ,1])]);  
-const left_right = shuffle(['left', 'right']); // if left or right is against target belief 
+const targetBeliefOrder = shuffle([shuffle([0, 0, 0, 0, 0]),shuffle([0, 0, 0, 0 ,0])]);  
+const left_right = shuffle(['left', 'left']); // if left or right is against target belief 
 
 const neighbourBeliefs = {
   left: {
@@ -125,7 +125,7 @@ const neighbourBeliefs = {
   }
 };
 
-const targetBeliefs = ['red','deepskyblue'];
+const targetBeliefs = ['red','red'];
 const randOrder = shuffle([0,1,2,3,4]);
 
 const targetBeliefsOrder = [targetBeliefs[targetBeliefOrder[0][0]],

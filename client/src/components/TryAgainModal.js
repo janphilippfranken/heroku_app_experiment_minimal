@@ -2,7 +2,7 @@ import React from 'react';
 
 import Button from './Button/Button';
 
-import Classes from '../SASS/components/TryAgainModal.module.scss';
+import Classes from './TryAgainModal.module.css';
 
 const TryAgainModal = props => {
     return (

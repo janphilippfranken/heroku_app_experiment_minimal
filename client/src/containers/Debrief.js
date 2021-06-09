@@ -9,6 +9,7 @@ import { changePhase, PHASES } from '../store/actions/gamePhase';
 
 const Debrief = props => {
     const dispatch = useDispatch();
+    const conditionNumber = useSelector(state => state.conditionData.conditionNumber);
     const participantToken = useSelector(state => state.participantToken);
     const participantID = useSelector(state => state.participantID);
     const participantData = useSelector(state => state.participantData);
